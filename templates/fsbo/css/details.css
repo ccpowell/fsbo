@@ -1,0 +1,569 @@
+/*IE 6 doesn't support min-width so we give it a fixed width*/
+* html #wrapper {width: 1130px; margin: 0 auto;}
+#wrapper {
+	background-color: #B3C5D9;
+    background-image: url("http://www.forsalebyowner.com/images/mainHomepage2/bgHomeGrad.gif");
+    background-position: left top;
+    background-repeat: repeat-x;
+}
+/* */
+#holder {width: 1130px;}
+#holder #topNav {width: 758px; margin-left: 0;}
+#holder #footer {width: 758px; margin-left: 0;}
+#main {width: 1130px;}
+#main {margin: 10px 0 0 0}
+
+div#columnWrap { width: 980px; margin: 0 auto; clear: both; background: #ffffff url("http://www.forsalebyowner.com/images/search/bgRailGrad3.png") repeat-y right 0;}
+div#columnWrap div#detailsWrap {margin-right: 0px; float:left; width:650px;}
+div#columnWrap div#rail {float: left; width: 330px; overflow: hidden;}
+
+div#columnWrap div#rail .pad {padding: 10px 7px 10px 10px;}
+
+/* Search dropdown */
+div#searchTools {
+	width: 980px !important;
+	margin: 0 auto;
+	background-color: #ffffff;
+	border-bottom: none !important;
+}
+div#searchOptionsWrap {
+	width: 980px;
+	margin: 0 auto;
+	background-color: #ffffff;
+}
+
+/* Sub Tools: get email alerts, listing count */
+div#subTools { width: 980px; background-color: #ffffff; margin: 0 auto; display: block; clear: left; height: 35px;}
+div#subTools div.back {float: left; padding: 10px 0 0 15px; font-size: 14px;}
+div#subTools div.count {float: right; padding: 10px 15px 0 0; font-size: 14px; color: #000;}
+div#subTools div.count span.pipe {color: #999;}
+
+/* Tool Bar Defaults */
+ul.toolBar {clear: left; height: 24px; margin: 0 5px 20px 5px;}
+ul.toolBar.topToolbar {border-width: 0 0 1px 0;}
+ul.toolBar li {display: block; float: left; color: #999; height: 24px; }
+ul.toolBar li > a {display: inline-block; padding: 0 5px 0 30px ; height: 24px; line-height: 24px; border-style:solid; border-width:1px 1px 1px 0px; border-color:#B7C2DB; background-repeat: no-repeat; background-position: 5px 1px; font-size: 13px;}
+ul.toolBar li:first-child > a { padding-left: 25px; }
+ul.toolBar li > a:active, ul.toolBar li > a:focus { outline:none; }
+ul.toolBar li > span { display: block; width: 90px; height: 20px; padding: 3px; }
+div.shadow {height: 7px; margin: 0 5px; font-size: 0; line-height: 0; background-image: url("http://www.forsalebyowner.com/images/global/bgShad.gif"); background-repeat: repeat-x;}
+div.shadowRev {height: 7px; margin: 0 auto; width: 980px; font-size: 0; line-height: 0; background-image: url("http://www.forsalebyowner.com/images/global/bgShadRev.gif"); background-repeat: repeat-x;}
+
+/* Tool Bar Specifics */
+ul.toolBar li:first-child a,
+ul.toolBar li.appraiseNow a { border-width: 1px 1px 1px 1px;  background-image: url(http://www.forsalebyowner.com/images/fsboListing/iconAppraisalListing.png); }
+ul.toolBar li.printFlyer a {  background-image: url(http://www.forsalebyowner.com/images/fsboListing/iconPrintFlyer.png); }
+ul.toolBar li.emailToFriend a {  background-image: url(http://www.forsalebyowner.com/images/fsboListing/iconMailToAFriend.png); }
+ul.toolBar li.facebook a { background-image: url("http://www.forsalebyowner.com/images/fsboListing/bulletDetResFacebook.gif"); background-repeat: no-repeat; background-position: 8px 5px; padding-left: 25px;}
+ul.toolBar li.shareThis { width: 96px; }
+ul.toolBar li.shareThis a { padding: 0 0 0 0 ; display: block; }
+/* ul.toolBar li.one {width: 144px;} */
+ul.toolBar li.one a {background-image: url("http://www.forsalebyowner.com/images/global/iconAddFaves.gif");} 
+ul.toolBar li.one.added {padding: 5px 0 6px 0;}
+ul.toolBar li.one.added a {display: inline;}
+ul.toolBar li.one.added span.added {padding: 0 0 0 20px; margin-left: 10px; color: #41893D; font-size: 12px; line-height: 1em; background-repeat: no-repeat; background-image: url("http://www.forsalebyowner.com/images/global/iconAdded.gif"); background-repeat: no-repeat; background-position: 5px 0;}
+ul.toolBar li.one.added a.removeFav {padding-left: 0; background-image: none;}
+ul.toolBar li span.socialGooglePlus { width: 72px; }
+ul.toolBar li span.socialFaceBook { width: 87px; }
+ul.toolBar li span.socialTwitter { width: 90px ;}
+ul.toolBar li span.socialPinterest { width: 73px; }
+
+/* New Favorites link */
+span.favLink {
+	float: right;
+	display: inline;
+	font-size:12px;
+	line-height:33px;
+	padding-right: 10px;
+	background-image: url(http://www.forsalebyowner.com/images/fsboListing/iconAddToFavorites.png);
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+span.favLink.added {
+	background-image: none; /* url(http://www.forsalebyowner.com/images/fsboListing/iconRemoveFavorites.png) */
+}
+span.favLink a {
+	display:block;
+	padding-left: 20px;
+	color: #ffffff;
+}
+span.favLink.added a {
+	padding-left: 0;
+	display: inline;
+}
+span.favLink a, span.favLink a:active, span.favLink a:focus { outline: none; }
+/* ul.toolBar li.two {width: 106px;} */
+ul.toolBar li.two a {background-image: url("http://www.forsalebyowner.com/images/global/iconLearnMore.gif");}
+/* ul.toolBar li.three {width: 154px;} */
+ul.toolBar li.three a {background-image: url("http://www.forsalebyowner.com/images/global/iconLearnMore.gif");}
+/* ul.toolBar li.six {width: 106px;} */
+ul.toolBar li.six a {}
+/* ul.toolBar li.five {width: 106px;} */
+ul.toolBar li.five a {background-image: url("http://www.forsalebyowner.com/images/global/iconLearnMore.gif");}
+/* ul.toolBar li.four {width: 129px; } */
+ul.toolBar li.four a {background-image: url("http://www.forsalebyowner.com/images/global/iconLearnMore.gif");}
+
+/* Property Info */
+div#propInfoSect {clear: left; margin: 0 0 0 0; }
+div#propInfoSect div.clear { clear: left; }
+
+div.botContentPad.flip div.ownerWrap {float: left; width: 750px;}
+div.botContentPad.flip div.callOwners {float: right; margin-left: 10px;}
+div.botContentPad.flip div.emailOwners {float: right;}
+
+div#infoWrap {margin: 15px 0 0 380px;  }
+div#infoWrap.noPhotos {min-height: 371px;}
+div#infoWrap.noPhotoNoMap {min-height: 371px;}
+
+/*IE 6 doesn't support min-height so we give it a fixed height*/
+* html div#infoWrap {height: 425px;}
+div#infoWrap h1 {padding: 18px 0 0 10px; font-size: 18px; line-height: 1.3em; font-weight: bold; background-color:#fff;}
+div#infoWrap p {padding: 4px 0; font-size: 12px; line-height: 1.4em; }
+div#infoWrap p.priceSect, div#infoWrap p.addSect, div#infoWrap p.propSect, div#infoWrap p.updatedSect {background-color:#fff;}
+div#infoWrap p.addSect { font-weight: 600; }
+div#infoWrap span.price {font-size: 13px; font-weight: bold; background-color:#fff;}
+div#infoWrap .priceSect.sold span {color: #a5000e;}
+div#infoWrap .justreduced .price {color: #408940;}
+div#infoWrap .propSect .justreduced {background-color:white;border-bottom:1px solid #E6ECF2;color:#408940;font-size:16px;padding:15px 0 15px 10px;}
+div#infoWrap p.mapButtons a.map { display: inline-block; width: 181px; height: 25px; background: transparent url(http://www.forsalebyowner.com/images/fsboListing/infoWrapMap.gif) no-repeat 0 0; }
+div#infoWrap p.mapButtons a.neighborhood { display: inline-block; width: 181px; height: 25px; background: transparent url(http://www.forsalebyowner.com/images/fsboListing/infoWrapExplore.gif) no-repeat 0 0; }
+div.about {line-height: normal;}
+
+div.flagListingWrapper { text-align:right; }
+div.flagListingWrapper a.flagListing { background: transparent url(http://www.forsalebyowner.com/images/fsboListing/iconReportAbuse.png) no-repeat 0 0; color: #000000; padding-left: 20px; line-height: 18px; margin: 10px 10px 0 0;}
+div.flagListingWrapper a.flagListing:hover { text-decoration: none; }
+div.newHomeSourceLinks {margin: 15px; height: 35px;}
+div.newHomeSourceLinks a.right { float: right; }
+div.newHomeSourceLinks a.left { padding-right: 10px; background: transparent url(http://www.forsalebyowner.com/images/global/arrowRtBlue.gif) no-repeat right center; font-size: 12px; font-weight: 900; line-height: 20px; }
+div.subdivisionDescription { clear: both; margin: 0 15px; }
+div.subdivisionDescription p { font-size: 12px }
+/*
+div#askQuestion {height: 145px;  background-position: 0 -20px;}
+*/
+
+div#askQuestion div#askInfo {padding: 15px 0 0 0;}
+/* clear: none is because sellerAdmin.css has a clear: both on h3*/
+div#askQuestion h3 {font-size: 18px; font-weight: bold; margin: 0 0 7px 0; color: #000; clear: none;}
+div#askQuestion p { margin: 0; border: 0;}
+div#askQuestion p span.ownerName {font-weight: bold;}
+div#askQuestion div#askForm {margin: 0; padding: 5px 0px}
+div#askQuestion div#askForm input.submit {position: relative; top: 8px}
+* html div#askQuestion div#askForm input.submit {position: relative; top: 6px}
+*:first-child+html div#askQuestion div#askForm input.submit {position: relative; top: 6px}
+
+div#infoWrap div#askQuestion div.textBubble {position: absolute; text-align: right; width: 140px; margin: 10px 0 0 10px;}
+div#infoWrap div#askQuestion div.textBubble div.textArea {padding: 0 4px 5px 0; background-image: url("http://www.forsalebyowner.com/images/fsboListing/bgAskQuestShad.gif"); background-repeat: no-repeat; background-position: right bottom;}
+div#infoWrap div#askQuestion div.textBubble textarea {width: 130px; height: 91px; margin: 0; padding: 4px 0 0 4px; border: 1px solid #7f9db9; overflow: auto; font-size: 13px; color: #999; font-family: Arial, Helvetica, sans-serif;}
+div#infoWrap div#askQuestion div.textBubble textarea.active {color: #000;}
+div#infoWrap div#askQuestion div.textBubble input.submit {margin: 4px 2px 0 0;}
+/* For preview */
+div#infoWrap div#askQuestion div.textBubble img.submit {margin: 4px 2px 0 0;}
+
+/*The estimatedSavings box is display for sold listings instead of #askQuestion*/
+#estimatedSavings {background-image: url("http://www.forsalebyowner.com/images/fsboListing/bgAskQuestBoxBlank.gif"); background-repeat: repeat-x; background-position: bottom; height: 145px; background-color: #e6ecf2; background-position: 0 -20px;}
+#estimatedSavings ul{margin:10px 0 0 6px;}
+#estimatedSavings ul li{float:left; margin-left:4px;}
+#estimatedSavings h3{border-bottom:1px solid #e6ecf2; margin:0 50px 7px 0; font-size:16px; color: #a5000e; margin-right: 0; padding: 15px 0 15px 10px;}
+#estimatedSavings input[type="text"]{border:1px solid #7f9db9; width:100px; padding:3px 0 3px 6px;}
+
+ul.placeListing {margin: 10px 0 0 15px;}
+ul.placeListing li {display: block; float: left; margin-right: 5px;}
+ul.placeListing li input.zip {width: 100px; padding: 3px 0 3px 6px; border: 1px solid #7F9DB9;}
+
+#inactiveNotice {background-image: url("http://www.forsalebyowner.com/images/fsboListing/bgAskQuestBoxBlank.gif"); background-repeat: repeat-x; background-position: bottom; height: 145px; background-color: #e6ecf2; background-position: 0 -20px;}
+#inactiveNotice h3{border-bottom:1px solid #e6ecf2; margin:0 50px 7px 0; font-size:16px; color: #a5000e; margin-right: 0; padding: 15px 0 15px 10px;}
+
+/* Property Photos, Video, etc. */
+/* Tabs */
+div#mediaWidgetWrap {float: left; width: 378px; margin: 3px 0 0 0; background-image: url("http://www.forsalebyowner.com/images/fsboListing/bgShadMedia.png"); background-repeat: no-repeat; background-position: 0 21px; position: relative;}
+
+
+div#mediaWidgetWrap ul#mediaTabs {margin: 0 0 0 10px;}
+div#mediaWidgetWrap ul#mediaTabs li {display: block; float: left; margin-right: 3px; background-image: url("http://www.forsalebyowner.com/images/fsboListing/bgTab.gif"); background-repeat: repeat-x;}
+div#mediaWidgetWrap ul#mediaTabs li a {display: block; padding-left: 5px; border: 1px solid #fff; border-width: 1px 1px 0 1px; color: #336399; font-size: 12px; line-height: 1.6em; text-decoration: none; background-repeat: no-repeat;}
+div#mediaWidgetWrap ul#mediaTabs li a:hover {border-color: #336399;}
+div#mediaWidgetWrap ul#mediaTabs li.active {background-image: url("http://www.forsalebyowner.com/images/fsboListing/bgTabOn.gif");}
+div#mediaWidgetWrap ul#mediaTabs li.active a {border: 1px solid #fff; border-width: 1px 1px 0 1px; color: #fff;}
+div#mediaWidgetWrap ul#mediaTabs li.active a:hover {border-color: #144882;}
+div#mediaWidgetWrap ul#mediaTabs li.grey {background-image: url("http://www.forsalebyowner.com/images/fsboListing/bgTabGrey.gif"); display: none;}
+div#mediaWidgetWrap ul#mediaTabs li.grey a {border: 1px solid #fff; border-width: 1px 1px 0 1px; color: #aaa; cursor:default;}
+div#mediaWidgetWrap ul#mediaTabs li.grey a:hover {border-color: #fff;}
+div#mediaWidgetWrap ul#mediaTabs li.photos {width: 99px;}
+div#mediaWidgetWrap ul#mediaTabs li.map {width: 47px;}
+div#mediaWidgetWrap ul#mediaTabs li.slide {width: 84px;}
+div#mediaWidgetWrap ul#mediaTabs li.grey.slide a {background-image: url("http://www.forsalebyowner.com/images/global/iconNewWinGrey.gif"); background-position: 70px 6px;}
+div#mediaWidgetWrap ul#mediaTabs li.slide a {background-image: url("http://www.forsalebyowner.com/images/global/iconNewWin.gif"); background-position: 70px 6px;}
+div#mediaWidgetWrap ul#mediaTabs li.virtual {width: 96px;}
+div#mediaWidgetWrap ul#mediaTabs li.grey.virtual a {background-image: url("http://www.forsalebyowner.com/images/global/iconNewWinGrey.gif"); background-position: 82px 6px;}
+div#mediaWidgetWrap ul#mediaTabs li.virtual a {background-image: url("http://www.forsalebyowner.com/images/global/iconNewWin.gif"); background-position: 82px 6px;}
+div#mediaWidgetWrap ul#mediaTabs li.video {width: 54px;}
+
+div#mediaWidget {clear: left; padding: 0 0 0 10px; position: relative;}
+div#mediaWidget img.photo {border: 1px solid #CCD8E6;}
+div#mediaWidget div.disclaimer {display: none; position: absolute; bottom: 1px; left: 1px; width: 405px; background-color: #000;}
+div#mediaWidget div.disclaimer p {color: #fff; padding: 7px 10px; font-size: 10px; line-height: 1.3em;}
+div#mediaWidget p.iNestNotice {color: #666; padding: 3px 0;}
+
+div#mediaWidget #mapMode {height:268px; width:358px; background-color:#f6f6f6;}
+div#mediaWidget #mapMode.noPhotos {height:268px; width:358px; background-color:#f6f6f6;}
+div#mediaWidget #videoMode {height:268px; width:358px; }
+div#mediaWidget #videoShowcaseMode {height:310px; width:368px; background-color:#fff; }
+div#mediaWidget #videoShowcaseMode #embedContainer {width: 358px;}
+div#mediaWidget #videoShowcaseMode #embedContainer input#syndEmbedCode {float: right; width: 260px; font-size: 12px; line-height: 1.3em; color: #999; padding: 4px 2px; border: 1px solid #ccc; margin: 5px 0; }
+div#mediaWidget #videoShowcaseMode #embedContainer div#embedHeader {float: right; margin: 5px 5px 5px 0; width: 90px; font-size: 11px; line-height: 1.3em;  text-align: right; color: #999;}
+div#mediaWidget #videoShowcaseMode #embedContainer div#embedHeader span.big {font-size: 14px;}
+div#mediaWidget div.overlay {display: block; position: absolute; z-index: 99; width: 358px; height: 268px; border: 1px solid #000; background-color: #000; opacity: 0.5; -moz-opacity: 0.5; filter: alpha(opacity=50);}
+div#mediaWidget div.floater {display: block; position: absolute; z-index: 100; width: 275px; height: 78px; margin: 95px 0 0 41px; background-image: url("http://www.forsalebyowner.com/images/fsboListing/bgFloaterOpen.gif");}
+div#mediaWidget div.overlay.hide{display:none;}
+div#mediaWidget div.floater.hide{display:none;}
+div#mediaWidget div.floater div.xClose {position: absolute; margin: 10px 0 0 248px;}
+div#mediaWidget div.floater p {padding: 24px 0 0 68px; font-size: 10px; color: #fff; line-height: 1.5em;}
+div#mediaWidget div.floater span.date {display: block; font-weight: bold;}
+div#mediaWidget div.floater span.time {display: block;}
+div#mediaWidget div.floater a.more {color: #fee9ba;}
+
+#mediaWidget #thumbs_holder{margin-top:5px;height:58px;overflow:hidden;position:relative;width:358px;}
+#mediaWidget #thumbs{clear:both;position:absolute;width:20000em;}
+#mediaWidget #thumbs .thumb{float: left;}
+
+div#mediaWidget a.thumb {width: 72px;}
+div#mediaWidget a.thumb:active, div#mediaWidget a.thumb:focus { outline: none; }
+/* div#mediaWidget a.thumb img {border: 1px solid #CCD8E6; margin-top: 1px;} */
+div#mediaWidget a.thumb img {border: 2px solid #ffffff;}
+div#mediaWidget a.thumb:hover img {border-color:#336399;}
+div#mediaWidget a.thumb.on img {border-color: #AA2216;}
+div#mediaWidget a.thumb.off img {display:none;}
+
+/* New styles (6/09) for photo captions */
+#photoCaption {position: absolute; bottom: 82px; width: 358px; margin-left: 1px; background-image: url("http://www.forsalebyowner.com/images/photoMgmt/bgPhotoCaption.png"); background-repeat: repeat;}
+* html #photoCaption {background-color: #333; background-image: none;}
+#photoCaption p {padding: 9px 11px; color: #fff; font-size: 11px; line-height: 1.3em;}
+#photoCaption p strong {font-size: 12px; line-height: 1.3em;}
+#photoCaption img.iconHide {float: right; display: inline; margin: 8px 8px 0 0;}
+#viewAllPhotos {position: absolute; right: 0px; top: 1px; padding-top: 6px; width: 130px; height: 22px; z-index: 198; text-align: center; background-image: url("http://www.forsalebyowner.com/images/photoMgmt/bgPhotoCapShow.png")}
+#viewAllPhotos a {position: relative; color:#fff; z-index: 199;}
+
+#photoSmall {background-color:black;width:358px;height:268px;}
+
+#photoCapShow {display: none; position: absolute; bottom: 82px; width: 432px; margin-left: 1px; background-image: url("http://www.forsalebyowner.com/images/photoMgmt/bgPhotoCapShow.png"); background-repeat: repeat-y; background-position: 0 0;}
+* html #photoCapShow {background-color: #333; background-image: none;}
+#photoCapShow img.iconShow {margin: 8px 0 8px 8px;}
+
+#paginPhotos {height: 15px; margin: 5px 10px 0 0;}
+#paginPhotos span {font-size: 12px; line-height: 1.3em; color: #336399;}
+#paginPhotos span.prevNext {float: left;}
+#paginPhotos span.viewAll {float: right;}
+#paginPhotos #pic_next {cursor:pointer}
+#paginPhotos #pic_prev {cursor:pointer}
+
+/* media widget js styles */
+#mapMode{display:none;}
+#mapModeWrap{display:none;}
+.videoMode{display:none;}
+#listingMainImageContainer{display:none;}
+#listingMainImageContainer.show{display:block; width:360px;}
+#mapMode.show{display:block;}
+#mapModeWrap.show{display:block;}
+.videoMode.show{display:block !important;}
+#lightboxAsk.show{display:block;}
+#lightboxEmail.show{display:block;}
+#lightboxFlag.show{display:block;}
+/* !important is needed because IE6 sees .lightboxCal.show as .show because it doesn't support multiple classes */
+.lightboxCal.show{display:block !important;}
+
+
+
+/* Bottom Content Wrapper */
+div.botContentPad {margin: 0 0 0 0; padding: 0 10px 10px 10px;}
+
+/* Headers */
+h2.hed {height: 33px; margin: 10px 0 0 0; padding-left: 12px; font-size: 18px; line-height: 1.8em; font-weight: bold; color: #fff; background-image: url("http://www.forsalebyowner.com/images/fsboListing/bgHedBarDet.gif"); background-repeat: repeat-x;}
+
+
+/* Open House times and dates */
+h2.hed.open {background-image: url("http://www.forsalebyowner.com/images/fsboListing/bgHedBarDetOpen2.gif");}
+div.openHouseWrapper {
+	clear:left;
+	background-image: url("http://www.forsalebyowner.com/images/fsboListing/bgOpenDatesBar.gif"); background-repeat: repeat-x; background-position: left top;
+	display: block;
+}
+div.openHouseInnerWrapper {
+	background: transparent url(http://www.forsalebyowner.com/images/fsboListing/iconOpenHouse.gif) no-repeat 20px 22px;
+}
+table#openHouseTable {
+	width: 525px;
+	height: 77px;
+	margin: 18px 0 0 90px;
+}	
+table#openHouseTable span.date,
+table#openHouseTable span.dateTime,
+table#openHouseTable span.time,
+table#openHouseTable span.addCalendar {display: block; line-height: 1.5em; font-size: 12px; }
+table#openHouseTable span.addCalendar a {font-size: 10px; padding: 1px 0 5px 18px; background-image: url("http://www.forsalebyowner.com/images/global/iconAddCal.gif"); background-repeat: no-repeat; background-position: 0 0px;}
+table#openHouseTable a.addCalendarLinkList { padding: 1px 0 0 18px; background: transparent url("http://www.forsalebyowner.com/images/global/iconAddCal.gif") no-repeat left center; color: #000000;}
+
+ul.openDates {clear: left; height: 77px; margin-bottom: 15px; background-image: url("http://www.forsalebyowner.com/images/fsboListing/bgOpenDatesBar.gif"); background-repeat: repeat-x; background-position: left top;}
+ul.openDates li {display: block; float: left; margin-top: 10px; margin-right: 70px; font-size: 12px; line-height: 1.8em;}
+ul.openDates li.flag {width: 80px; height: 77px; margin-right: 10px; background-image: url("http://www.forsalebyowner.com/images/fsboListing/iconOpenHouse.gif"); background-repeat: no-repeat; background-position: 14px 5px;}
+ul.openDates li span.date {display: block; font-weight: bold;}
+ul.openDates li span.time {display: block;}
+ul.openDates li span.addCalendar {display: block;}
+ul.openDates li span.addCalendar a {font-size: 10px; padding: 1px 0 5px 18px; background-image: url("http://www.forsalebyowner.com/images/global/iconAddCal.gif"); background-repeat: no-repeat; background-position: 0 0px;}
+
+
+/* About Property Sect */
+div.botContentPad div.sect {float: left; padding: 15px 0 20px 0; margin: 0 15px 0 0; width: 186px;}
+div.botContentPad div.sect span.label {display: block; font-weight: bold;}
+div.botContentPad div.sect span.value {display: block;}
+div.botContentPad div.sect span.greyed {color: #999;}
+div.botContentPad p.about{font-size:12px; margin-left:12px;}
+
+div.sect.one span.label {float: left; padding-left: 15px;}
+div.sect.one span.value {margin-left: 135px;}
+
+div.sect.two span.label {float: left;}
+div.sect.two span.value {margin-left: 115px;}
+
+div.about {clear: left; padding: 0 15px 5px 15px; font-size: 12px; overflow:hidden;}
+div.about ul {list-style-type: disc; list-style-position: inside;}
+div.about ol {list-style-type: decimal; list-style-position: inside;}
+div.about img.logo {float: right;}
+/* Two Colomn About Property Sect */
+div.botContentPad div.twoColumn div.sect { width: 299px;}
+div.botContentPad div.twoColumn div.sect ul { 
+	display: block;
+	list-style: disc outside none;
+	padding-left: 20px;
+	margin: 5px 20px;
+}
+/* Room Dimensions Sect */
+div.roomDimensions {background-image: url("http://www.forsalebyowner.com/images/fsboListing/bgDetResSect.gif"); background-repeat: repeat-x; background-position: left bottom; padding: 0 15px 22px; overflow: hidden;}
+div.roomDimensions div.room {float: left; margin: 5px 10px 0 0; width: 15%}
+div.roomDimensions div.room div.roomName {font-weight: bold}
+* html div.roomDimensions {height: 100%}
+
+/* Contact Owners Sect */
+div.callOwners {float: left; width: 274px; background-image: url("http://www.forsalebyowner.com/images/fsboListing/bgDetCallSect.gif"); background-repeat: no-repeat; background-position: left bottom; margin-bottom: 10px; }
+div.emailOwners { margin: 0 0 10px 15px; float:left; background-image: url("http://www.forsalebyowner.com/images/fsboListing/bgDetEmailSect.gif"); background-repeat: no-repeat; background-position: left bottom; width: 340px; ^width: 335px; }
+div.callOwners, div.emailOwners { height: 250px; overflow: hidden; }
+div.callOwners .pad {display: block; padding: 0 15px 22px 15px;}
+div.emailOwners .pad {display: block; padding: 0 15px 22px 15px; }
+
+
+div.callOwners h3, div.emailOwners h3 {padding: 10px 15px 9px 15px; border-bottom: 1px solid #e6ecf2; font-size: 16px; font-weight: bold;}
+div.callOwners h3 {margin: 0 14px 9px 0;}
+div.callOwners .pad h3 { margin: 0 0 0 0; }
+div.emailOwners h3 {margin: 0 3px 2px 0;}
+* html div.emailOwners h3 {margin: 0 1px 0 0;}
+*:first-child+html div.emailOwners h3 {margin: 0 1px 0 0;}
+div.callOwners p {font-size: 13px; line-height: 1.3em;}
+div.emailOwners p {font-size: 13px; line-height: 1.3em;}
+div.callOwners p span.ownerName {font-weight: bold;}
+div.callOwners p.doNotCall {height: 60px; padding: 0 0 0 55px; margin: 15px 15px 0 0; font-size: 10px; background-image: url("http://www.forsalebyowner.com/images/fsboListing/doNotCall.gif"); background-repeat: no-repeat;}
+
+div.emailOwners ul {width: 222px; marign: 10px 0 5px 0;}
+div.emailOwners ul li.email {margin-bottom: 10px;}
+div.emailOwners ul li label {float: left; font-size: 12px; color: #000;}
+div.emailOwners ul li span.chars {float: right; font-size: 10px; color: #999;}
+div.emailOwners ul li input.email {width: 210px; padding: 3px 6px; margin: 3px 0 0 0; font-size: 12px; color: #999; border: 1px solid #7F9DB9; font-family: Arial, Helvetica, sans-serif;}
+div.emailOwners ul li input.active {color: #000;}
+div.emailOwners ul li textarea.question {width: 210px; height: 60px; padding: 3px 6px; margin: 3px 0 0 0; font-size: 12px; color: #999; border: 1px solid #7F9DB9; font-family: Arial, Helvetica, sans-serif;}
+div.emailOwners ul li textarea.active {color: #000;}
+div.emailOwners ul li.submit {margin-top: 5px; text-align: right;}
+div.emailOwners ul li.submit input {margin-right: -4px;}
+
+/* New Construction Contact Sect */
+div.emailBuilder { margin: 0 0 10px 0; background-image: url("http://www.forsalebyowner.com/images/fsboListing/bgDetEmailSect.gif"); background-repeat: repeat-x; background-position: left bottom;  }
+div.emailBuilder .pad {display: block; padding: 0 15px 22px 15px;}
+div.emailBuilder h3 {padding: 10px 15px 9px 15px; border-bottom: 1px solid #e6ecf2; font-size: 16px; font-weight: bold;margin: 0 3px 2px 0;}
+div.emailBuilder table {margin-top:10px;width: 400px;}
+div.emailBuilder td { padding: 0 3px; width: 196px;}
+div.emailBuilder label {float: left; font-size: 12px; color: #000;}
+div.emailBuilder span.chars {float: right; font-size: 10px; color: #999;}
+div.emailBuilder input.email {width: 165px; padding: 3px 6px; margin: 3px 0 0 0; font-size: 12px; color: #999; border: 1px solid #7F9DB9; font-family: Arial, Helvetica, sans-serif;}
+div.emailBuilder input.active {color: #000;}
+div.emailBuilder textarea.question {width: 185px; height: 60px; padding: 3px 6px; margin: 3px 0 0 0; font-size: 12px; color: #999; border: 1px solid #7F9DB9; font-family: Arial, Helvetica, sans-serif;}
+div.emailBuilder textarea.active {color: #000;}
+div.emailBuilder ul li.submit {margin-top: 5px; text-align: right;}
+div.emailBuilder ul li.submit input {margin-right: -4px;}
+div.emailBuilder #askQuestionStandardButton { margin-left: 0; }
+div.spamThreat { border: 3px solid #edeff6; float:left; padding: 10px;  }
+div.spamThreat p.hed {font-size: 13px; line-height: 1.3em; font-weight: 600;}
+div.spamThreat p.explain {font-size: 10px; line-height: 1.3em;}
+
+div.emailBuilder div.spamThreat { border-style: solid; border-color:#E6ECF2; border-width: 0 0 0 1px; float: right; width: 175px; padding: 10px;  margin-top: -3px; }
+div.emailBuilder div.spamThreat p.hed {font-size: 13px; line-height: 1.3em; font-weight: 600;}
+div.emailBuilder div.spamThreat p.explain {font-size: 10px; line-height: 1.3em;}
+
+/* Resources */
+ul.resources {margin: 0 0 10px 0;}
+ul.resources li {margin: 0 0 2px 0; padding: 0 0 2px 18px; font-size: 12px; background-image: url("http://www.forsalebyowner.com/images/fsboListing/bulletDetRes.gif"); background-repeat: no-repeat; background-position: 0 0;}
+ul.resources li.facebook {background-image: url("http://www.forsalebyowner.com/images/fsboListing/bulletDetResFacebook.gif");}
+
+/* Other Props Sect */
+div.otherProps {}
+div.otherProps div.listingsHolder {height: 195px; overflow: auto; border: 1px solid #B3C5D9; background-color: #fff; background-image: url("http://www.forsalebyowner.com/images/global/bgShad.gif"); background-repeat: repeat-x; background-position: left top;}
+
+/* Ads */
+div#textAds {width: 152px; overflow: hidden;}
+div#textAds .textAdsBlock {border-top: 1px dotted #A1B8D1; padding: 20px 0 0 0px;}
+
+/* Crosslink Listings */
+div.listing {margin: 0 5px 0 0; border-bottom: 1px solid #B3C5D9}
+
+div.listing div.photo {float: left; height: 111px; width: 140px; background-image: url("http://www.forsalebyowner.com/images/global/bgShadList.png") !important; background-image: url("http://www.forsalebyowner.com/images/global/bgShadList.gif"); background-repeat: no-repeat; background-position: 0;}
+div.listing div.photo a:active, div.listing div.photo a:focus { outline: none; }
+div.listing div.photo img.photo {width: 100px; height: 75px; margin: 17px 0 0 63px;}
+div.listing:hover, div.listing.listingHov {background-image: url("http://www.forsalebyowner.com/images/search/bgListingRowHov.gif"); background-repeat: repeat-x; background-position: 0 0;}
+div.listing:hover div.photo, div.listing.listingHov div.photo {background-image: url("http://www.forsalebyowner.com/images/global/bgShadList.png") !important; background-image: none;}
+
+div.listing div.photo img.photo {margin: 17px 0 0 17px; border: 1px solid #336399;}
+/*
+div.open div.photo img.photo {border: 1px solid #41893D;}
+div.new div.photo img.photo {border: 1px solid #336399;}
+div.sold div.photo img.photo {border: 1px solid #a5000e;}
+
+div.listing div.photo span.flag {position: absolute; display: block; margin: 17px 0 0 17px; width: 46px; height: 77px; background-repeat: no-repeat;}
+div.listing.open div.photo span.flag {background-image: url("http://www.forsalebyowner.com/images/search/flagOpenLrg.gif");}
+div.listing.new div.photo span.flag {background-image: url("http://www.forsalebyowner.com/images/search/flagNewLrg.gif");}
+div.listing.sold div.photo span.flag {background-image: url("http://www.forsalebyowner.com/images/search/flagSoldLrg.gif");}
+div.listing p.desc {margin: 0 15px 5px 0; padding: 0 0 5px 0; font-size: 12px; color: #336399; border-bottom: 1px dotted #ece6f2; overflow: hidden}
+*/
+
+div.listing div.sect {float: left; padding: 14px 0 0 0; margin: 0; font-size: 12px; line-height: 1.5em; color: #000;}
+div.listing div.sect.left {width: 460px;}
+span.pipecleaner {padding: 0 5px; color: #1b9731;}
+div.listing div.sect.left p.desc {margin: 0 0 5px 0; padding: 0 0 5px 0; font-size: 12px; color: #336399; border-bottom: 1px dotted #ece6f2;}
+div.listing div.sect.mid {width: 233px; padding: 0 0 14px 0;}
+div.listing div.sect.mid span.price {font-weight: bold;}
+div.listing.sold span.price {color: #a5000e;}
+div.listing div.sect.mid span.address {display: block;}
+div.listing div.sect.mid span.distance {display: block; color: #999;}
+div.listing div.sect.right {width: 228px; padding: 0 0 14px 0;}
+div.listing div.sect.right span.beds {display: block; font-weight: bold;}
+div.listing div.sect.right span.proptype {display: block;}
+div.listing.sold span.savings {display: block; color: #a5000e;}
+div.listing div.sect.right span.data {display: block;}
+div.listing div.sect.right span.updated {display: block;}
+
+/* Overrides */
+.botContentPad.sold div.callOwners {height: 115px;}
+.botContentPad.sold div.emailOwners {height: 115px;}
+.botContentPad.inactive div.callOwners {height: 115px;}
+.botContentPad.inactive div.emailOwners {height: 115px;}
+.botContentPad.iNest div.sect.three span.label {float: left;}
+.botContentPad.iNest div.sect.three span.value {margin-left: 135px;}
+
+/*Ask Question / E-mail Owner */
+div#askQuestionBlankEmail{background-image: url("http://www.forsalebyowner.com/images/fsboListing/bgAskQuestBoxBlank.gif"); background-repeat: repeat-x; background-position: bottom; height: 145px; background-color: #e6ecf2; background-position: 0 -20px;}
+/* clear: none is because sellerAdmin.css has a clear: both on h3 */
+div#askQuestionBlankEmail h3 {font-size: 16px; padding: 15px 0 7px 10px; margin: 0 50px 7px 0; border-bottom: 1px solid #E6ECF2; clear: none;}
+div#askQuestionBlankEmail p {margin: 0 0 0 10px; padding: 0; border: 0;}
+div#askQuestionBlankEmail p span.ownerName {font-weight: bold;}
+select#askQuestionTextArea {width:175px; margin-top: 2px; *width: 160px;}
+input.quickAskQuestion { margin: 0 0 0 5px; position: absolute; }
+
+div#askQuestion.fct {background: url("http://www.forsalebyowner.com/images/fsboListing/bgAskQuestBoxBlank.gif") repeat-x center bottom;}
+div#askQuestion.fct p.learnMore {border-bottom:1px solid #E6ECF2; font-size:16px; font-weight:bold; margin:0px; padding:30px 0px 6px 12px;}
+div#askQuestion.fct p.learnMore a {padding-right:12px;}
+
+div#askQuestion.fct p.trial {font-size:12px; margin:0; padding:6px 10px 0px 12px;}
+
+#askQuestionCharCount.OverLimit {color:#ff0000;}
+#askQuestionCharCount.UnderLimit {color:#999;}
+
+.emailBuilder ul.askQuestionStandardResultBox,
+.emailOwners ul.askQuestionStandardResultBox {display:block; width:168px; padding-top:4px; padding-bottom:5px; overflow: hidden}
+.emailBuilder ul.askQuestionStandardResultBox { width: 250px; }
+.emailBuilder ul.askQuestionStandardResultBox li,
+.emailOwners ul.askQuestionStandardResultBox li {display:none;}
+.emailBuilder ul.askQuestionStandardResultBox.ShowError,
+.emailOwners ul.askQuestionStandardResultBox.ShowError {background:url(http://www.forsalebyowner.com/images/global/iconError.gif) no-repeat 7px 7px;}
+.emailBuilder ul.askQuestionStandardResultBox.ShowError li,
+.emailOwners ul.askQuestionStandardResultBox.ShowError li {color:#a5000f; padding-left:34px; display:none; padding-bottom:2px;  }
+.emailBuilder ul.askQuestionStandardResultBox.ShowError.InvalidQuestion #InvalidQuestion,
+.emailOwners ul.askQuestionStandardResultBox.ShowError.InvalidQuestion #InvalidQuestion {display:block;}
+.emailBuilder ul.askQuestionStandardResultBox.ShowError.InvalidQuestionLength #InvalidQuestionLength,
+.emailOwners ul.askQuestionStandardResultBox.ShowError.InvalidQuestionLength #InvalidQuestionLength {display:block;}
+.emailBuilder ul.askQuestionStandardResultBox.ShowError.InvalidEmail #InvalidEmail,
+.emailOwners ul.askQuestionStandardResultBox.ShowError.InvalidEmail #InvalidEmail {display:block;}
+.emailBuilder ul.askQuestionStandardResultBox.ShowError.EmailFailure #EmailFailure,
+.emailOwners ul.askQuestionStandardResultBox.ShowError.EmailFailure #EmailFailure {display:block;}
+.emailBuilder ul.askQuestionStandardResultBox.ShowError.EmailFailureSecurity #EmailFailureSecurity,
+.emailOwners ul.askQuestionStandardResultBox.ShowError.EmailFailureSecurity #EmailFailureSecurity {display:block;}
+.emailBuilder ul.askQuestionStandardResultBox.ShowError.InvalidPostalCode #InvalidPostalCode { display: block; }
+.emailBuilder ul.askQuestionStandardResultBox.ShowError.InvalidFirstLastName #InvalidFirstLastName { display: block; }
+
+#askQuestionStandardForm.hide {display:none;}
+#askQuestionDisplaySuccess {display:none; margin-bottom:24px;}
+#askQuestionDisplaySuccess.show {display:block}
+span.chars #askQuestionStandardCharCount.OverLimit {color:#ff0000;}
+span.chars #askQuestionStandardCharCount.UnderLimit {color:#999;}
+#askQuestionStandardButton {clear: right; margin-left:168px;}
+
+/* Needed for listing preview */
+#previewListingUI{border:1px solid red; padding:10px; margin:5px 0 10px 0; font-size: 1.2em; text-align:center;}
+#previewListingUI p{color:#000000; margin:12px 0 2px 0; padding:0;}
+#previewListingUI p.review{font-weight:bold; margin:8px 0 8px 0;}
+
+/* LISTING DESCRIPTION AREA */
+h2.pageTitle { font-size: 22px; line-height:1.3em; padding: 0 10px 10px 10px; font-weight:600; display: block; }
+div#infoWrap h1.seoTitle { font-size: 12px; line-height: 1.4em; font-weight: 600; padding: 0.25em 0px; }
+div.listingDescription h1, div.listingDescription h2, div.listingDescription h3, div.listingDescription h4, div.listingDescription h5, div.listingDescription h6, div.listingDescription td, div.listingDescription div, div.listingDescription p, div.listingDescription ul, div.listingDescription ol {margin: 0; padding: 0; border: 0; font-family: "Lucida Grande",Geneva,Arial,Verdana,sans-serif; font-size: 12px}
+div.listingDescription ul, div.listingDescription ol {margin-left: 15px}
+div.listingDescription h1 {font-size: 2em; font-weight: bold}
+div.listingDescription h2 {font-size: 1.5em; font-weight: bold}
+div.listingDescription h3 {font-size: 1.17em; font-weight: bold}
+div.listingDescription h4 {font-size: 1em; font-weight: bold}
+div.listingDescription h5 {font-size: .83em; font-weight: bold}
+div.listingDescription h6 {font-size: .75em; font-weight: bold}
+
+/* FORECLOSURE SAMPLE DATA */
+#sampleWrap {background-image: url("http://www.forsalebyowner.com/images/fsboListing/bgGradSampleWrap.png"); background-repeat: repeat-x; background-position: 0 0;}
+.hilite, div.foreclosureTrialListingInfo a {color: #F0801F;}
+div.foreclosureTrialListingInfo a.nohilite {color: #467AA7;}
+img#mapOverlay {position: absolute; z-index: 1000; bottom: 0; left: 10px}
+#sampleWrap {padding-bottom: 15px;}
+#sampleCaption {position: relative; zoom: 1; margin: -25px 0 0 0;}
+#sampleCaptionLeft {float: left; display: inline; width: 150px; height: 90px; padding: 15px 0 0 0; border: 1px solid #E6E6E6; border-width: 1px 1px 0 0;}
+#sampleCaptionMid {float: left; display: inline; width: 373px; height: 90px; padding: 15px 15px 0 15px; border: 1px solid #E6E6E6; border-width: 1px 1px 0 0;}
+#sampleCaptionMid p {font-size: 16px; line-height: 1.4em; font-weight: bold; font-family: Helvetica, sans-serif;}
+#sampleCaptionRt {float: left; display: inline; width: 205px; height: 90px; padding: 15px 0 0 15px; border: 1px solid #E6E6E6; border-width: 1px 0 0 0;}
+* html img.foreclosureSampleData {width: 774px}
+
+/* Resource Widget */
+		#resourceWidget { margin:5px 5px 5px 0; }
+			#resourceWidget .resourceHeader { background-color:#a8a8a8;color:#fff;font-size:18px;padding:10px; }
+			#resourceWidget .resourceContentWrapper { background-color:#e2e2e2;margin:2px 0; padding:15px;color:#666;font-size:13px; }
+				#resourceWidget .resourceContentWrapper .resourceFreeCreditScore, #resourceWidget .resourceContentWrapper .resourceMoveBoxer, #resourceWidget .resourceContentWrapper .resourceUsLegal { margin:5px 0; }
+				#resourceWidget .resourceContentWrapper .resourceFreeCreditScore img, #resourceWidget .resourceContentWrapper .resourceMoveBoxer img, #resourceWidget .resourceContentWrapper .resourceUsLegal img { margin:5px 0; }
+				#resourceWidget .resourceContentWrapper .resourceFreeCreditScore a, #resourceWidget .resourceContentWrapper .resourceMoveBoxer a, #resourceWidget .resourceContentWrapper .resourceUsLegal a  { font-size:12px;line-height:2.2em; }
+
+/* Pro Ad in Rail */
+div.findProAd {padding: 10px 5px 10px 5px;}
+div.findProAd p.adHed {padding: 0 0 3px 0; margin: 0 0 5px 0; font-size: 15px; line-height: 1.3em; font-weight: bold; color: #000; border-bottom: 1px solid #ccd8e6;}
+div.findProAd p.proType {margin: 0 55px .4em 0; font-size: 12px; line-height: 1.3em; font-weight: bold; color: #336399;}
+div.findProAd p.proType a {font-weight: bold; color: #336399;}
+div.findProAd p.proDesc {margin: 0 0 .4em 0; font-size: 12px; line-height: 1.3em; color: #666;}
+div.findProAd div.photoWrap {float: right; display: inline; width: 55px; margin: 0 0 0 0; font-size: 0;}
+div.findProAd div.photoMatte {float: right; border: 1px solid #ccc; font-size: 0;}
+div.findProAd div.photoMatte img.photo {border: 1px solid #fff;}
+div.findProAd img.icon {float: right; margin: 0 0 0 5px;}
+div.findProAd a.webAddr {color: #336399; font-size: 10px; line-height: 1.3em;}
+div.findProAd a.newWin {padding-right: 10px; background-image: url("http://www.forsalebyowner.com/images/proAd/ad/iconNewWindow.gif"); background-repeat: no-repeat; background-position: right center;}
+div.findProAd p.joinUpLink {margin-top: 5px; padding-top: 5px; border-top: 1px solid #ccd8e6; text-align: right;}
+div.findProAd p.joinUpLink a {color: #336399; font-size: 11px; line-height: 1.3em;}
+
+/* Sharethis toolbar icon fix */
+ul.toolBar li span a span.stbuttontext {line-height: 24px; font-size: 13px; padding-left: 28px; }
+ul.toolBar li span#sharethis_0 a.stico_rotate, ul.toolBar li span#sharethis_1 a.stico_rotate {background-position: 7px 4px !important}
+ul.toolBar li span#sharethis_1 a.stico_rotate, ul.toolBar li span#sharethis_1 a.stico_rotate {background-position: 7px 4px !important}
+
+/* New Construction Call to action Badge */
+#newConstructionCallToActionBadge { background: transparent url(http://www.forsalebyowner.com/images/newHomeSource/Medal_Icon.png) no-repeat left top; padding: 10px 37px; *padding: 10px 0px; }
+#newConstructionCallToActionBadge a { color: #E82B2E; font-weight: 900; display:block; width: 135px; *padding-left: 37px; *width: auto;}
+#newConstructionCallToActionBadge a img { margin: 0 0 0 4px;}
+
+/* Foreclosure overwrites */
+div.sect.two div.yellowNotice { margin-top: 10px; }

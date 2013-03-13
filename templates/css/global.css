@@ -1,0 +1,95 @@
+/* RESET */
+html,body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,p,blockquote,fieldset,input {margin: 0; padding: 0;}
+h1,h2,h3,h4,h5,h6,pre,code,address,caption,cite,code,th,a {font-size: 1em; font-weight: normal; font-style: normal;}
+ul,ol,dl {list-style: none;}
+fieldset,img {border: none;}
+caption,th {text-align: left;}
+table {border: 0; border-collapse: collapse; border-spacing: 0;}
+td {padding: 0; vertical-align: top;}
+* {-moz-outline: none;}
+
+/* BASIC */
+body {font-family: "Lucida Grande", Geneva, Arial, Verdana, sans-serif; font-size: 11px; line-height: 1.3em; background-color: #fff; color: #000;}
+/* zoom: 1 is to give IE7 hasLayout ... otherwise floated elements inside a relatively position parent can disappear */
+#wrapper {text-align: left; position: relative; zoom: 1;}
+textarea {font-family: "Lucida Grande", Geneva, Arial, Verdana, sans-serif;}
+a {color: #467AA7; text-decoration: none;}
+a:hover {text-decoration: underline;}
+h2 {font-size: 18px; font-weight: bold;}
+
+.show, div.show, span.show {display: block}
+.hide, div.hide, span.hide {display: none}
+.clear {clear: both; height: 0; font-size: 0; line-height: 0;}
+.unbold {font-weight: normal;}
+
+/* Errors  */
+div#error, ul.form-errors {padding: 15px 15px 15px 25px; border-bottom: 1px solid #999; background-image: url("http://www.forsalebyowner.com/images/global/bgErrorBox.gif"); background-repeat: repeat-x; background-position: top;}
+div#error p, ul.form-errors li  {padding-left: 30px; font-size: 14px; line-height: 1.4em; color: #9F0310;}
+div#error p.alert, ul.form-errors > li {padding-bottom: 6px; background-image: url("http://www.forsalebyowner.com/images/global/iconError.gif"); background-repeat: no-repeat; background-position: 0 0;}
+div#error ul.bullets li, ul.form-errors > li li {padding-left: 40px; font-size: 14px; line-height: 1.4em; color: #9F0310; background-image: url("http://www.forsalebyowner.com/images/global/bulletError.gif"); background-repeat: no-repeat; background-position: 30px 7px;}
+div#error p.contact {padding-top: 10px;}
+/*Need these to override main.css*/
+div#error strong, ul.form-errors li b {font-size: 14px;}
+div#error a {font-size: 14px;}
+ul.errors li {color:red;font-weight:bold;}
+ul.form-errors li b {color: black;}
+ul.form-errors li b:after {content: ':';}
+
+/* Success Msg */
+div#success {margin: 0 0 20px 0; padding: 20px 10px; border-bottom: 1px solid #C6EACD; background-image: url("http://www.forsalebyowner.com/images/global/bgSuccessGrad.gif"); background-repeat: repeat-x; background-position: bottom; background-color: #FBFBFB}
+div#success p.msg {padding: 0 0 0 50px; color: #419639; font-size: 16px; line-height: 1.4em; font-weight: bold; background-image: url("http://www.forsalebyowner.com/images/global/iconSuccess.gif"); background-repeat: no-repeat; background-position: 3px 3px;}
+div#success p.msg span.sub {display: block; color: #000; font-size: 12px; line-height: 1.4em; font-weight: normal;}
+
+
+/* Hover Menus */
+/* These rules are also in header.css but need to be here also for co-brands */
+ul.hovmenu {display: none; position: absolute; z-index: 100; border-bottom: 3px solid #336399; border-left: 1px solid #CCD8E6; border-right: 1px solid #CCD8E6; background-color: #fff;}
+ul.hovmenu li {border-bottom: 1px solid #CCD8E6; padding: 0;}
+ul.hovmenu li a {display: block; height: 20px; padding: 0 0 0 10px; margin: 0; background-color: #fff; font-size: 11px; line-height: 1.7em; text-decoration: none; white-space: nowrap; background-repeat: no-repeat; background-position: right 7px;}
+ul.hovmenu li a:hover {background-color: #FFFAEE; text-decoration: none;}
+ul.hovmenu li.on a {font-weight: bold;}
+ul.hovmenu li.sortDn a {background-image: url("http://www.forsalebyowner.com/images/global/icon_sort_dsc.gif"); font-weight: bold;}
+ul.hovmenu li.sortUp a {background-image: url("http://www.forsalebyowner.com/images/global/icon_sort_asc.gif"); font-weight: bold;}
+
+/* float clearing for IE6 */
+* html .clearfix{height: 1%;overflow: visible;}
+
+/* float clearing for IE7 */
+*+html .clearfix{min-height: 1%;}
+
+/* float clearing for everyone else */
+.clearfix:after{clear: both;content: ".";display: block;height: 0;visibility: hidden;font-size: 0;}
+
+input.title_hint{color: #999999;}
+input.title_hint.active{color: black;}
+
+/* Yellow Callout Notice */
+div.yellowNotice { background: #FDF6E5; border: 1px solid #EFDAA2; margin: 5px 20px 5px 5px; -moz-box-shadow: 2px 2px 6px #dfdfdf; -webkit-box-shadow: 2px 2px 6px #dfdfdf; box-shadow: 2px 2px 6px #dfdfdf; }
+div.yellowNotice a:visited,
+div.yellowNotice a:hover,
+div.yellowNotice a:active,
+div.yellowNotice a { font-size: 10px; color: #336399 !important; line-height: 1.5em; text-decoration: none; padding: 5px; display: block; }
+
+/* CSS3 Buttons */
+.css3button {
+	display: inline-block;
+	font-size: 16px;
+	color: #fff;
+	-moz-box-shadow: 1px 1px 3px #999;
+	-webkit-box-shadow: 1px 1px 3px #999;
+	box-shadow: 1px 1px 3px #999;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	padding: 0 0.5em;
+	line-height: 1.75em;
+}
+.css3button.blue {
+	background-color: #336399;
+}
+.css3button.red {
+	background-color: #D5341E;
+}
+
+/* Lending Tree Widget */
+#lendingTreeWidget { margin:10px 6px; }

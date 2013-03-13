@@ -1,0 +1,46 @@
+/* Override Styles for Community Tabbed Widget on Single Property Pages */
+.ui-helper-clearfix:after {
+   	clear: left;
+}
+.ui-tabs-hide {
+	display: none !important;
+}
+.ui-widget-header {
+	background: transparent;
+	border: none;
+	padding: 0px;
+	margin: 0px;
+}
+.ui-tabs, .ui-widget, .ui-widget-content, .ui-corner-all {
+	border-radius: 0px;
+}
+.ui-tabs {
+	padding: 0px;
+}
+.ui-tabs-nav {
+	margin: 0px 0px -1px 0px !important;
+	padding: 0px !important;
+}
+.ui-tabs-panel {
+	border: 1px solid #1f5691 !important;
+	padding: 0px !important;
+}
+.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr, .ui-corner-left, .ui-corner-tl {
+	border-radius: 0px;
+}
+.ui-tabs .ui-tabs-nav li {
+	border: 1px solid #1f5691;
+	background: #cce5fc;
+	background: -webkit-gradient(linear, left top, from(#cce5fc), to(#98c1e8));
+	background: -moz-linear-gradient(top, #cce5fc, #98c1e8);	
+	font-family: "Lucida Grande",Geneva,Arial,Verdana,sans-serif;
+	font-size: 14px;
+}
+	.ui-tabs .ui-tabs-nav li.ui-tabs-selected {
+		border-bottom: 0px;
+		padding-bottom: 1px;
+		background: none;
+		background-color: #ffffff;
+	}
+.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited { color: #182c5d; font-weight: bold; }
+.ui-helper-reset { line-height: none }

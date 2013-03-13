@@ -1,0 +1,170 @@
+div#lightboxBg {display: none; z-index: 200; position: absolute; width: 100%; height: 100%; top: 0; left: 0; background-color: #000; opacity: 0.5; -moz-opacity: 0.5; filter: alpha(opacity=50);}
+div#lightboxBg[id] {position: fixed;}
+div#lightboxBg.show{display:block;}
+div.lightbox {display: none; z-index: 201; position: absolute; left: 50%; top: 75px;}
+div.lightbox[id] {position: fixed;}
+div.lightbox div.lbScroll {margin: 0 12px 12px 12px; overflow: auto; border: 1px solid #ccd8e6; background-color: #fff;}
+
+/*Login lightbox */
+div#lightboxLogin {width: 380px; margin-left: -190px;}
+div#lightboxLogin div.lbScroll {height: 200px;}
+div#lightboxLogin fieldset {padding: 10px 0;}
+div#lightboxLogin div.row label {width: 150px;}
+div#lightboxLogin div.chk {padding: 0 0 0 150px;}
+div#lightboxLogin.show {display: block !important;}
+div#loginLinks {padding: 12px 0; margin: 0 15px; border-top: 1px dashed #cbd7e5;}
+div#loginLinks input.submt {float: right;}
+div#loginLinks a#forgetPass, div#loginLinks a#newAcct {padding: 0 0 0 8px; line-height: 1.5em; background-image: url("http://www.forsalebyowner.com/images/global/arrowRtBlue.gif"); background-repeat: no-repeat; background-position: 0 3px;}
+
+
+/*Listing Page Lightboxes */
+div#lightboxEmail {width: 410px; margin-left: -205px;}
+div#lightboxFlag {width: 410px; margin-left: -205px;}
+div#lightboxAsk {width: 590px; margin-left: -295px;}
+.lightboxCal {width: 380px; margin-left: -190px;}
+
+div.lightbox div.inner {background-color: #fff; border: 4px solid #336399; background-image: url("http://www.forsalebyowner.com/images/fsboListing/bgLightbox.gif"); background-repeat: repeat-x; background-position: bottom;}
+div.lightbox a.closeX {display: block; float: right; width: 27px; height: 26px; margin: 15px; background-image: url("http://www.forsalebyowner.com/images/fsboListing/xCloseLtbox.gif"); background-repeat: no-repeat;}
+div.lightbox h2 {font-size: 18px; line-height: 1em; font-weight: bold; padding: 43px 0 10px 130px; margin: 12px 10px 0 10px; border-bottom: 1px solid #e6ecf2; background-image: url("http://www.forsalebyowner.com/images/fsboListing/logoFSBO.gif"); background-repeat: no-repeat; background-position: 5px 0;}
+
+
+#lightboxAskQuestionContainer.hide{display:none;}
+
+div.lightbox div.lightboxAskQuestionResultBox {background-color: #fff; display:none;}
+div.lightbox div.lightboxAskQuestionResultBox p.errorNotice {font-weight: bold; display:none;}
+div.lightbox div.lightboxAskQuestionResultBox.ShowSuccess{background:#fff url(http://www.forsalebyowner.com/images/listing/icon_success.gif) no-repeat 7px 50%; display:block;}
+div.lightbox div.lightboxAskQuestionResultBox.ShowSuccess li{color:#0D501A;  display:none;}
+div.lightbox div.lightboxAskQuestionResultBox.ShowSuccess.EmailSuccess #EmailSuccess{display:block;}
+div.lightbox div.lightboxAskQuestionResultBox.ShowError{background:#fde3e2 url(http://www.forsalebyowner.com/images/global/iconError.gif) no-repeat 7px 50%; background-color: #fff; color: #a5000e; border: 1px solid #a5000e; border-width: 1px 0; padding: 10px 25px 10px 55px;}
+div.lightbox div.lightboxAskQuestionResultBox.ShowError ul li{color:#a5000f; display:none;}
+div.lightbox div.lightboxAskQuestionResultBox.ShowError{display:block;}
+div.lightbox div.lightboxAskQuestionResultBox.showError p.errorNotice {display:block;}
+div.lightbox div.lightboxAskQuestionResultBox.ShowError.InvalidQuestion #InvalidQuestion{display:block;}
+div.lightbox div.lightboxAskQuestionResultBox.ShowError.InvalidQuestionLength #InvalidQuestionLength{display:block;}
+div.lightbox div.lightboxAskQuestionResultBox.ShowError.InvalidEmail #InvalidEmail{display:block;}
+div.lightbox div.lightboxAskQuestionResultBox.ShowError.EmailFailure #EmailFailure{display:block;}
+div.lightbox div.lightboxAskQuestionResultBox.ShowError.EmailFailureSecurity #EmailFailureSecurity{display:block;}
+div.lightbox div.lightboxAskQuestionResultBox.ShowError.InvalidZipCode #InvalidZipCode{display:block;}
+div.lightbox div.lightboxAskQuestionResultBox.ShowError.InvalidName #InvalidName{display:block;}
+
+div.lightbox div.lightboxEmailFriendResultBox {background-color: #fff; display:none;}
+div.lightbox div.lightboxEmailFriendResultBox p.errorNotice {font-weight: bold; display:none;}
+div.lightbox div.lightboxEmailFriendResultBox.ShowSuccess{background:#fff url(http://www.forsalebyowner.com/images/listing/icon_success.gif) no-repeat 7px 50%; display:block;}
+div.lightbox div.lightboxEmailFriendResultBox.ShowSuccess li{color:#0D501A;  display:none;}
+div.lightbox div.lightboxEmailFriendResultBox.ShowSuccess.EmailSuccess #EmailSuccess{display:block;}
+div.lightbox div.lightboxEmailFriendResultBox.ShowError{background:#fde3e2 url(http://www.forsalebyowner.com/images/global/iconError.gif) no-repeat 7px 50%; background-color: #fff; color: #a5000e; border: 1px solid #a5000e; border-width: 1px 0; padding: 10px 25px 10px 55px;}
+div.lightbox div.lightboxEmailFriendResultBox.ShowError ul li{color:#a5000f; display:none;}
+div.lightbox div.lightboxEmailFriendResultBox.ShowError{display:block;}
+div.lightbox div.lightboxEmailFriendResultBox.ShowError p.errorNotice {display:block;}
+div.lightbox div.lightboxEmailFriendResultBox.ShowError.InvalidEmail #InvalidEmail{display:block;}
+div.lightbox div.lightboxEmailFriendResultBox.ShowError.EmailFailure #EmailFailure{display:block;}
+div.lightbox div.lightboxEmailFriendResultBox.ShowError.MissingField #MissingField{display:block;}
+#lightboxEmailAFriendForm.hide{display:none;}
+
+div.lightbox div.lightboxFlagListingResultBox {background-color: #fff; display:none;}
+div.lightbox div.lightboxFlagListingResultBox p.errorNotice {font-weight: bold; display:none;}
+div.lightbox div.lightboxFlagListingResultBox.ShowSuccess{background:#fff url(http://www.forsalebyowner.com/images/listing/icon_success.gif) no-repeat 7px 50%; display:block;}
+div.lightbox div.lightboxFlagListingResultBox.ShowSuccess li{color:#0D501A;  display:none;}
+div.lightbox div.lightboxFlagListingResultBox.ShowSuccess.FlagSuccess #FlagSuccess{display:block;}
+div.lightbox div.lightboxFlagListingResultBox.ShowError{background:#fde3e2 url(http://www.forsalebyowner.com/images/global/iconError.gif) no-repeat 25px 50%; background-color: #fff; color: #a5000e; border: 1px solid #a5000e; border-width: 1px 0; padding: 10px 25px 10px 55px;}
+div.lightbox div.lightboxFlagListingResultBox.ShowError ul li{color:#a5000f; display:none;}
+div.lightbox div.lightboxFlagListingResultBox.ShowError{display:block;}
+div.lightbox div.lightboxFlagListingResultBox.ShowError p.errorNotice {display:block;}
+div.lightbox div.lightboxFlagListingResultBox.ShowError.MissingReason #MissingReason{display:block;}
+div.lightbox div.lightboxFlagListingResultBox.ShowError.CommentRequired #CommentRequired{display:block;}
+
+div#lightboxFlagListingContainer p {width:335px;}
+
+div.msgSent {height: 65px; background-color: #fff; border-bottom: 1px solid #CCD8E6; margin: 65px 0 165px 0;}
+div.msgSent p {color: #177E29; font-size: 15px; font-weight: bold; line-height: 1.3em; margin: 0; padding: 13px 0 15px 65px; background-image: url("http://www.forsalebyowner.com/images/global/iconMsgSent.gif"); background-repeat: no-repeat; background-position: 15px 15px;}
+div.msgSent span.back {color: #4E78A7; font-size: 12px; font-weight: normal; line-height: 1.3em; padding-left: 8px; background-image: url("http://www.forsalebyowner.com/images/global/arrowLfBlue.gif"); background-repeat: no-repeat; background-position: 0 3px;}
+div.msgSent img.env {position: absolute; margin: -16px 0 0 240px;}
+
+div#lightboxEmail form {padding: 15px 0 25px 25px;}
+div#lightboxEmail label {float: left; font-size: 12px;}
+div#lightboxEmail input.field,div.lightbox textarea.field {display: block; margin-bottom: 5px; margin-left: 150px; width: 195px; font-size: 12px; padding-left: 3px; border: 1px solid #7f9db9;}
+div#lightboxEmail textarea.message {height: 60px;}
+div#lightboxEmail input.submit {margin-left: 150px;}
+
+div#lightboxFlag form {padding: 15px 0 25px 25px;}
+div#lightboxFlag label {float: left; font-size: 12px;}
+form#lightboxFlagListingForm label { float: none; }
+div#lightboxFlag input.field,div.lightbox textarea.field {display: block; margin-bottom: 5px; margin-left: 150px; width: 195px; font-size: 12px; padding-left: 3px; border: 1px solid #7f9db9;}
+div#lightboxFlag textarea.comment {width:335px; height: 60px; overflow: auto; margin-left: 0px;}
+div#lightboxFlag input.submit {margin-left: 150px;}
+
+div#lightboxAsk form {float: left; width: 382px; padding: 15px 0 25px 25px; background-image: url("http://www.forsalebyowner.com/images/fsboListing/bgBubblesLtbox.gif"); background-repeat: no-repeat; background-position: 20px 75px;}
+div#lightboxAsk label {float: left; font-size: 12px;}
+div#lightboxAsk input.field,div.lightbox textarea.field {display: block; margin-bottom: 5px; margin-left: 150px; width: 205px; font-size: 12px; padding-left: 3px; border: 1px solid #7f9db9;}
+div#lightboxAsk div.askTextBubble {width: 366px; height: 91px; background-image: url("http://www.forsalebyowner.com/images/fsboListing/bgTextBubbleLtbox.gif"); background-repeat: no-repeat;}
+div#lightboxAsk textarea.askQuestion {width: 345px; height: 70px; overflow: auto; border: 0; font-size: 13px; color: #000; font-family: Comic Sans MS,Monotype Corsiva,cursive; margin: 9px 0 0 8px; padding-left: 3px;}
+div#lightboxAsk span.chars {display: block; margin: 3px 0 15px 265px; font-size: 10px; color: #999;}
+div#lightboxAsk input.submit {margin-left: 150px;}
+div#lightboxAsk input.builderSubmit {margin-left: 63px; }
+div#lightboxAsk input.builderField {display: block; margin-bottom: 5px; width: 205px; font-size: 12px; padding-left: 3px; border: 1px solid #7f9db9;}
+div#lightboxAsk input.builderZipCode {display: block; margin-bottom: 5px; width: 132px; font-size: 12px; padding-left: 3px; border: 1px solid #7f9db9;}
+div#lightboxAsk div.spamMsg {float: left; width: 150px; margin: 10px 0 0 0; padding: 5px 0 45px 15px; border-left: 1px solid #CCD8E6;}
+div#lightboxAsk div.spamMsg p.hed {font-size: 13px; line-height: 1.3em; margin: 0 0 10px 0;}
+div#lightboxAsk div.spamMsg p.explain {font-size: 10px; line-height: 1.3em;}
+
+
+.lightboxCal div.inner {background-position: 0 35px;}
+.lightboxCal h2 {color: #000000;}
+.lightboxCal div.openHouseInfo {float: left; width: 175px; padding: 10px 0;}
+.lightboxCal div.openHouseInfo p {padding: 5px 5px 5px 20px; font-size: 12px;}
+.lightboxCal a.print {display: block; font-size: 12px; padding: 7px 0 5px 40px; margin-left: 5px; border-top: 1px solid #CCD8E6; background-image: url("http://www.forsalebyowner.com/images/fsboListing/iconPrint.gif"); background-repeat: no-repeat; background-position: 15px 5px;}
+.lightboxCal ul.calMenu {float: left; width: 180px; padding: 20px 0 25px 0; background-color: #fff;}
+.lightboxCal ul.calMenu li {padding: 5px 10px; font-size: 14px;}
+.lightboxCal ul.calMenu li.yahoo a {padding-left: 30px; background-image: url("http://www.forsalebyowner.com/images/fsboListing/logoCalYahoo.gif"); background-repeat: no-repeat; background-position: 0 2px;}
+.lightboxCal ul.calMenu li.google a {padding-left: 30px; background-image: url("http://www.forsalebyowner.com/images/fsboListing/logoCalGoogle.gif"); background-repeat: no-repeat; background-position: 3px 2px;}
+.lightboxCal ul.calMenu li.microsoft a {padding-left: 30px; background-image: url("http://www.forsalebyowner.com/images/fsboListing/logoCalOutlook.gif"); background-repeat: no-repeat; background-position: 2px 2px;}
+.lightboxCal ul.calMenu li.ical a {padding-left: 30px; background-image: url("http://www.forsalebyowner.com/images/fsboListing/logoCaliCal.gif"); background-repeat: no-repeat; background-position: 3px 2px;}
+
+
+/* Sell Path Lightboxes */
+.lightboxSelect.show {display: block !important;}
+.lightboxSelectPack.show {display: block !important;}
+div.lightboxSelect {width: 645px; margin-left: -322px;}
+div.lightboxSelect div.lbScroll {height: 300px;}
+div.lightbox div.highlights {clear: left; margin: 0 10px; padding: 10px 0 0 0; border-bottom: 1px dashed #ccd8e6;}
+div.lightbox div.highlights span.hed {font-size: 12px; font-weight: bold; display: block; margin-bottom: 5px;}
+div.lightbox div.highlights span.hed i {font-weight:normal}
+div.lightbox div.highlights p {margin-bottom: 10px; font-size: 12px; line-height: 1.4em;}
+div.lightbox div.highlights ul {list-style: disc inside; margin-bottom: 10px;}
+div.lightbox div.highlights li {font-size: 12px; line-height: 1.4em; margin-left: 14px;}
+div.lightbox div.highlights img.lightboxItem {float: left; margin: 3px 10px 10px 0; border: 1px solid #7F9DB9;}
+/*Browsers other than FF dont flow list-style-type: outside around floats well
+	so here we have hacks for IE6, IE7 and Safari 3 respectively */
+* html div.lightbox div.highlights ul {list-style: disc inside; margin-bottom: 10px;}
+*:first-child+html div.lightbox div.highlights ul {list-style: disc inside; margin-bottom: 10px;}
+body:first-of-type div.lightbox div.highlights ul {list-style: disc inside; margin-bottom: 10px;}
+
+div.lightboxSelectPack {width: 645px; margin-left: -322px;}
+div.lightboxSelectPack div.lbScroll {float: left; width: 370px; height: 265px; padding-left: 0;}
+div.lightboxSelectPack h2 {padding-top: 24px;}
+div.lightbox h2 span.price {display: block; font-size: 12px; line-height: 1.5em; font-weight: normal;}
+div.lightbox div.lbPane {float: left; display: inline; margin: 0 0 12px 12px; width: 220px; padding: 8px 0 0 0;}
+div.lightbox div.lbPane div.sect {margin: 0 0 20px 0;}
+div.lightbox div.lbPane div.sect h3.sectHed {font-size: 12px; line-height: 1.3em;}
+div.lightbox div.lbPane div.sect ul.features li {font-size: 12px; line-height: 1.3em; margin: 4px 0 0 0;}
+div.lightbox div.lbPane div.incl ul.features li a {padding-left: 12px;}
+div.lightbox div.lbPane div.incl ul.features li a.selected {font-weight: bold; background-image: url("http://www.forsalebyowner.com/images/global/arrowRtBlue.gif"); background-repeat: no-repeat; background-position: 0 3px;}
+div.lightbox div.lbPane div.notincl ul.features li {color: #999; padding-left: 12px;}
+
+
+/* Find a Pro Lightboxes  */
+div.lightboxFindProSelect {width: 720px; margin-left: -360px;}
+div.lightboxFindProSelect div.lbScroll {float: left; width: 370px; height: 265px; margin-left: 0; padding-left: 0;}
+div.lightboxFindProSelect h2 {padding-top: 42px; font-weight: normal;}
+div.lightboxFindProSelect div.lbPane {width: 155px;}
+div.lightboxFindProSelect div.lbPane ul.features li {padding-bottom: 5px;}
+div.lightboxFindProSelect div.lbPane div.incl ul.features li a {display: block;}
+div.lightboxFindProSelect div.lbPane div.incl ul.features li a.selected {font-weight: normal;}
+div.lightboxFindProSelect img.sample {float: left;}
+div.lightboxFindProSelect p.sampleCaption {float: left; width: 165px; margin: 10px 0 10px 7px; font-size: 12px; line-height: 16px;}
+
+div.lightboxFindProSampleAd {width: 550px; margin-left: -250px;}
+div.lightboxFindProSampleAd div.lbPane {width: 145px; margin-right: 5px;}
+div.lightboxFindProSampleAd div.lbPane p.about {margin: 2px 0 .5em 0; font-size: 12px; line-height: 1.3em;}
+div.lightboxFindProSampleAd img.sample {margin: 3px 0 0 0;}
+

@@ -1,0 +1,52 @@
+span.backLink {clear: left; display: block; margin: 10px; font-size: 12px; line-height: 1.3em;}
+
+/* Property Photos, Video, etc. */
+/* Tabs */
+#verticalGallery div#media_photoCol {clear: left; float: left; width: 662px; margin: 3px 8px 0 0; background-image: url("http://www.forsalebyowner.com/images/photoMgmt/bgShadPhotoBox.gif"); background-repeat: no-repeat; background-position: 0 0; position: relative;}
+
+#verticalGallery div#media_photoHolder {margin: 0 10px; background-color: #ECF1F6;}
+#verticalGallery div#media_photoHolder img.photo {border: 1px solid #336399;}
+#verticalGallery div#media_photoHolder #pic_next, div#photoHolder #pic_next_media{cursor:pointer}
+#verticalGallery div#media_photoHolder #pic_prev, div#photoHolder #pic_prev_media{cursor:pointer}
+
+#verticalGallery div#media_photoLarge {background-color:black;width:640px;height:480px;}
+
+.backLink a {
+background-image:url(http://www.forsalebyowner.com/images/global/arrowLfBlue.gif);
+background-repeat:no-repeat;
+background-position: 0 50%;
+padding-left:11px
+}
+#verticalGallery span.prevNext {float: right; margin: 8px; color: #777; font-size: 12px; line-height: 1.3em;}
+#verticalGallery span.prevNext a {font-weight:bold;}
+#verticalGallery p.caption {padding: 8px; font-size: 11px; line-height: 1.4em;}
+#verticalGallery p.caption strong {font-size: 12px; line-height: 1.5em; font-weight: bold;}
+#verticalGallery p.caption span.count {color: #777;}
+
+div#askQuestion{background-color:#fff;background-image:url()}
+div#askQuestionBlankEmail{background-color:#fff;background-image:url()}
+#verticalGallery div#media_infoWrap {margin: 0px; min-height: 0px; background-color:#fff;}
+#verticalGallery div#media_infoWrap {float:left; width: 330px; padding-bottom: 15px;}
+#verticalGallery div#media_infoWrap div#media_thumbsPane {border:1px solid #336399; height: auto; overflow: auto; padding: 9px 0 9px 0; margin: 0 0 10px 0; background: #c1c2c2; background: -webkit-linear-gradient(top, #c1c2c2 0%,#ffffff 100%); background: -moz-linear-gradient(top, #c1c2c2 0%, #ffffff 100%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c1c2c2', endColorstr='#ffffff');}
+#verticalGallery ul#media_thumbsList li {float: left; padding: 0 0 9px 9px;}
+#verticalGallery ul#media_thumbsList li a {display: inline; float: left; border: 1px solid transparent;}
+#verticalGallery ul#media_thumbsList li a.on,ul#media_thumbsList li a:hover {border-color: #336399;}
+#media_photoLarge .dialog_Arrow { position:absolute; top:192px; cursor:pointer;}
+#media_photoLarge .dialog_Arrow.left_Arrow { left:10px; }
+#media_photoLarge .dialog_Arrow.right_Arrow{ left:605px;}
+
+div.bar {height: 42px; margin: 5px 0 0 0; background-image: url("http://www.forsalebyowner.com/images/photoMgmt/bgBar.gif"); background-repeat: repeat-x; background-position: 0 0;}
+div.bar span.label {display: block; padding: 5px 10px 0 10px; font-size: 14px; line-height: 1.3em; font-weight: bold;}
+div.bar ul.labels li {float: left; display: inline; height: 23px; padding: 5px 10px 0 10px; font-size: 14px; line-height: 1.3em; font-weight: bold;}
+div.bar ul.labels li.one {border-right: 1px solid #9eb6d4;}
+div.bar a {color: #154f89;}
+
+
+div#basics,div#map {height: 130px;}
+div#basics div.sect {padding: 10px; font-size: 12px; line-height: 1.3em;}
+div#basics div.sect.one {padding-top: 0; border-bottom: 1px solid #9eb6d4;}
+
+.hidden{display:none; width:300px; background-color:#154f89;}
+.bold {font-weight:bold;}
+.normal {font-weight:normal;}
+

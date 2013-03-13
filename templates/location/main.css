@@ -1,0 +1,194 @@
+div#wrapper {
+    background-color: #B3C5D9;
+    background-image: url("http://www.forsalebyowner.com/images/mainHomepage2/bgHomeGrad.gif");
+    background-position: left top;
+    background-repeat: repeat-x;
+    margin-top: 10px;
+    min-width: 980px;
+    text-align: center;
+}
+
+div#subTools, 
+form#searchToolsForm {
+    background: none repeat scroll 0 0 #FFFFFF;
+    margin: 0 auto;
+    text-align: left;
+    width: 980px;
+}
+a.blueBrowseButton {
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 26px;
+	display: block;
+	padding: 0 2em 0 1em;
+	background: #2E679C url('http://www.forsalebyowner.com/images/global/arrowRtWhite.png') no-repeat 95% center;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+}
+
+#locationWrapper { background-color: #ffffff; margin: 0 auto; width: 980px; text-align: left;}
+#locationWrapper div.clearWithSpace { clear: both; display: block; height: 25px; }
+#mapPlaceHolder { margin: 5px 0px 0px 0px; }
+#mapPlaceHolder + a.blueBrowseButton { margin: 10px 0px 0px 0px; }
+#locationWrapper h1 { font-size: 18px; font-weight: 600; color: #333333; line-height: 22px; padding: 20px 20px 0 20px; }
+#locationWrapper h1 a { font-size: 12px; font-weight:600; padding: 0 10px; line-height: 22px;}
+#locationWrapper h1 span.innerWrapper { float: left; } 
+#locationWrapper h1 a.blueBrowseButton { float:left; margin: 0 0 0 12px; padding: 0 26px 0 10px; }
+#locationWrapper h2 { font-size: 17px; font-weight: 600; color: #333333; line-height: 1em; padding: 0; }
+#locationWrapper h3 { font-size: 16px; font-weight: 400; line-height: 1.3em; padding:0 ; }
+#locationWrapper h1 + h3 { clear: left; padding: 0px 0px 0px 20px; color: #053D59; } 
+#locationWrapper h4 { font-size: 12px; line-height: 1.5em; color: #333333; }
+#locationWrapper .locationFullColumn {}
+#locationWrapper .locationTwoColumn {}
+#locationWrapper div.locationTwoColumn div.locationLeftColumn { margin-right: 340px; overflow:hidden; width: 640px; }
+#locationWrapper div.locationTwoColumn div.locationRightColumn { float: right; padding: 0px 20px 0px 0px; width: 300px; }
+
+.locationDescritption { padding: 20px; }
+.locationDescritption h2 { margin-bottom: 10px; }
+.locationDescritption div.blueOutlineBox { margin-top: 0; }
+#locationWrapper .locationDescritption p { font-size: 12px; color: #333333; line-height: 18px; padding: 0 0 20px 0; }
+#locationWrapper div.locationSearchResults { overflow: hidden; border-style: solid; border-color: #D4DCE7; border-width: 0px 1px 1px 1px; }
+#locationWrapper div.locationSearchResults h2.locationListingTitle { font-size: 12px; line-height: 20px; background-color: #D4DCE7; padding: 0 10px; margin-bottom: 5px; }
+#locationWrapper div.locationSearchResults h2.locationFeaturedTitle { font-size: 12px; line-height: 24px; background-color: #FFF5E4; border-style: solid; border-width: 1px 0px; border-color:#FCD88D; padding: 0 10px; margin-bottom: 5px; -moz-box-shadow: 0px 5px 5px #EDEDED; -webkit-box-shadow: 0px 5px 5px #EDEDED; box-shadow: 0px 5px 5px #EDEDED; }
+/* Featured Listings Ad */
+div.adText { margin-left: 16px; white-space: nowrap;  }
+p.directsBar {padding: 7px 10px; margin: 5px 0 8px 0; color: #000; font-size: 12px; line-height: 1.3em; background-image: url("http://www.forsalebyowner.com/images/sell/create/bgDirectsBar.gif"); background-repeat: repeat-y;}
+p.directsBar img.arrow {vertical-align: middle; margin: -5px 3px 0 0;}
+
+div.listing:hover, div.listing.listingHov {background-image: url("http://www.forsalebyowner.com/images/search/bgListingRowHov.gif"); background-repeat: repeat-x; background-position: 0 0;}
+div.listing div.photoWrap { float: left; margin: 0 10px; }
+div.listing div.photoWrap div.photo {
+	float:left;
+	position:relative;
+	height: 79px;
+	background-color: #CCCCCC;
+	-moz-box-shadow: inset 0px 0px 12px #FFFFFF;
+	-webkit-box-shadow: inset 0px 0px 12px #FFFFFF;
+	box-shadow: inset 0px 0px 12px #FFFFFF;
+}
+
+div.listing img.photo { display: inline-block; width: 100px; height: 77px; border:1px solid #336399; }
+div.listing .photo a.flag  { color: #FFFFFF; display: block; font-faimly: Helvetica; font-size: 9px; font-weight: 400; margin: 63px 0 0 1px; padding: 1px 3px 1px 0px; position:absolute; text-align: right; text-transform: uppercase; width: 97px; }
+div.listing.feat .photo img {border-color: #d89128;}
+div.listing.feat .photo a.flag {background-color: #d89128;}
+div.listing.justreduced .photo img {border-color: #408940;}
+div.listing.justreduced .photo a.flag {background-color: #408940;}
+div.listing.newconstruction .photo img {border-color: #724112;}
+div.listing.newconstruction .photo a.flag {background-color: #724112;}
+div.listing.open .photo img {border-color: #4b2d88;}
+div.listing.open .photo a.flag {background-color: #4b2d88;}
+div.listing.undercontract .photo img {border-color: #2c628e;}
+div.listing.undercontract .photo a.flag {background-color: #2c628e;}
+div.listing.sold .photo img {border-color: #a32b22;}
+div.listing.sold .photo a.flag {background-color: #a32b22;}
+div.listing.new .photo img {border-color: #009da7;}
+div.listing.new .photo a.flag {background-color: #009da7;}
+div.locationListingMore a.blueBrowseButton { margin: 10px; float: left; }
+
+a.learnMore, a.addFav, span.added {padding: 0 0 0 18px; line-height: 1.8em; background-repeat: no-repeat; background-position: 0 0;}
+a.learnMore {background-image: url("http://www.forsalebyowner.com/images/global/iconLearnMore2.gif");}
+a.addFav { background-image: url("http://www.forsalebyowner.com/images/global/iconAddFaves2.gif");}
+span.added {color: #1b9731; background-image: url("http://www.forsalebyowner.com/images/global/iconAdded2.gif"); background-position: 2px 1px;}
+a.removeFav {text-decoration: none;}
+
+/* State listings */
+div#viewBar {height: 24px;  border-bottom: 1px solid #DEE5EB;  background-color: #7FA8C3; color: #FFF; border-width: 1px 0; margin: 0 5px 5px 0;}
+div#viewBar div {display: block; float: left; }
+div#viewBar div a.viewItem {display: block; padding: 0 10px; margin: 0; font-size: 12px; line-height: 24px; text-decoration: none; background-position: left bottom; color:#fff;}
+span.sortby, span.display {color: #fff;}
+#locationStateListings { margin: 10px 0 0 20px; }
+#locationStateListings div.listingFeat.listing {border-bottom: none;}
+#locationStateListings div.listing p.desc {padding: 18px 0 0 0; font-size: 14px; margin-left:170px;}
+#locationStateListings div.listing p.desc.price { font-weight: 600; padding: 10px 0 0 0 ; }
+#locationStateListings div.listing p.desc.address { padding: 10px 0 0 0 ; margin-bottom: 10px; }
+#locationStateListings div.listing div.sect, div.listingFeat div.sect {float: left; font-size: 12px; line-height: 1.5em; color: #000;}
+#locationStateListings div.listingFeat div.sect {padding: 8px 0 0 0;}
+#locationStateListings div.listing div.sect {padding: 0 0 0 0;}
+#locationStateListings div.listingFeat .clear, div.listing .clear {clear: left;}
+#locationStateListings span.pipecleaner {padding: 0 5px; color: #1b9731;}
+#locationStateListings div.sect {width: 190px;}
+#locationStateListings div.sect span.price {display: block; font-weight: bold;}
+#locationStateListings div.sold span.price {color: #a5000e;}
+#locationStateListings div.sold span.savings {display: block; color: #a5000e;}
+#locationStateListings div.justreduced span.price {color: #408940;}
+#locationStateListings div.justreduced span.savings {display: block; color: #408940;}
+#locationStateListings div.newconstruction span.price { color: #724112;}
+#locationStateListings div.newconstruction span.savings {display: block; color: #724112;}
+#locationStateListings div.sect span.address {display: block;}
+/* Canadian postalcodes have line-break issues w/ long citynames */
+#locationStateListings div.sect span.address span.displayPostalCode { white-space: nowrap; }
+#locationStateListings div.sect span.distance {display: block; color: #999;}
+#locationStateListings div.sect {width: 150px;}
+#locationStateListings div.sect span.beds {display: block; font-weight: bold;}
+#locationStateListings div.sect span.proptype {display: block;}
+#locationStateListings div.sect span.data {display: block;}
+#locationStateListings div.sect span.updated {display: block;}
+#locationStateListings div.listingFeat a:visited, div.listing a:visited {color: #691a8b;}
+
+/* Regular Listings */
+#locationStateListings div.listing {padding: 0 0 10px 0; margin: 0 10px ; }
+div.listingSpacer { border-style: solid; border-color:#D4DCE7; border-width: 1px 0px 0px 0px; margin: 0 12px;  }
+#locationStateListings div.listing div.photoWrap {float: left; margin: 15px 20px 0 0;}
+#locationStateListings div.listing div.photo img.photo { width:150px; height: 115px; display:inline-block; }
+#locationStateListings div.listing:hover, div.listing.listingHov {}
+#locationStateListings div.listing:hover div.photo, div.listing.listingHov div.photo {}
+#locationStateListings div.listing div.photo span.flag {position: absolute; display: block; margin: 17px 0 0 17px; width: 46px; height: 77px; background-repeat: no-repeat;}
+#locationStateListings div.listing div.flags {width:150px; font-size: 11px; line-height: 1em; color:#bababa; font-family: Lucida Grande; margin-bottom:3px;}
+#locationStateListings div.listing div.flags span.photosFlag {position:relative; float: right; width:auto;text-align:right;}
+#locationStateListings div.listing div.flags span.videoFlag {postion:relative; float:left; width:auto;}
+#locationStateListings div.listing div.flags img {vertical-align:bottom;}
+#locationStateListings div.listing div.photoWrap div.photo { height: 117px; }
+#locationStateListings div.listing .photo a.flag {text-align:right;display: block; position: absolute; width: 138px; margin: 92px 0 0 1px; padding: 5px 6px; font-size: 12px; color: #fff; text-transform: uppercase; font-weight:bold;font-family:Helvetica;}
+
+/* End State Listngs */
+div.blueOutlineBox { border: 1px solid #2D669D; padding: 10px; margin: 20px 0; }
+div.blueOutlineBox table { margin: 10px 0;}
+div.blueOutlineBox table tr td { line-height: 1em; font-size: 12px; color: #333333; padding: 5px 0;}
+div.blueOutlineBox table tr td:first-child { padding-right: 1em;}
+
+/* Ad block */
+#ad_sidebar_right {  }
+#ad_sidebar_right.onTheRight { float: right; margin: 0 0 20px 20px; display: block; width: 320px; height: 320px;}
+
+/* Children links */
+#locationChildren {}
+div.locationChildrenWrapper { margin: 10px 20px; }
+div.locationChildrenWrapper span.locationChild { float:left;  }
+div.locationChildrenWrapper span.locationChild a { display: block; padding: 0.25em 0.5em; white-space: nowrap; background-color: #f0f3f3; border: 1px solid #f0f3f3; border-radius: 0.25em; margin: 0.25em; }
+div.locationChildrenWrapper span.locationChild a:hover { text-decoration: none; border-color: #467AA7; }
+p.locationViewChildren { padding: 0.25em 0.5em; text-align: right; }
+p.locationViewChildren a { color: #656565; }
+
+/* Breadcrumbs */
+ul.breadcrumbs { padding: 10px 0 0 20px; }
+html>body ul.breadcrumbs { *position: relative; *z-index: 10; *line-height:25px; *display:block; *height:25px; }
+ul.breadcrumbs li.breadcrumbsParent {display: inline-block; position: relative; }
+html>body ul.breadcrumbs li.breadcrumbsParent { *display:block; *float: left; *margin: 0px 2px; *height: 25px; }
+ul.breadcrumbs li.breadcrumbsParent a { display: block; background-color:#BFD1E9; border: 1px solid #BFD1E9; color: #000000; padding: 0 1em; line-height: 25px; z-index: 35; position: relative; }
+html>body ul.breadcrumbs li.breadcrumbsParent a { *float:left; }
+ul.breadcrumbs li.breadcrumbsParent div.breadcrumbsSiblings { 
+		display: none; position: absolute; top: 26px; left: 0px; 
+		height: 205px; background: transparent;  background-color: #FFFFFF; 
+		z-index: 34; border: 1px solid #BFD1E9; box-shadow:3px 3px 3px #CECECE; -webkit-box-shadow:3px 3px 3px #CECECE;
+}
+html>body ul.breadcrumbs li.breadcrumbsParent div.breadcrumbsSiblings { *height: 255px; }
+
+ul.breadcrumbs li.breadcrumbsParent div.breadcrumbsSiblings.col1 { width: 125px; height: auto; }
+ul.breadcrumbs li.breadcrumbsParent div.breadcrumbsSiblings.col2 { width: 250px; }
+ul.breadcrumbs li.breadcrumbsParent div.breadcrumbsSiblings.col3 { width: 375px; }
+ul.breadcrumbs li.breadcrumbsParent div.breadcrumbsSiblings.col4 { width: 500px; }
+ul.breadcrumbs li.breadcrumbsParent div.breadcrumbsSiblings.col5 { width: 625px; }
+ul.breadcrumbs li.breadcrumbsParent div.breadcrumbsSiblings.col6 { width: 750px; }
+ul.breadcrumbs li.breadcrumbsParent div.breadcrumbsSiblings.col7 { width: 875px; }
+ul.breadcrumbs li.breadcrumbsParent div.breadcrumbsSiblings.col8 { width: 1000px; }
+ul.breadcrumbs li.breadcrumbsParent div.breadcrumbsSiblings.col9 { width: 1125px; }
+ul.breadcrumbs li.breadcrumbsParent.hover a,
+ul.breadcrumbs li.breadcrumbsParent:hover a { background-color: #FFFFFF; border-bottom: 1px solid #FFFFFF; }
+ul.breadcrumbs li.breadcrumbsParent.hover div.breadcrumbsSiblings,
+ul.breadcrumbs li.breadcrumbsParent:hover div.breadcrumbsSiblings { display: block; }
+ul.breadcrumbs div.breadcrumbsSiblings ul { float:left; width: 125px; overflow: hidden; display: block; }
+ul.breadcrumbs div.breadcrumbsSiblings ul li {}
+ul.breadcrumbs div.breadcrumbsSiblings ul li a { background-color: transparent !important; display: block; line-height: 20px; border: 0px none transparent !important; white-space: nowrap; }
+div.moreListings { clear: both; float: right; width: 225px; padding: 20px; }

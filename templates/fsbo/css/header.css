@@ -1,0 +1,186 @@
+/* Top Nav */
+div#topNavWrap {height: 26px; min-width: 695px; font-size: 12px; padding: 0 0 0 8px; font-family: "Lucida Grande", Arial, Helvetica, sans-serif; overflow: visible;}
+div#topNavWrap div#topNavig {float: right; margin: 0; padding: 0; text-align: left; overflow: visible;}
+div#topNavWrap div#topNavig div {float: left; border-style: solid; border-color: #8dcfff; border-width: 0 0 1px 1px;  overflow: visible; background-color:rgb(250,250,250); background-color: rgba(250,250,250,0.75); }
+html* div#topNavWrap div#topNavig div { background-color: transparent; filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#BBFAFAFA,endColorstr=#BBFAFAFA); zoom:1; }
+div#topNavWrap div#topNavig div a.navItem {display: block; padding: 5px 10px; margin: 0; text-decoration: none; text-align: center;}
+div#topNavWrap div#topNavig div a.navItem:hover {background-color: #ffffff;}
+
+div#topNavWrap div#topNavig div#hello {color: #333; font-size: 12px; padding: 5px 10px;}
+
+div#topNavWrap div#topNavig div#viewFavs {width: 140px; padding: 0;}
+
+div#topNavWrap div#topNavig div#viewFavs:hover #favMenu, div#topNavWrap div#topNavig #viewFavs.hov #favMenu {display: block;}
+#favMenu {border-top: 1px solid #CCD8E6; margin-top: 0px;}
+#favMenu li {width: 134px; padding: 0; border-right: 0;}
+#favMenu li a {display: block; padding: 1px 0 1px 10px;}
+
+div#topNavWrap div#topNavig div#savedSearches {width: 150px; padding: 0;}
+div#topNavWrap div#topNavig div#savedSearches #savedMenu:hover, div#topNavWrap div#topNavig #savedSearches.hov #savedMenu {display: block;}
+#savedMenu {border-top: 1px solid #CCD8E6; margin-top: 0px;}
+#savedMenu li {width: 142px; padding: 0; border-right: 0;}
+#savedMenu li a {display: block; padding: 1px 0 1px 10px;}
+
+
+/* Hover Menus */
+ul.hovmenu {display: none; position: absolute; z-index: 100; border-bottom: 3px solid #336399; border-left: 1px solid #CCD8E6; border-right: 1px solid #CCD8E6; background-color: #fff;}
+ul.hovmenu li {border-bottom: 1px solid #CCD8E6; padding: 0;}
+ul.hovmenu li a {display: block; height: 20px; padding: 0 0 0 10px; margin: 0; background-color: #fff; font-size: 11px; line-height: 1.7em; text-decoration: none; white-space: nowrap; background-repeat: no-repeat; background-position: right 7px;}
+ul.hovmenu li a:hover {background-color: #FFFAEE; text-decoration: none;}
+ul.hovmenu li.on a {font-weight: bold;}
+ul.hovmenu li.sortDn a {background-image: url("http://www.forsalebyowner.com/images/global/icon_sort_dsc.gif"); font-weight: bold;}
+ul.hovmenu li.sortUp a {background-image: url("http://www.forsalebyowner.com/images/global/icon_sort_asc.gif"); font-weight: bold;}
+
+
+/* Header */
+div#header {clear: both; min-width: 765px; height: 100px; margin: 0; padding: 0;}
+div#header img#logo {position: absolute; margin: -7px 0 0 17px;}
+div#header span.tribCoText { position:absolute; left:211px; top:52px; font:14px Lucida Grande; }
+
+div#header div#cobrandLogo {position: absolute; margin: 0 0 0 194px;}
+div#header div#countSavings {position: absolute; white-space: nowrap; margin: 18px 0 0 208px; font-size: 18px; line-height: 1.3em; color: #000;}
+div#header div#tabsWrap {position: absolute; margin: 62px 0 0 0; width: 100%; height: 49px; background-image: url("http://www.forsalebyowner.com/images/global/bgTabsGradCozy.gif"); background-repeat: repeat-x; background-position: bottom;}
+/*horrible, horrible hack for IE6 to kill horizontal scroll bar*/
+* html div#header div#tabsWrap {margin-left: -12px; background-image: url("http://www.forsalebyowner.com/images/global/bgTabsGradCozy.gif");}
+div#header div#tabsWrap ul#tabs {margin: 0 0 0 208px; width: 730px; padding: 0;}
+div#header div#tabsWrap ul#tabs li {display: block; float: left; margin: 0 3px 0 0; padding: 0;}
+div#header div#tabsWrap ul#tabs li a {display: block; float: left; height: 29px; padding: 0 14px; border: 1px solid #336399; border-width: 1px 1px 0 1px; background-image: url("http://www.forsalebyowner.com/images/global/bgTab.gif"); background-color: none; background-repeat: repeat-x; background-position: left bottom; font-size: 13px; line-height: 2.2em; color: #fff; font-weight: normal; font-family: Arial, Helvetica, sans-serif;}
+div#header div#tabsWrap ul#tabs li.sellTab a {background-image: url("http://www.forsalebyowner.com/images/global/bgTabRed.gif"); border-color: #971600;}
+div#header div#tabsWrap ul#tabs li a.selected {height: 30px; padding: 0 14px; border: 1px solid #b3c5d9; border-width: 1px 1px 0 1px; background-image: none; background-color: #e6ecf2; color: #336399;}
+div#header div#tabsWrap ul#tabs li a:hover {background-position: right bottom; text-decoration: none;}
+div#header div#customerSupport {float: right; text-align: right; margin: 10px 12px; font-size: 11px; line-height:1.3em;}
+/*this rule needed because homepage.css has its own link rules */
+div#header div#customerSupport ul a, div#header div#customerSupport ul a:hover, div#header div#customerSupport ul a:visited {color: #467AA7; text-decoration: none;}
+
+/* "new" icon in tabs */
+div#header div#tabsWrap ul#tabs li img.iconNew {vertical-align: super;}
+* html div#header div#tabsWrap ul#tabs li.proTab a {padding-top: 6px; height: 23px;}
+* html div#header div#tabsWrap ul#tabs li.proTab a.selected {height: 24px;}
+
+/* Footer */
+div#footerBot #footerWrap, div#footerBot #footerAd {width:960px; margin: 0 auto;}
+div#footerBot #footerAd { text-align: center;margin-bottom:10px;}
+div#footerBot {clear: left; min-width: 948px; padding: 10px 14px; background-color: #E6ECF2; background-image: url("http://www.forsalebyowner.com/images/global/bgFootGrad.gif"); background-repeat: repeat-x; background-position: top;}
+div#footerBot div.footSect {float:left;margin:0 5px 20px;width:163px; text-align: left;}
+div#footerBot div.footSect.last {margin-right: 0; width: 263px;}
+div#footerBot div.footSect.last div.leftColumn { float: left; }
+div#footerBot div.footSect.last div.rightColumn { float: right; }
+div#footerBot div.footSect.last	div.connected {width: 130px; height: 45px;}
+div#footerBot div.footSect.last	div.connected .icons {float: left; width: 42px;}
+div#footerBot div.footSect.last	div.connected .text {float: left; width: 87px;}
+div#footerBot div.footSect.last	div.connected .text_short {padding-top: 10px;}
+div#footerBot div.footSect.last	div.connected .text_long {padding-top: 3px;}
+div#footerBot div.footSect.last div.leftColumn div.connected .text { width: 80px; }
+div#footerBot div.footSect h3 {margin: 0 0 8px 0; font-size: 14px; color: #000;}
+div#footerBot div.footSect p {padding: 0 0 10px 0; margin: 0; font-size: 12px; line-height: 1.3em; color: #4d4d4d;}
+div#footerBot div.footSect a {padding: 0 0 0 0; font-size: 12px;}
+div#footerBot p#copyright {clear: both; padding: 4px 0 0 0; margin: 0; border-top: 1px solid #ccd8e6; font-size: 12px; line-height: 1.3em; color: #999;}
+div#footerBot div.footSect span.new {color: #fd8a02;}
+
+/* Find pro ad in footer */
+div#footerBot div.footSect div.findProAd {width: 135px; background-color: #fff; padding: 10px;}
+div#footerBot div.footSect div.findProAd p.proType {margin: 0 55px 5px 0; padding: 0; font-size: 12px; line-height: 1.3em; font-weight: bold; color: #336399;}
+div#footerBot div.footSect div.findProAd p.proType a {font-weight: bold; color: #336399;}
+div#footerBot div.footSect div.findProAd p.proDesc {margin: 0 0 5px 0; padding: 0; font-size: 11px; line-height: 1.3em; color: #666;}
+div#footerBot div.footSect div.findProAd img.icon {float: right; margin: 0 0 0 5px;}
+div#footerBot div.footSect div.findProAd p.joinUpLink {margin-top: 5px; padding: 5px 0 0 0; border-top: 1px solid #ccd8e6; text-align: right;}
+div#footerBot div.footSect div.findProAd p.joinUpLink a {color: #336399; font-size: 11px; line-height: 1.3em;}
+
+
+/* OVERRIDES for 2 evil stylesheets (main.css and fsbo/main.css) */
+body {margin: 0;}
+div#topNavWrap, div#footerBot {line-height: 1.3em;}
+div#topNavWrap a,div#footerBot a {text-decoration: none; text-align: left; color: #467AA7; font-family: "Lucida Grande", Arial, Helvetica, sans-serif;}
+div#topNavWrap div#hello {font-family: "Lucida Grande", Arial, Helvetica, sans-serif;}
+div#topNavWrap a {font-size: 12px;}
+div#topNavWrap a:hover, div#footerBot a:hover {text-decoration: underline; color: #467AA7;}
+div#topNavWrap ul,div#footerBot ul {list-style-type: none; margin: 0; padding: 0;}
+div#topNavWrap ul li,div#footerBot ul li {margin: 0; padding: 0;}
+div#header span#countSavings {font-family: "Lucida Grande", Arial, Helvetica, sans-serif;}
+div#header div#tabsWrap ul#tabs li {font-family: "Lucida Grande", Arial, Helvetica, sans-serif;}
+div#header div#tabsWrap ul#tabs li a {text-decoration: none;}
+div#header {clear: both; height: 115px; text-align: left;}
+div#header div#customerSupport ul, div#header div#customerSupport ul li {list-style-type:none; margin:0; padding:0; font-family: "Lucida Grande", Arial, Helvetica, sans-serif;}
+div#header div#customerSupport ul a, div#header div#customerSupport ul a:hover {font-family: "Lucida Grande", Arial, Helvetica, sans-serif; font-weight: normal; color: #467AA7; text-decoration: none;}
+div#topNavWrap div#topNavig div a {font-weight: normal;}
+div#footerBot {font-family: "Lucida Grande", Arial, Helvetica, sans-serif;}
+div#footerBot div.footSect h3 {font-family: "Lucida Grande", Arial, Helvetica, sans-serif;}
+div#footerBot div.footSect p {text-align: left; font-family: "Lucida Grande", Arial, Helvetica, sans-serif;}
+div#footerBot div.footSect a {font-weight: normal; font-family: "Lucida Grande", Arial, Helvetica, sans-serif;}
+div#footerBot div.footSect ul li {text-align: left;}
+div#footerBot p#copyright {text-align: left; font-family: "Lucida Grande", Arial, Helvetica, sans-serif;}
+div.clear, br.clear {clear: both; height: 0; font-size: 0; line-height: 0;}
+
+/* iPhone */
+@media screen and (max-device-width: 480px){
+	div#header div#tabsWrap ul#tabs {
+		width: 730px;
+	}
+}
+
+/* Super-flyout-navigation panels */
+/* IE7 initialize z-index as a base */
+div#tabsWrap { *z-index: 10; }
+/* Initilize all tabs for CSS positioning */
+div#header div#tabsWrap ul#tabs li { position: relative; }
+div.navMenu {
+	position: absolute;
+	display: none;
+	width: 356px; /* SUM of two columns + padding + 1px */
+	padding: 10px 14px;
+	background: #D2ECF1 none no-repeat 0 0;
+	z-index: 1000;
+	-moz-box-shadow: 3px 3px 3px #CECECE;
+	-webkit-box-shadow: 3px 3px 3px #CECECE;
+	-o-box-shadow: 3px 3px 3px #CECECE;
+	box-shadow: 3px 3px 3px #CECECE;
+}
+div.navMenu ul { list-style: none outside none; margin: 0; padding: 0; }
+div.navMenu div.navMenuInner { background-color: #FFFFFF; }
+div.navMenu.navSingleColumn { width: 205px; }
+div.navMenu div.navItemBlock { float: left; width: 160px; padding: 10px 0 10px 14px; }
+
+/* Poistioning flyouts */
+ul#tabs div.navMenu { top: 30px; }
+ul#tabs li.buyTab div.navMenu,
+ul#tabs li.sellTab div.navMenu,
+ul#tabs li.eduTab div.navMenu,
+ul#tabs li.toolsTab div.navMenu { left: 0; right: auto; }
+ul#tabs li.appraisalTab div.navMenu,
+ul#tabs li.mortgageTab div.navMenu,
+ul#tabs li.proTab div.navMenu { left: auto; right: 0; }
+
+/* Over write main tab if flyout is active */
+div#header div#tabsWrap ul#tabs li.activeNavMenu > a,
+div#header div#tabsWrap ul#tabs li.activeNavMenu > a:hover { background-image: none !important; background-color: #D2ECF1 !important; color:#083796; border-color: #D2ECF1 !important; }
+
+/* Convert inner elements to default */
+div#header div#tabsWrap ul#tabs div.navMenu li { display: list-item; float: none; background-image: none; font-size: 13px; color: #000000; }
+div#header div#tabsWrap ul#tabs li div.navMenu li a,
+div#header div#tabsWrap ul#tabs li div.navMenu a { 
+	display: inline; 
+	background-image: none; 
+	border-style: none; 
+	float: none; 
+	height: auto; 
+	line-height: 1.3em; 
+	padding: 0; 
+	font-weight: 400; 
+	font-size: 13px; 
+	color: #083796;
+}
+
+div#header div#tabsWrap ul#tabs li div.navMenu li a:hover,
+div#header div#tabsWrap ul#tabs li div.navMenu a:hover { text-decoration: underline;  }
+
+/* Search tab special needs */
+#navigationSearchForm { margin-top: 10px; }
+#navigationSearchFormInput { border:1px none #7F9DB9; padding: 2px 1px; color: #999999; font-size: 13px; width: 260px; *width: 240px; }
+#navigationSearchFormInput:focus { color: #333333; }
+#navigationSearchFormSubmit { border: 0px none #999999; color: #FFFFFF; background-color:#819DBC; font-size: 13px; margin-left: 1em; padding: 1px 1em; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; *margin-left: 5px; *padding: 0px 1em; }
+div#header div#tabsWrap ul#tabs li div.navMenu form#navigationSearchForm a,
+div#header div#tabsWrap ul#tabs li div.navMenu form#navigationSellForm a { text-decoration: underline; background-image: none !important; }
+#navigationSellFormPostalCode { border:1px none #7F9DB9; padding: 2px 1px; color: #999999; font-size: 13px; width: 130px; }
+#navigationSellFormSubmit { border: 0px none #999999; color: #FFFFFF; background-color:#819DBC; font-size: 13px; margin-left: 1em; padding: 1px 1em; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; *margin-left: 5px; *padding: 0px 1em; }
+/* For preview */
+div.navigationPreview div.navMenu { display: block; }

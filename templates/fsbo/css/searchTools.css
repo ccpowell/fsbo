@@ -1,0 +1,94 @@
+/*Fucking co-brand overrides*/
+#main div#searchTools {margin-top: 0px;}
+#main div, #main td, #main strong, #main p, #main a, #main a:hover, #main h1, #main h2, #main h3, #main h4, #main h5, #main h6, #main form {font-family: "Lucida Grande", Geneva, Arial, Verdana, sans-serif;}
+#main div, #main td, #main p, #main a, #main a:hover {font-weight: normal;}
+#main a, #main a:hover {color: #467AA7}
+body form#searchToolsForm {font-family: "Lucida Grande", Geneva, Arial, Verdana, sans-serif; font-size: 11px; z-index:1;}
+
+/* Search Tools */
+div#searchTools {min-width: 780px; width: 100%; height: 98px; border-bottom: 1px solid #336399; background-repeat: repeat-x; background-position: 0 0; margin-top: -15px; }
+html>body div#searchTools { *z-index: 2; }
+div#searchTools.withInternational { height: 110px; }
+* html div#searchTools {margin-top: -5px;}
+div#searchTools div.sect {float: left; height: 86px; padding-top: 12px; color: #000; background-image: url("http://www.forsalebyowner.com/images/search/bdrSearchToolsSect.gif"); background-repeat: no-repeat; background-position: right bottom; }
+html>body div#searchTools div.sect {*position:relative; *z-index:2;}
+div#searchTools div.sect label {display: block; font-size: 14px; font-weight: bold;}
+div#searchTools div.sect p {padding: 3px 0 0 0; font-size: 12px;}
+div#searchTools div.sect input {font-size: 15px; border: 1px solid #7F9DB9;}
+div#searchTools div.sect input.submit {border: 0;}
+div#searchTools div.sect input.area {width: 177px; margin-top: 3px; padding: 4px 0 4px 6px;}
+div#searchTools div.submit {background-image: none; padding-right: 0;}
+div#searchTools a.moreOptions {padding-left: 12px; background-image: url("http://www.forsalebyowner.com/images/global/arrowRtBlue.gif"); background-repeat: no-repeat; background-position: 0 2px; text-decoration: none; font-size: 11px;}
+div#searchTools a.moreOptionsOn {padding-left: 12px; background-image: url("http://www.forsalebyowner.com/images/global/arrowDnBlue.gif"); background-repeat: no-repeat; background-position: 0 5px; text-decoration: none; font-size: 11px;}
+div#searchTools div.sect p.withInternational { padding: 0 0 0 0; }
+div#searchTools div.sect p.withInternational a {font-size:11px; padding-left: 12px;}
+
+div#searchTools div.search {width: 200px; padding-left: 10px;}
+div#searchTools div.price {width: 170px; padding-left: 15px;}
+div#searchTools div.beds {width: 96px; padding-left: 15px;}
+div#searchTools div.baths {width: 96px; padding-left: 15px;}
+div#searchTools div.submit {padding-left: 14px;}
+/* div#searchTools div.price #priceDisplay {width: 150px; text-align: center;} */
+
+/* More Options */
+div#searchOptionsWrap {min-width: 800px; border-bottom: 6px solid #336399; padding: 0 0 1px 0;}
+div#searchOptions {display: none; height: 232px; background-image: url("http://www.forsalebyowner.com/images/global/bgShad.gif"); background-repeat: repeat-x; background-position: 0 0;}
+div#searchOptions div.col {float: left;}
+div#searchOptions div h3 {font-size: 14px; margin: 0 0 5px 0; font-weight: bold;}
+div#searchOptions div.col ol li, div#searchOptions div.col ul li {padding: 3px 0;}
+div#searchOptions input {height: 13px;} /* Fixes spacing problem in IE 6 & 7 */
+div#searchOptions p {padding: 3px 0 0 0; font-size: 11px;}
+
+div#searchOptions div.one {width: 100px; height: 232px; border-right: 1px solid #ece6f2;}
+div#searchOptions div.radiusSect {padding: 10px 0 15px 15px; border-bottom: 1px solid #ece6f2;}
+div#searchOptions div.photosSect {padding: 10px 0 15px 15px;}
+
+div#searchOptions div.two {width: 325px; height: 232px; border-right: 1px solid #ece6f2;overflow-y:scroll;}
+div#searchOptions div.propTypeSect {padding: 10px 0 15px 15px;}
+div#searchOptions div.propTypeSect ul.propTypeList {float: left; padding-right: 30px;}
+#propTypeOptions {font-size: 11px; margin-left: 5px;}
+
+div#searchOptions div.three {width: 183px; height: 232px; border-right: 1px solid #ece6f2;}
+div#searchOptions div.three p {white-space: nowrap;}
+div#searchOptions div.sqFtSect {padding: 10px 0 5px 15px; border-bottom: 1px solid #ece6f2;}
+div#searchOptions div.acreSect {padding: 10px 0 5px 15px; border-bottom: 1px solid #ece6f2;}
+div#searchOptions div.openHousesSect {padding: 10px 0 15px 15px;}
+
+div#searchOptions div.four {width: 200px; height: 232px; padding-left: 8px; background-image: url("http://www.forsalebyowner.com/images/search/bgSrchOptsRtPane.gif"); background-repeat: no-repeat; background-position: 0 0;}
+div#searchOptions div.four div.scroller {height: 232px; overflow: auto;}
+div#searchOptions div.amenitiesSect {padding: 10px 0 15px 15px;}
+div#searchOptions div.amenitiesSect ul.amenitiesList {float: left; padding-bottom: 15px;}
+div#searchOptions div.four div.transactionTypes {border-bottom: 1px solid #ece6f2; margin-bottom: 10px; padding-bottom: 5px; overflow: hidden;}
+div#searchOptions div.amenitiesSect ul.transactionsList {float: left; padding-bottom: 5px;}
+
+/* Sliders */
+/* Override jQueryUI styles */
+div#searchTools .ui-slider-handle, div#searchTools .ui-widget-content, div#searchOptions .ui-widget-content, .ui-widget-header {background: none !important; border: none !important;}
+
+div#searchTools div.price div.slider {height: 35px; width: 153px; margin-top: 2px; position: relative;}
+div#searchTools div.price div.slider img.bg {position: absolute; width: 153px; height: 17px;}
+div#searchTools div.price div.slider img.bar {position: absolute; width: 157px; height: 4px; margin: 19px 0 0;}
+div#searchTools div.price div.slider #pricehandle1 {position: absolute; left: 0; top: 11px; width: 12px; height: 19px; margin: 0;}
+div#searchTools div.price div.slider #pricehandle2 {position: absolute; left: 137px; top: 11px; width: 12px; height: 19px;}
+
+div#searchTools div.beds div.slider {height: 35px; width: 75px; margin-top: 2px; position: relative;}
+div#searchTools div.beds div.slider img.bg {position: absolute; width: 75px; height: 17px;}
+div#searchTools div.beds div.slider img.bar {position: absolute; width: 87px; height: 4px; margin: 19px 0 0;}
+div#searchTools div.beds div.slider #bedshandle {position: absolute; left: 0; top: 11px; width: 12px; height: 19px; margin: 0;}
+
+div#searchTools div.baths div.slider {height: 35px; width: 75px; margin-top: 2px; position: relative;}
+div#searchTools div.baths div.slider img.bg {position: absolute; width: 75px; height: 17px;}
+div#searchTools div.baths div.slider img.bar {position: absolute; width: 87px; height: 4px; margin: 19px 0 0;}
+div#searchTools div.baths div.slider #bathshandle {position: absolute; left: 0; top: 11px; width: 12px; height: 19px; margin: 0;}
+
+div#searchOptions div.sqFtSect div.slider {height: 30px; width: 153px; margin-top: 2px; position: relative;}
+div#searchOptions div.sqFtSect div.slider img.bg {display: none; position: absolute; width: 153px; height: 17px;}
+div#searchOptions div.sqFtSect div.slider img.bar {position: absolute; width: 159px; height: 4px; margin: 14px 0 0 0;}
+div#searchOptions div.sqFtSect div.slider #sqFtHandle1 {position: absolute; left: 0; top: 6px; width: 12px; height: 19px; margin: 0;}
+div#searchOptions div.sqFtSect div.slider #sqFtHandle2 {position: absolute; left: 137px; top: 6px; width: 12px; height: 19px;}
+
+div#searchOptions div.acreSect div.slider {height: 30px; width: 153px; margin-top: 2px; position: relative;}
+div#searchOptions div.acreSect div.slider img.bg {display: none; position: absolute; width: 153px; height: 17px;}
+div#searchOptions div.acreSect div.slider img.bar {position: absolute; width: 159px; height: 4px; margin: 14px 0 0 0;}
+div#searchOptions div.acreSect div.slider #acreHandle1 {position: absolute; left: 0; top: 6px; width: 12px; height: 19px; margin: 0;}
+div#searchOptions div.acreSect div.slider #acreHandle2 {position: absolute; left: 137px; top: 6px; width: 12px; height: 19px;}
