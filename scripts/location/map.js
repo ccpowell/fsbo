@@ -1,3 +1,37 @@
+function polylineDecode(polyLineString) {
+    'use strict';
+    var lat_or_lng = 0,
+        charIndex = 0,
+		points = [],
+		previousPoint = [0, 0],
+        latlng = [],
+        shiftBlock,
+        resultBit,
+        bit,
+        ll,
+        delta,
+        number;
+
+    while (charIndex < polyLineString.length) {
+        shiftBlock = resultBit = 0x00;
+        do {
+            bit = polyLineString.charCodeAt(charIndex++) - 0x3F; // Convet char to bit & offset
+            resultBit |= (bit & 0x1F) << shiftBlock;                 // Alter resulting bit based on last block
+            shiftBlock += 0x05;                                        // Advance to next 5-bit block
+        } while (bit >= 0x20);
+        ll = lat_or_lng % 2;
+        delta = resultBit & 0x01 ? ~(resultBit >> 0x01) : resultBit >> 0x01; // Determine number signing by last bit
+        number = previousPoint[ll] + delta;          // Calculate next number by addition of delta
+        previousPoint[ll] = number;                      // Store new previous point        
+        latlng[ll] = (number * 1e-5);
+        if (1 === ll) {
+            points.push(new google.maps.LatLng(latlng[0], latlng[1]));
+        }
+        lat_or_lng++;                                                // Move cursor to next lat/lng
+    }
+
+    return points;
+}
 
 function Shape(map,opts) {
 	this.options.map = map;
@@ -32,8 +66,9 @@ Shape.prototype = {
 			for(k in options) {
 				this.options[k] = options[k];
 			}
-			for( var i = 0; i < this.options.paths.length; i++) {
-				this.options.paths[i] = google.maps.geometry.encoding.decodePath(this.options.paths[i]);
+            for (var i = 0; i < this.options.paths.length; i++) {
+                //this.options.paths[i] = google.maps.geometry.encoding.decodePath(this.options.paths[i]);
+                this.options.paths[i] = polylineDecode(this.options.paths[i]);
 			}
 			this.options.fillColor = !!this.options.colorCode ? this.options.colorCode :  this._getFillColor(); 
 			if(/^[0-9A-Fa-f]{6}$/.test(this.options.fillColor)) { this.options.fillColor = '#'+this.options.fillColor }
