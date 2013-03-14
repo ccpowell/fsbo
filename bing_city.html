@@ -1,0 +1,1347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Chicago | ForSaleByOwner.com - FSBO</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" media="all" href="templates/css/global.css?v=118" />
+    <link rel="stylesheet" type="text/css" media="all" href="templates/fsbo/css/header.css?v=118" />
+    <style type="text/css" media="all">
+        @import url(templates/fsbo/css/searchTools.css?v=118);
+    </style>
+    <style type="text/css" media="all">
+        @import url(templates/location/main.css?v=118);
+    </style>
+    <script charset="UTF-8" type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0">
+    </script>
+    <script type="text/javascript" src="scripts/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery-ui-1.8.24.custom.min.js"></script>
+    <link type="text/css" href="templates/css/jqueryui/jquery-ui-1.8.24.custom.css?v=118"
+        rel="stylesheet" />
+    <script type="text/javascript" src="scripts/main.js?v=118"></script>
+    <script type="text/javascript" src="scripts/FavoritesBase.js"></script>
+    <script type="text/javascript">
+        FavoritesBase.isLoggedIn = 0;
+        FavoritesBase.numFavorites = 0;
+
+        $(document).ready(function () {
+            $('#viewFavs').mouseover(function () { $(this).addClass("hov"); });
+            $('#viewFavs').mouseout(function () { $(this).removeClass("hov"); });
+            $('#savedSearches').mouseover(function () { $(this).addClass("hov"); });
+            $('#savedSearches').mouseout(function () { $(this).removeClass("hov"); });
+        });
+
+</script>
+</head>
+<body style="background-image: url('http://www.forsalebyowner.com/images/global/HDR-Filler-Gradient.png');
+    background-repeat: repeat-x;">
+    <div id="topNavWrap">
+        <div id="topNavig">
+            <div id="myAcct">
+                <a class="navItem" href="/user/seller/" rel="nofollow">My Account</a></div>
+            <div id="logOut">
+                <a class="navItem" href="/login/" rel="nofollow">Login</a></div>
+        </div>
+    </div>
+    <div id="header">
+        <div id="tabsWrap">
+            <ul id="tabs">
+                <li class="buyTab"><a href="/homes-for-sale">Search Homes</a><div id="navigationSearch"
+                    class="navMenu">
+                    <div class="navMenuInner">
+                        <div class="navItemBlock">
+                            <ul>
+                                <!--<li><a href="">Featured Homes</a></li>-->
+                                <li><a href="/homes-for-sale?szLocation=Chicago%2C+IL&iPage=1&iSortMethod=14&szSortDirection=DESC">
+                                    Most Viewed</a></li>
+                                <li><a href="/homes-for-sale?szLocation=Chicago%2C+IL&iPage=1&iSortMethod=11&szSortDirection=DESC">
+                                    New Homes</a></li>
+                                <li><a href="/homes-for-sale?szLocation=Chicago%2C+IL&iPage=1&iSortMethod=13&szSortDirection=DESC">
+                                    Just Reduced</a></li>
+                                <li><a href="/homes-for-sale?szLocation=Chicago%2C+IL&iPropertyStatus=9">New Construction</a></li>
+                            </ul>
+                        </div>
+                        <div class="navItemBlock">
+                            <ul>
+                                <li><a href="/homes-for-sale?szLocation=Chicago%2C+IL&iPage=1&hasOpenHouse=1">Open Houses</a></li>
+                                <li><a href="/homes-for-sale/International">International Listings</a></li>
+                                <li><a href="/homes-for-sale?szLocation=Chicago%2C+IL&iPage=1&transactionTypes[]=1">
+                                    Rent and Lease Options</a></li>
+                                <li><a href="/homes-for-sale?szLocation=Chicago%2C+IL&transactionTypes[]=1&transactionTypes[]=2&transactionTypes[]=8">
+                                    Financing Options</a></li>
+                            </ul>
+                        </div>
+                        <div class="clear">
+                        </div>
+                    </div>
+                    <form action="/homes-for-sale" method="get" id="navigationSearchForm">
+                    <input type="text" name="szLocation" onfocus="this.value=''" onblur="if(this.value.length < 1) this.value= this.title"
+                        value="Enter a City, State, Zip Code or Listing ID" title="Enter a City, State, Zip Code or Listing ID"
+                        id="navigationSearchFormInput" autocomplete="off" maxlength="60" /><input type="submit"
+                            value=" Search " id="navigationSearchFormSubmit" /><br>
+                    <a href="/homes-for-sale?searchOptionsOpen=1">Advanced Search</a>
+                    </form>
+                </div>
+                </li>
+                <li class="sellTab"><a href="/listing/new">Sell Your Home</a><div id="navigationSell"
+                    class="navMenu navSingleColumn">
+                    <form action="/listing/new/package" onsubmit="return gaTrackPageViewOnSubmit('/listing/new')"
+                    method="post" id="navigationSellForm">
+                    <label for="navigationSellFormPostalCode">
+                        Get Started:</label><br>
+                    <input type="text" name="postalCode" id="navigationSellFormPostalCode" onfocus="this.value=''"
+                        onblur="if(this.value.length < 1) this.value= this.title" value="Enter your Zip Code"
+                        title="Enter your Zip Code" maxlength="7" autocomplete="off" />
+                    <input type="submit" value="Go!" id="navigationSellFormSubmit" />
+                    <input type="hidden" name="newpostal" value="1" />
+                    <br>
+                    <a href="/listing/new#eduHowLink">Learn more...</a>
+                    </form>
+                </div>
+                </li>
+                <li class="eduTab"><a href="/education/">Education</a><div id="navigationEducation"
+                    class="navMenu">
+                    <div class="navMenuInner">
+                        <div class="navItemBlock">
+                            <ul>
+                                <li><a href="/education/index.php/selling-your-home">Selling Your Home</a></li>
+                                <li><a href="/education/index.php/buying-a-home">Buying a Home</a></li>
+                                <li><a href="/education/index.php/foreclosures">Foreclosures</a></li>
+                                <li><a href="/education/index.php/market-conditions">Market Conditions</a></li>
+                                <li><a href="/education/index.php/condominiums">Condominiums</a></li>
+                                <li>&nbsp;</li>
+                                <li>Want to learn more?</li>
+                                <li><a href="/blog">Visit our blog!</a></li>
+                            </ul>
+                            <a href="/blog">
+                                <img src="http://www.forsalebyowner.com/images/global/blog/blogPreview.png" width="150"
+                                    height="82" /></a></div>
+                        <div class="navItemBlock">
+                            <strong>Most Popular Articles</strong>
+                            <ul>
+                                <li><a href="/education/index.php/buying-a-home/the-home-search/319-how-to-buy-a-for-sale-by-owner-home">
+                                    Buying Direct from Owners</a></li>
+                                <li><a href="/education/index.php/selling-your-home/the-basics/180-a-simple-guide-for-selling-a-home-on-your-own">
+                                    Simple Selling Steps</a></li>
+                                <li><a href="/education/index.php/selling-your-home/marketing-your-home/133-snagging-a-home-buyer-selling-secrets-for-writing-a-successful-property-listing-ad">
+                                    Property Ads: Must Dos </a></li>
+                                <li><a href="/education/index.php/selling-your-home/disclosures/548-video-paperwork-and-closing">
+                                    Video: Closings & Forms</a></li>
+                                <li><a href="/education/index.php/selling-your-home/the-basics/138-what-is-fsbo">By-Owner
+                                    Benefits</a></li>
+                                <li><a href="/education/index.php/selling-your-home/the-basics/47-assembling-your-home-selling-team">
+                                    Building a Winning Team</a></li>
+                                <li><a href="/education/index.php/market-conditions/84-market-conditions/348-the-basics-on-lease-option-rent-to-own">
+                                    Rent-to-Own Basics</a></li>
+                                <li><a href="/education/index.php/selling-your-home/marketing-your-home/549-video-how-to-market-your-home">
+                                    Video: Market Your Home</a></li>
+                            </ul>
+                            </br>
+                            <ul>
+                                <li><a href="/education/index.php/faq-general">FAQ's</a></li>
+                            </ul>
+                        </div>
+                        <div class="clear">
+                        </div>
+                    </div>
+                </div>
+                </li>
+                <li class="toolsTab"><a href="/tools/">Tools</a><div id="navigationTools" class="navMenu">
+                    <div class="navMenuInner">
+                        <div class="navItemBlock">
+                            <strong>For Sellers</strong>
+                            <ul>
+                                <li><a href="/education/index.php/home-selling-checklist">Home Seller&rsquo;s Checklist</a></li>
+                                <li><a href="/pricingGuide/Seller">Pricing Guide for Sellers</a></li>
+                                <li><a href="/real-estate-forms.html">Real Estate Forms</a></li>
+                            </ul>
+                            <br>
+                            <strong>For Buyers</strong>
+                            <ul>
+                                <li><a href="/home-buying.html">Home Buyer&rsquo;s Guide</a></li>
+                                <li><a href="/home-buying-tips.html">Home Buying Checklist</a></li>
+                                <li><a href="/real-estate-forms.html">Real Estate Forms</a></li>
+                            </ul>
+                        </div>
+                        <div class="navItemBlock">
+                            <strong>Additional Resources</strong>
+                            <ul>
+                                <li><a href="/shop">ForSaleByOwner Store</a></li>
+                                <li><a href="/pricing_report/">Home Value Calculator</a></li>
+                                <li><a href="/service-search.php">Service Providers</a></li>
+                                <li><a href="/insurance">Insurance Center</a></li>
+                                <li><a href="/city-profiles">City Profiles</a></li>
+                                <li><a href="/reports.html">Cities, Schools &amp; Crime</a></li>
+                                <li><a href="/framewrap.html?url=http://www.bestplaces.net/col/">Cost of Living Comparisons</a></li>
+                                <li><a href="/moving-your-home.html">Moving &amp; Relocation</a></li>
+                            </ul>
+                        </div>
+                        <div class="navItemBlock">
+                            <p>
+                                <b>Getting to Know the Terms</b></p>
+                            <ul>
+                                <li><a href="http://www.forsalebyowner.com/realestate">Real Estate</a></li>
+                                <li><a href="http://www.forsalebyowner.com/the-mls">MLS</a></li>
+                                <li><a href="http://www.forsalebyowner.com/houses-on-sale">Houses On Sale</a></li>
+                                <li><a href="http://www.forsalebyowner.com/sell-as-is">Sell As Is</a></li>
+                                <li><a href="http://www.forsalebyowner.com/property-for-sale">Property For Sale</a></li>
+                                <li><a href="http://www.forsalebyowner.com/houses-for-sale">Houses For Sale</a></li>
+                                <li><a href="http://www.forsalebyowner.com/by-owner">By Owner</a></li>
+                                <li><a href="http://www.forsalebyowner.com/foreclosure">Foreclosure</a></li>
+                            </ul>
+                        </div>
+                        <div class="clear">
+                        </div>
+                    </div>
+                </div>
+                </li>
+                <li class="appraisalTab"><a href="/pricing_report/">Pricing Reports</a></li>
+                <li class="mortgageTab"><a href="/mortgage/">Mortgage</a><div id="navigationMortgage"
+                    class="navMenu">
+                    <div class="navMenuInner">
+                        <div class="navItemBlock">
+                            <strong>Mortgage Tools</strong>
+                            <ul>
+                                <li><a href="/mortgage/">Mortgage Resource Center</a></li>
+                                <li><a href="/mortgage/rates.php">Today&rsquo;s Mortgage Rates</a></li>
+                                <li><a href="/mortgage-calculators.html">Mortgage Calculators</a></li>
+                                <li><a href="http://www.freecreditscore.com/dni/default.aspx?SiteVersionID=997&sc=676461&bcd=ListingTxtOnly_1x1_Access">
+                                    Free Credit Score</a></li>
+                            </ul>
+                        </div>
+                        <div class="navItemBlock">
+                            <a href="/mortgage/">
+                                <img src="http://www.forsalebyowner.com/images/mortgage/mortgagePreview.jpg" width="130"
+                                    height="82" style="border: 1px solid #083796" /></a></div>
+                        <div class="clear">
+                        </div>
+                    </div>
+                </div>
+                </li>
+                <li class="proTab"><a href="/pro/search">Find a Pro</a></li>
+            </ul>
+        </div>
+        <a href="/">
+            <img src="http://www.forsalebyowner.com/images/global/FSBO-ForSaleByOwner-Logo.png"
+                id="logo" alt="FSBO @ For Sale By Owner.com" title="FSBO @ For Sale By Owner.com" /></a>
+        <div id="customerSupport">
+            <ul>
+                <li>(888) FOR-SALE
+                    <img src="http://www.forsalebyowner.com/images/global/iconPhoneBlue.gif" id="iconPhone"></li>
+                <li><a href="/support">Customer Support
+                    <img src="http://www.forsalebyowner.com/images/global/arrowRtBlueHeader.gif"></a></li>
+                <li><a href="#" onclick="javascript:gaTrackPageView('/livechat');window.open('http://chat.forsalebyowner.com/netagent/cimlogin.aspx?questid=C97949F9-63B1-45DF-A6B4-00D1CC3D208B&amp;portid=9B6061D5-4D5C-4F0C-8178-AF3E189C275A&amp;nareferer='+escape(document.location),'_blank','resizable=yes,width=750,height=475'); return false;">
+                    Live Chat
+                    <img src="http://www.forsalebyowner.com/images/global/arrowRtBlueHeader.gif"></a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="wrapper">
+        <script type="text/javascript" src="/scripts/searchTools.js"></script>
+        <script type="text/javascript">
+            var minPriceLimit = 0;
+            var maxPriceLimit = 1000000;
+            var priceInterval = 50000;
+            var currMinPrice = 0;
+            var currMaxPrice = 1050000;
+
+            var currMinBedKey = 0;
+            var minBeds = new Array();
+            minBeds[0] = '0';
+            minBeds[1] = '1';
+            minBeds[2] = '2';
+            minBeds[3] = '3';
+            minBeds[4] = '4';
+            minBeds[5] = '5';
+            minBeds[6] = '6';
+            var currMinBathKey = 0;
+
+            var minBaths = new Array();
+            minBaths[0] = '0';
+            minBaths[1] = '.5';
+            minBaths[2] = '1';
+            minBaths[3] = '1.5';
+            minBaths[4] = '2';
+            minBaths[5] = '2.5';
+            minBaths[6] = '3';
+            minBaths[7] = '3.5';
+            minBaths[8] = '4';
+            minBaths[9] = '4.5';
+            minBaths[10] = '5';
+
+            var minSqFtLimit = 0;
+            var maxSqFtLimit = 5000;
+            var sqFtInterval = 500;
+            var currMinSqFt = 0;
+            var currMaxSqFt = 5500;
+
+            var currMinAcreKey = 0;
+            var currMaxAcreKey = 11;
+            var acres = new Array();
+            acres[0] = '0';
+            acres[1] = '.25';
+            acres[2] = '.5';
+            acres[3] = '1';
+            acres[4] = '2';
+            acres[5] = '3';
+            acres[6] = '4';
+            acres[7] = '5';
+            acres[8] = '10';
+            acres[9] = '15';
+            acres[10] = '20';
+            acres[11] = '100000';
+
+		</script>
+        <form id="searchToolsForm" method="get" action="/homes-for-sale">
+        <input name="viewType" type="hidden" value="" />
+        <input name="iSortMethod" type="hidden" value="2" />
+        <input name="szSortDirection" type="hidden" value="DESC" />
+        <input name="iPropertyStatus" type="hidden" value="" />
+        <div id="searchTools" class="withInternational">
+            <div class="sect search">
+                <label for="area">
+                    Search</label>
+                <p>
+                    City, State | ZIP Code | Listing ID</p>
+                <input id="szLocation" name="szLocation" class="area title_hint" type="text" value="Chicago, Illinois"
+                    title="e.g. Chicago, IL or Toronto, ON" />
+                <p>
+                    <a href="#" id="moreOptionsLink" class="moreOptions">More Search Options</a></p>
+                <p class="withInternational">
+                    <a href="/homes-for-sale?szLocation=International">View International Listings</a></p>
+            </div>
+            <div class="sect price">
+                <input id="minPrice" name="minPrice" type="hidden" value="0" />
+                <input id="maxPrice" name="maxPrice" type="hidden" value="1050000" />
+                <label>
+                    Price Range</label>
+                <p id="priceDisplay">
+                    <span id="minPriceDisplay">No Minimum</span> - <span id="maxPriceDisplay">No Maximum</span></p>
+                <div id="priceSlider" class="slider">
+                    <img src="http://www.forsalebyowner.com/images/search/sliderBgPrice.gif" class="bg" />
+                    <img src="http://www.forsalebyowner.com/images/search/sliderBar.gif" class="bar" />
+                    <img id="pricehandle1" src="http://www.forsalebyowner.com/images/search/sliderHandle.gif"
+                        class="ui-slider-handle" width="9" height="15" />
+                    <img id="pricehandle2" src="http://www.forsalebyowner.com/images/search/sliderHandle.gif"
+                        class="ui-slider-handle" width="9" height="15" />
+                </div>
+            </div>
+            <div class="sect beds">
+                <input id="minBed" name="minBed" type="hidden" value="0" />
+                <label>
+                    Beds:
+                </label>
+                <p id="minBedDisplay">
+                    Any</p>
+                <div id="bedsSlider" class="slider">
+                    <img src="http://www.forsalebyowner.com/images/search/sliderBgBeds.gif" class="bg" />
+                    <img src="http://www.forsalebyowner.com/images/search/sliderBar.gif" class="bar" />
+                    <img id="bedshandle" src="http://www.forsalebyowner.com/images/search/sliderHandle.gif"
+                        class="ui-slider-handle" width="9" height="15" />
+                </div>
+            </div>
+            <div class="sect baths">
+                <input id="minBath" name="minBath" type="hidden" value="0" />
+                <label>
+                    Baths:
+                </label>
+                <p id="minBathDisplay">
+                    Any</p>
+                <div id="bathsSlider" class="slider">
+                    <img src="http://www.forsalebyowner.com/images/search/sliderBgBeds.gif" class="bg" />
+                    <img src="http://www.forsalebyowner.com/images/search/sliderBar.gif" class="bar" />
+                    <img id="bathshandle" src="http://www.forsalebyowner.com/images/search/sliderHandle.gif"
+                        class="ui-slider-handle" width="9" height="15" />
+                </div>
+            </div>
+            <div class="sect submit">
+                <input class="submit" type="image" src="http://www.forsalebyowner.com/images/search/butSearch.gif" /><br />
+                <a href="/homes-for-sale?searchOptionsOpen=1">
+                    <img src="http://www.forsalebyowner.com/images/search/butResetSearch.gif" /></a>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+        <div id="searchOptionsWrap">
+            <div id="searchOptions">
+                <div class="col one">
+                    <div class="radiusSect">
+                        <h3>
+                            Within</h3>
+                        <ol class="radiusList">
+                            <li>
+                                <label>
+                                    <input name="iRadius" type="radio" value="1" />
+                                    1 mile</label></li>
+                            <li>
+                                <label>
+                                    <input name="iRadius" type="radio" value="3" />
+                                    3 miles</label></li>
+                            <li>
+                                <label>
+                                    <input name="iRadius" type="radio" value="5" />
+                                    5 miles</label></li>
+                            <li>
+                                <label>
+                                    <input name="iRadius" type="radio" value="10" />
+                                    10 miles</label></li>
+                            <li>
+                                <label>
+                                    <input name="iRadius" type="radio" value="20" checked="checked" />
+                                    20 miles</label></li>
+                            <li>
+                                <label>
+                                    <input name="iRadius" type="radio" value="50" />
+                                    50 miles</label></li>
+                        </ol>
+                    </div>
+                    <div class="photosSect">
+                        <h3>
+                            Photos</h3>
+                        <label>
+                            <input name="iHasPhoto" type="checkbox" />
+                            Must Have</label>
+                    </div>
+                </div>
+                <div class="col two">
+                    <div class="propTypeSect">
+                        <h3>
+                            Property Type <span id="propTypeOptions"><a id="propSelectAll" href="javascript:;">Select
+                                All</a> | <a id="propDeselectAll" href="javascript:;">De-select All</a></span></h3>
+                        <ul class="propTypeList">
+                            <li>
+                                <label>
+                                    <input name="rgPropTypes[]" type="checkbox" value="5" checked="checked" />
+                                    Acreage/Land</label></li>
+                            <li>
+                                <label>
+                                    <input name="rgPropTypes[]" type="checkbox" value="6" checked="checked" />
+                                    Commercial</label></li>
+                            <li>
+                                <label>
+                                    <input name="rgPropTypes[]" type="checkbox" value="2" checked="checked" />
+                                    Condo/Townhome</label></li>
+                            <li>
+                                <label>
+                                    <input name="rgPropTypes[]" type="checkbox" value="10" checked="checked" />
+                                    Co-op</label></li>
+                            <li>
+                                <label>
+                                    <input name="rgPropTypes[]" type="checkbox" value="3" checked="checked" />
+                                    Duplex/Triplex</label></li>
+                            <li>
+                                <label>
+                                    <input name="rgPropTypes[]" type="checkbox" value="13" checked="checked" />
+                                    Farm/Land</label></li>
+                            <li>
+                                <label>
+                                    <input name="rgPropTypes[]" type="checkbox" value="7" checked="checked" />
+                                    Farm/Ranch</label></li>
+                        </ul>
+                        <ul class="propTypeList">
+                            <li>
+                                <label>
+                                    <input name="rgPropTypes[]" type="checkbox" value="16" checked="checked" />
+                                    Log Cabin/Home</label></li>
+                            <li>
+                                <label>
+                                    <input name="rgPropTypes[]" type="checkbox" value="4" checked="checked" />
+                                    Mobile Home</label></li>
+                            <li>
+                                <label>
+                                    <input name="rgPropTypes[]" type="checkbox" value="14" checked="checked" />
+                                    Multi-Family</label></li>
+                            <li>
+                                <label>
+                                    <input name="rgPropTypes[]" type="checkbox" value="8" checked="checked" />
+                                    Rental Only</label></li>
+                            <li>
+                                <label>
+                                    <input name="rgPropTypes[]" type="checkbox" value="1" checked="checked" />
+                                    Single Family</label></li>
+                            <li>
+                                <label>
+                                    <input name="rgPropTypes[]" type="checkbox" value="9" checked="checked" />
+                                    Timeshare</label></li>
+                            <li>
+                                <label>
+                                    <input name="rgPropTypes[]" type="checkbox" value="18" checked="checked" />
+                                    Vacation Home</label></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col three">
+                    <div class="sqFtSect">
+                        <input id="minSqFt" name="minSqFt" type="hidden" value="0" />
+                        <input id="maxSqFt" name="maxSqFt" type="hidden" value="5500" />
+                        <h3>
+                            Square Feet</h3>
+                        <p id="sqFtDisplay">
+                            <span id="minSqFtDisplay">No Minimum</span> - <span id="maxSqFtDisplay">No Maximum</span></p>
+                        <div id="sqFtSlider" class="slider">
+                            <img src="http://www.forsalebyowner.com/images/search/sliderBgPrice.gif" class="bg" />
+                            <img src="http://www.forsalebyowner.com/images/search/sliderBar.gif" class="bar" />
+                            <img id="sqFtHandle1" src="http://www.forsalebyowner.com/images/search/sliderHandle.gif"
+                                class="ui-slider-handle" width="9" height="15" />
+                            <img id="sqFtHandle2" src="http://www.forsalebyowner.com/images/search/sliderHandle.gif"
+                                class="ui-slider-handle" width="9" height="15" />
+                        </div>
+                    </div>
+                    <div class="acreSect">
+                        <input id="minAcre" name="minAcre" type="hidden" value="0" />
+                        <input id="maxAcre" name="maxAcre" type="hidden" value="100000" />
+                        <h3>
+                            Acreage</h3>
+                        <p id="acreDisplay">
+                            <span id="minAcreDisplay">No Minimum</span> - <span id="maxAcreDisplay">No Maximum</span></p>
+                        <div id="acreSlider" class="slider">
+                            <img src="http://www.forsalebyowner.com/images/search/sliderBgPrice.gif" class="bg" />
+                            <img src="http://www.forsalebyowner.com/images/search/sliderBar.gif" class="bar" />
+                            <img id="acreHandle1" src="http://www.forsalebyowner.com/images/search/sliderHandle.gif"
+                                class="ui-slider-handle" width="9" height="15" />
+                            <img id="acreHandle2" src="http://www.forsalebyowner.com/images/search/sliderHandle.gif"
+                                class="ui-slider-handle" width="9" height="15" />
+                        </div>
+                    </div>
+                    <div class="openHousesSect">
+                        <h3>
+                            Open Houses</h3>
+                        <label>
+                            <input name="hasOpenHouse" type="checkbox" />
+                            Must Have</label>
+                    </div>
+                </div>
+                <div class="col four">
+                    <div class="scroller">
+                        <!-- had to add this extra div for Safari1 - a floated div can't scroll -->
+                        <div class="amenitiesSect">
+                            <h3>
+                                Transaction Type</h3>
+                            <div class="transactionTypes">
+                                <ul class="transactionsList">
+                                    <li>
+                                        <label>
+                                            <input name="transactionTypes[]" type="checkbox" value="1" />
+                                            For Rent/Lease</label></li>
+                                    <li>
+                                        <label>
+                                            <input name="transactionTypes[]" type="checkbox" value="0" />
+                                            Foreclosures</label></li>
+                                    <li>
+                                        <label>
+                                            <input name="transactionTypes[]" type="checkbox" value="2" />
+                                            Lease-to-Own</label></li>
+                                    <li>
+                                        <label>
+                                            <input name="transactionTypes[]" type="checkbox" value="4" />
+                                            Short Sale</label></li>
+                                    <li>
+                                        <label>
+                                            <input name="transactionTypes[]" type="checkbox" value="8" />
+                                            Trade</label></li>
+                                </ul>
+                            </div>
+                            <h3>
+                                Amenities</h3>
+                            <ul class="amenitiesList">
+                                <li>
+                                    <label>
+                                        <input name="iAmenityID[]" type="checkbox" value="8388608" />
+                                        Active Adult</label></li>
+                                <li>
+                                    <label>
+                                        <input name="iAmenityID[]" type="checkbox" value="64" />
+                                        Appliances Included</label></li>
+                                <li>
+                                    <label>
+                                        <input name="iAmenityID[]" type="checkbox" value="256" />
+                                        Basement</label></li>
+                                <li>
+                                    <label>
+                                        <input name="iAmenityID[]" type="checkbox" value="512" />
+                                        Bonus/Great Room</label></li>
+                                <li>
+                                    <label>
+                                        <input name="iAmenityID[]" type="checkbox" value="16" />
+                                        Carpeted Floors</label></li>
+                                <li>
+                                    <label>
+                                        <input name="iAmenityID[]" type="checkbox" value="4" />
+                                        Central AC</label></li>
+                                <li>
+                                    <label>
+                                        <input name="iAmenityID[]" type="checkbox" value="2048" />
+                                        Central Heating</label></li>
+                                <li>
+                                    <label>
+                                        <input name="iAmenityID[]" type="checkbox" value="1024" />
+                                        Covered Parking</label></li>
+                                <li>
+                                    <label>
+                                        <input name="iAmenityID[]" type="checkbox" value="4096" />
+                                        Deck/Porch</label></li>
+                                <li>
+                                    <label>
+                                        <input name="iAmenityID[]" type="checkbox" value="8192" />
+                                        Fenced Yard</label></li>
+                                <li>
+                                    <label>
+                                        <input name="iAmenityID[]" type="checkbox" value="2" />
+                                        Fireplace</label></li>
+                                <li>
+                                    <label>
+                                        <input name="iAmenityID[]" type="checkbox" value="16384" />
+                                        Furnished</label></li>
+                                <li>
+                                    <label>
+                                        <input name="iAmenityID[]" type="checkbox" value="32768" />
+                                        Garage</label></li>
+                                <li>
+                                    <label>
+                                        <input name="iAmenityID[]" type="checkbox" value="65536" />
+                                        Jetted Bathtub</label></li>
+                                <li>
+                                    <label>
+                                        <input name="iAmenityID[]" type="checkbox" value="262144" />
+                                        Lakefront</label></li>
+                                <li>
+                                    <label>
+                                        <input name="iAmenityID[]" type="checkbox" value="1048576" />
+                                        Mother-in-Law Apartment</label></li>
+                                <li>
+                                    <label>
+                                        <input name="iAmenityID[]" type="checkbox" value="2097152" />
+                                        Office/Den</label></li>
+                                <li>
+                                    <label>
+                                        <input name="iAmenityID[]" type="checkbox" value="128" />
+                                        Patio/Balcony</label></li>
+                                <li>
+                                    <label>
+                                        <input name="iAmenityID[]" type="checkbox" value="131072" />
+                                        Pool</label></li>
+                                <li>
+                                    <label>
+                                        <input name="iAmenityID[]" type="checkbox" value="8" />
+                                        Security System</label></li>
+                                <li>
+                                    <label>
+                                        <input name="iAmenityID[]" type="checkbox" value="524288" />
+                                        Spa/Jacuzzi</label></li>
+                                <li>
+                                    <label>
+                                        <input name="iAmenityID[]" type="checkbox" value="4194304" />
+                                        Sprinkler System</label></li>
+                                <li>
+                                    <label>
+                                        <input name="iAmenityID[]" type="checkbox" value="16777216" />
+                                        Tile Floors</label></li>
+                                <li>
+                                    <label>
+                                        <input name="iAmenityID[]" type="checkbox" value="33554432" />
+                                        View</label></li>
+                                <li>
+                                    <label>
+                                        <input name="iAmenityID[]" type="checkbox" value="1" />
+                                        Waterfront</label></li>
+                                <li>
+                                    <label>
+                                        <input name="iAmenityID[]" type="checkbox" value="32" />
+                                        Wood Floors</label></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- end div.scroller -->
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+        </div>
+        <!-- end div#searchTools -->
+        </form>
+        <script type="text/javascript">
+            var bound = [
+              [41.643919000000, -87.940101000000],
+              [42.023135000000, -87.523661000000]
+              ];
+            var gPolygons = [{ "title": "Ravenswood", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Ravenswood", "listingCount": null, "paths": ["ytd_GfrhvOSaG?}r@vG?zESfER?oFRcG?oFz@cG{E?{ERgJf@?cG?oFSoF?cG?{E?oF?oFScG?wGSkH_D?kH?cGR?wGSwQSkM?cGfE?rDg@rD{@rD?`DQlP}@fJ{@zJuAjJoAbJqBRfJR~H?~H?jH?jH?bGR~M?vG?~HR~H?~H?bG?zE?bGA|EDrF?xFDxFDbF?xFoDjAgEnA_DlD_D|BsDdEgD|D_ErE{E~C{TfO"], "colorCode": "960E4E" }, { "title": "Archer Heights", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Archer_Heights", "listingCount": null, "paths": ["iag~F~lovOwo@suCfE?~Cg@rDf@lGChIc@rl@_@vj@[~M?bLgAz@fPzObj@vLz^nAzEbBnFvBzEbBnFdB`GdB~Fb@pMcLReKPaE?wJTgJS{Jz@{Jg@_IR{J?gJRgJRoUR{J?"], "colorCode": "F1024B" }, { "title": "Ashburn", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Ashburn", "listingCount": null, "paths": ["eq{}FvglvOzYg|@f@wVScG?k\\g@{{@Ss^?cGSqU?kH?cQfm@kCrDf@lJ?`E?fJ?rIg@nKiCfOoKzOeL?jRRdG?p]Rr]?jHRzESnF?zERbG?vG?|E?xEz@nFg@lH?zESnF^z]Zb\\?rN?~MR~M?nK_DbBgE?sDRsDRsD?_D?{E?sD?sD?sDR{ERkHRoP?{J?eHNmEVsD?_D?_D?eGBaSJ"], "colorCode": "FFFF00" }, { "title": "Austin", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Austin", "listingCount": null, "paths": ["ukx~FftvvO?cG?{E?cG{JcBwGRsIf@oFRkCjC{@bQRo_@Sk\\?kH~@kUNgGjCgT`AqP`@wTz@}TzCs[bIC`NRxE?jf@SnP?~C{@rDRfJSpDOpPgBrIR~PBtCFjFSpDKfJ?~C?fJ?rD{@rDSzE?fE?~C?~Cf@~CRfES~CQzEA~C?~H?vQg@R~MS~MRnFRnFSbGRnF?bG?nF?zE?bGHvNHzM?fO?jMRnF?bG?zE?bG?bG?nFRnFRbG{JS{JRoFR_D?kHRoK?gJ?oF?_Nf@oK?oK?gG^gITqE?iDHkF?mDFqDFcEFyDNeED{HDqDJaFJgJ?{J?sI?{J?gJf@gJR"], "colorCode": "2A38F6" }, { "title": "Avalon Park", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Avalon_Park", "listingCount": null, "paths": ["ypy}FdysuOkR_D_N{@rDoFjM{TvLkRjJmNzCmEfJgObBsDvLkRbJeN~JiPzJgObIyLEhG?nFDlFB`GDrFBfF@rF?nFRvGf@fESrNSbLRfJ?zESfE?bGRbG?rI?bLw[fOgO?sDRsDoAgERsDS{OcBsDR"], "colorCode": "2A38F6" }, { "title": "Avondale", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Avondale", "listingCount": null, "paths": ["mc~~FjxnvO{@cG?oK?_NS_N_DS_DRoK?kFNwDBwHPGuG?iF?mE?wGSkMR{Eg@wG?iF?yF?_GFkFGgG?kHG_LKsF?oF?oF?oFSoF?oF?cG?{ERgJvVgEtM_K|D{CjHgJfEcBrDkMjM_NbBcLzE_D?|FRpHS~MRbG?nF?nF?nFRnFf@~F{@fGRfE?bGRzESbG?nF?nF?nF?xFHzFHlF?nF?bG?zERrN?nF?vG?zERzE?bG?zERnFSbGRzE?bG?~MSvL_IvB}DrBiDfB{JfEkCjCsDnA"], "colorCode": "F1024B" }, { "title": "Back of the Yards", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Back_of_the_Yards", "listingCount": null, "paths": ["ipg~FfzdvOGkIGeGEkFG_HEmFC_F?oFImFCsFCaGAkF?oF?gGCgN?qKByF?wLScQ?kHCu\\Ys\\hH?|CCnDCnDI~CGjEGfHOdGKbG?fE?vJ?fJGxDCrDIpDGrDGz@sMwAsN{AsGaGaEcJkGKsFGcFEuF?oFve@wBnF{@bVSfTKFhKJlFFfFPzNHjM@bO@bN?~MBlN?tF?pFBlF@fFH|N?~M?zE?bG?nF?hF?lG@hFDpFDlFDpFD|F@|EDbGFpFApF?zJ_Df@aFNyCBmHH}Cp@cG?sDRgE?kNYgI}AcGvBcGSwi@zC{d@pXoFD"], "colorCode": "26761D" }, { "title": "Belmont Central", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Belmont_Central", "listingCount": null, "paths": ["i`~~FzsyvO?cG?{EScGRcGS_N?sNSkM?sN?oF?oF?cG?oF?{EScG?oFScGnKSfJ?rISzJ?rDSfER~Cg@rD?zJ?~Hg@zJRfJS~HSbL{@z@~\\Sn_@Rf|@kCvVoFfEka@nAgTRcVRgJRgJ?gJ?{Jf@"], "colorCode": "26761D" }, { "title": "Beverly", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Beverly", "listingCount": null, "paths": ["e}p}FpdgvO?gORkMgEf@gESsD?sDRsDRsD?_DSSoFSoFRcG?oF?kM?cG?cG{JR{J?sIRgJRsDRsD?cJ?cD?kRf@sI?_DRk\\??_]SwG?{Ob[oZfEgEfJkCrl@_Xxh@{TlRwGnZgO?wLRgEjJVvJV~M^bGwB?vG?bG?fJ?bG?nK?fJRjM?vLRjMSfE?nF?vGBpH?dGDdFHpF?nF?zEL~FDvG?jEJtFFpG?zEAjF?|G@xE?t]gr@d@"], "colorCode": "F1218F" }, { "title": "Brainerd", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Brainerd", "listingCount": null, "paths": ["e_u}F`navOcGg@gEoAsD{EwBoFoAwG?w[ScG?oFRcGRwGRoFg@wL?cGhAoEhBwCbCoDfD_F?wGBeL?yEMgGIkF?oFAsFIyFbK[vg@e@dJRpJErJMrDCfJBpD@tD?dEC`DC`EMNjr@|v@_@RvF?zE?nFRbG?zE?zJ?vGPdIaG`E_N_@wJWkJWSfERfJc[vQmRvGyh@zTcj@nU"], "colorCode": "BBF0C4" }, { "title": "Bridgeport", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Bridgeport", "listingCount": null, "paths": ["ejk~Fr|`vO_DkC{E{@oF_NsIkMR{EeG{l@e@qEcBqPvG?zEf@~C?bBoF?oF?cG?{ErDSrD?vDE|DCMeF?{E?wGrIaCfJIzJ?fJ?FkEGkK?cGS{E?cGfVaDnl@g@R|G?`J?pF?rN?nF?bF?xF?pF?nF?nF?nFHdGXr\\Bt\\?jHwLrD_D{@iHg@uF?{H?_XbVcLnKgEnAmErAaE~AoFRkH{@"], "colorCode": "F1218F" }, { "title": "Brighton Park", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Brighton_Park", "listingCount": null, "paths": ["ykh~FjvjvOgE?sIq_@kHu[sDcQcL{h@{L_n@vDOzE?fORrD?fE?fJ?xCc@xDk@zE_DxJsGhDaBfF_@zd@qXvi@{CbGRbGwBrDbBjCfORpJ?pJSvt@f@zr@RjH?nU?vVbBvKcLfA_N?wj@Zsl@^iIb@mGBsDg@_Df@"], "colorCode": "E293FE" }, { "title": "Bucktown", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Bucktown", "listingCount": null, "paths": ["ez|~FjmgvOSgEz@gGSwEg@wG?oF?oF?oFScGR_NO_FCgGvGgK~IeFzDqJz@{ErD{JrDcBrDz@~CoAdDcGtEsIf@gEf@{JxHuGzFuElDsCvGgEjHgEvBzJbBvG?zERbG?nF?nF?bG?zERbG?nFSnFSrNLfFtAnERvG?zT?bG?zE?bG?bGRzE?nF?bG?bG{J?oKz@_DScGRgE?gE?_D?wGRgESgJf@wGSwLRgJ?"], "colorCode": "960E4E" }, { "title": "Burnside", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Burnside", "listingCount": null, "paths": ["eat}FxauuOsNkCsDoAsDQgJeBgJoAwVkCsIwBS_I?oFSwLbDu@vOiLnKcFdDaAtOmJnKgEnF_DbG{AzEgDNjXBvFCzIBfF?bGRzERnd@gEz@"], "colorCode": "960E4E" }, { "title": "Calumet Heights", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Calumet_Heights", "listingCount": null, "paths": ["evv}FhmsuO?kH?wGSsIRcG?oF?wGSwGRsNRsNg@gESwG?oFAsFCgFEsFCaGEmF?oFDiGnIqNbG{JnKuOnPiVnFeIrHcMrJuNnCyCtG}HAbM?vG?vG?bG@zH?fGJdJBnE@dWJlFDbM@dK?fJRzE?~M?vGRnFSnF?nFR~\\?vG{EfDcGzAoF~CoKfEuOlJeD`AoKbFwOhLcDt@"], "colorCode": "F1218F" }, { "title": "Canaryville", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Canaryville", "listingCount": null, "paths": ["wsg~F|j}uOIeG?oF?oF?oF?qF?yF?cF?oF?sN?qF?sGvE}C~ELfD?nG?rOe@nJPnF?fJ?lGlCdFtBRrIDtFFbFJrFbJjG`G`EzArGzAjJCvQoFJqDFsDHyDBgJFwJ?gE?cG?eGJgHNkEF_DFoDHoDB}CBiH?"], "colorCode": "BBF0C4" }, { "title": "Chatham", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Chatham", "listingCount": null, "paths": ["mly}Fpa|uO?kHSoF?oF?}F?uF?oFS{E?oFSoF?cGRcGSoFRkHSsI?_IS_IRsISkHScGSoFRoFSoF?oFRcGS{ESgE?kHR{ESoFScG?cG?{ErDkCnPz@rDRfESrDnArDSfO?v[gORvL?nFR~HrIvBvVjCfJnAfJdBrDPrDnArNjC_Nrb@oF~McBfE_DjH_Ir]_Dj\\SfEwBrDcQjR{EbLkCfEcBfEoFnFkHSoZbLgD|A_EhB}ClAiExBwIfCcJzB"], "colorCode": "8DD8ED" }, { "title": "Chinatown", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Chinatown", "listingCount": null, "paths": ["atl~Fbl}uOS_I{CmJ_PmNoFgEkCkCsDgJgER{ER?{J?oFScL?oFbGSzERnFS~HwBvGNnJTbHQjH?~C?bG?vL?rNg@bGSnUS?nFRnK?bG@jF@pGkJxA{J?gJHsIH?zE?nKLdF}DBwDDsD?sDR?zE?bG?nF?nF{E?_DR{J{@"], "colorCode": "8DD8ED" }, { "title": "Clearing", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Clearing", "listingCount": null, "paths": ["uz_~Fnu{vO{@{^?_N?oFO_GEmF@uFMeFLmGGgFKkG?gF?wFQoFEmF?}FQuF?uFTgM?cG?cGSoFRcGg@{EgEsI{JsDRgErIFS_HbL?fJg@vLg@rGEB}KSsN?{ESsN?oF?oFKiIGeK?cG?oFSoFScGsIReJFiJJ{JRBcGCcG?{E?oFfJSfJSbGR~Hg@rNRzJSfJSfJS?bGRbG?zE?nFwGRwLS?bGSnFRbG?zERnKRbQSfERjH?nF?nFR~M?~MRbL?rN?zORrNRrN?~M?rNR~M?~MRrNR~MSrN?~M?nFRbGRfO`@fGiFvE_DRsDf@sD?sDg@sDR_DRsDSsDRsD?sDR"], "colorCode": "E293FE" }, { "title": "Cragin", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Cragin", "listingCount": null, "paths": ["yb~~FvztvORoFS{ERwGSoF?_N?sN?sN?_N?_Ng@sNRoF?oFSoFRgEzT{@nK?rISfE?fESzE?nFSfERfESrDRrISzJS`EKdDGlDQfE@pDCpDB|G?_BfWiBbSo@|ZaApPkCfTOfGo@zOOzMkMf@_IRgJR{JS_If@{J?sD?_Df@gESsDR{J?sIRgJ?oKR"], "colorCode": "FFFF00" }, { "title": "DePaul", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/DePaul", "listingCount": null, "paths": ["m{|~FfpdvOS{J?gJ?_S?oKG{HKgG?cG?oF?{EScG?oF?oF?oF?oF?{ESwG?uE?uF?{E?cGSoF?oF?cGSoFnFSrNS~CRfD?fKg@rJAnJ@zJ?fJg@bLSvL?jMSbBnFR~HRnKf@bLRvGoZbLcBv[kHfEcGvBaEbFoEnDuGjFwBjMg@fEuErIeDbG_DnAsD{@sDbBsDzJ{@zEoAjHkMjHwG~H"], "colorCode": "1821A3" }, { "title": "Douglas", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Douglas", "listingCount": null, "paths": ["kgl~FxezuO`@uF?_IeAoKq@cGkCoF?{JS}P?aK?yGkC{EsIkC~Cg@e@qEhWyKfERrCeAnNkFvTmIbVqIbGx@fB_GnI{BjDvNwCrB?~HRzJSbGRfO?zE?dKbVb@tUITfHBbFB`GB|E?tH?jI?rI?lF?~Fol@zBgV@oURcGRsNf@wL?cG?_D?yCa@"], "colorCode": "F2BC4F" }, { "title": "Dunning", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Dunning", "listingCount": null, "paths": ["ew`_GdrbwO?kM?cGg@cG?{ERcG?cGS{ESgYSoKRoF?oFSoF?oFSoF?eG?oF?cG?oFKcGG}F{EEoP{c@wB{EwBcGaCqFmByEcCqG_BuECmLCyH?sFCqF?wFnKOrIK`JIjDEhEEGoM?_I?wL?oFSoF?oFrtAwBrD??rNRjM?rNR~MSbGRbG?zE?bG?zE?nFRnF?vG?zE?bG?bGRtI?hH?bG?bGDzG@~FBtF?zFFpF?bG?nF?nF?nF?nFRnF?bG?nFRbG?nF?zE?pFRnFSbGRbG?nF?nF?bGSzERbG{Of@wSL_GDsISgJRgJz@{JS"], "colorCode": "960E4E" }, { "title": "East Side", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/East_Side", "listingCount": null, "paths": ["yuo}Fh|iuOcLoFwIuBcOd@iEmFiCaD_DkCi@gLUvGuB_Je@zIgGiKzGtNcQAwQ}C_DRcBnFwGbBkK_FqG~AiFUc@uMsDoAkHvL_DsD{EwLuPyh@aEmMrk@c[zEsDjD@dFnBvH`AnDYvCuAlHq@bL~WbQoKjHvGfE_D~GmPrD?~HfEnKSfERfJEvLMrG?pJ?bJ?tLSmAvJArF?nFnUtEjHD?zEnK??bG?nF?nF?nF?pF?jF?pF?zESzTgTfEod@?{ERsb@wBz@jH"], "colorCode": "BBF0C4" }, { "title": "Edgewater", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Edgewater", "listingCount": null, "paths": ["mpi_G|`cvO?iGL_Il@gJR_N?_N?oF?oF?oFAkF?gGMsLC{G?oFfJRxCSpHg@vGf@~Cg@vFdBxEkCxMmPnAuEzE\\~Rf@fEcBzEnAzEsD{@gJf@{EjC~MnAjHRfERfT?jH?vGRnK?bG?nFRnF?nF?nU?bGRjMF`NgDAgESsDRsDf@sDSsDRsD?uD?qDRsN?_I?sN?cELkOXoF@oFB"], "colorCode": "8DD8ED" }, { "title": "Edison Park", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Edison_Park", "listingCount": null, "paths": ["ehj_Ghw|vObGR~CSzER?zEnArDf@vG?bG?bLRjR?vLRrIDpEmJp@{J?_D?sD?sD?aD[aLKcGSsXRRgJ_ISsD?sD?_DjHsIz@wG??gORoFSoFScG?oF?cG?oF?cGg@cG?cGR{EfE?rNRfJSzJ?rDf@rI?~CRzE{@~CRfER~CSrJf@nJg@"], "colorCode": "960E4E" }, { "title": "Englewood", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Englewood", "listingCount": null, "paths": ["s|a~Fxb_vOAgFCmF?qF?uFCmN?_NAcN?qJK}QQ{NGgFKmFE}E`VkCbQoAxCJtUF~CRzJoAfERrIcBnFsD~FvC`F|A|JlCCwFM{FvJjAtI}ANdFBhFBbIdJxB~JdC|IxDzJnAfJjCfJjCzJvB?zEB|E{D|EoDjFg@nFK`GThFIbF?bGRnF\\hEq@lFf@nF?bG_D?_Df@sD?gE?sD?sD?sDRgE?sI?{J?gJf@gJRgJ?gJ?gJRaGZkMJiJ?gJR{JR{ESsNR{J?uG@", "yu}}FdozuO"], "colorCode": "2A38F6" }, { "title": "Forest Glen", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Forest_Glen", "listingCount": null, "paths": ["uej_GxuyvO{J_XsIgYkCoA_DbBgJ~HsDfEcGzEsNjMRcLSgOR_N?cGz@_IkRg@oA{JfTSRoPvLgJrDeBrDoAzEwBzJwGnAwGfEgJ{ErD}W|@Ua]zEwBrD?rDRrDRrD?zE?zERjC_IbBsDvBoFnAgEnAgEbBgEbB{EzB_EN_H?cGbFkBdJnAtJn@rIf@rDRbLRrDSbKoD~D~F~C~CfJvGjHvG?vE_NrFwCfBmGtBeDjAcC|JsDzJ_D~HoArD_DvGjH~HoAfEwGfOkCoAoA|EcGhHgEvB_DzJwBpFsD`LwBdGqJCHzGGbGKbGSbLsI~MwGjH"], "colorCode": "2A38F6" }, { "title": "Gage Park", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Gage_Park", "listingCount": null, "paths": ["}xc~F~pjvOcBwK?wV?oUSkHg@{r@Rwt@?qJSqJFmO~IMrIf@fDSnG?|Cq@lHIxCC`FO~Cg@zJf@nURzJ?RvG?bLRbGg@bGRnFSnFRnF?nF?bGRnF?nF?nF?bG?nFRnFDlFEpF?bG?bG?nF?nF?nFRnF?bG?nF?vLsDnAsDSsDRsD?sD?sDRgJ?cV?aUF_QQ"], "colorCode": "F2BC4F" }, { "title": "Galewood", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Galewood", "listingCount": null, "paths": ["md{~Fns|vOjCgJz@oFrDgOvBsIjCoKjC{JrNod@jCwVSg|@z@cQjCkCnFSnFSzJg@|JGAjGBdFClG?nFSbGf@nF?zE?~H?~H?jH?bGRnFRjHSzERbGSnFRnF?nFSbGRnF?vG?zES~Hf@vGRzESbL{JSgJRgJRgJRgJ?oKS{Ef@gERoF?"], "colorCode": "B0D973" }, { "title": "Garfield Park", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Garfield_Park", "listingCount": null, "paths": ["k`t~FfyovOaDGU_NXkO?_g@MsS?_FIcMIeGCmFIiGKyEbBsDwBkH?cG?sNSkM?gO?cGRsF?oNSkM?sNnAoKbBkR{@{EzEbGbLSjH?rDSrD?rD?rD?rD?fE?~C?rDSrDRzESrD?rD?rDSfES~C?|DV]jF{@zE?bG?zE?rN?rNR~M?jM?fOKnM^n]PlWQxT?jM?~MRfOS~MRrN?vLRjH?vGwLS_D?{E@_DPgER_DS_Dg@_D?gE?{E?sDRsDz@gJ?_D?cG{@sDnAuEA"], "colorCode": "F2BC4F" }, { "title": "Garfield Ridge", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Garfield_Ridge", "listingCount": null, "paths": ["iag~F~lovOzJ?~Pa@vNEfJSzJ?~HSzJf@zJ{@fJRvJU`E?dKQbLSvL?bVSbV??nF?zEBbGCbGzJShJKdJGrISRbGRnF?nF?bG?zERrN?nF?nFRrN?zERrNC|KcEDgOf@gJf@cL?R~GsIGSfEzJbBfEbLf@zESbGRnF?bG?bGSbGAxLPtF?|FDlFPnF?vF?fFJjGFfFMlGLdFAtFDlFN~F?nF?~Mz@z^gESsDRgE?_DRgE?gJRgJ?_I?_DRcG?sDRcE?wJg[[oIRoF?cGSoF?oF?oFSoF?cG?oF?oFScG?oF?oF?oF?cGSoF?oFS{E?cG?oF?oF?oF?cGScGRgES{ES_IRoFSoFR{EScG?oF?oFScG?oFSoFsI?gJ?{JRoF?sN?uIXqI`@{J{YoFkWsD?{J?cBkHcGs]"], "colorCode": "FFFF00" }, { "title": "Goose Island", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Goose_Island", "listingCount": null, "paths": ["ufx~FbsavOwGS_D?gJR{J??{EcBwGwB{JbBw[nZcLnAnFfEf@bKEfU}AnPcLjCgObB_I~HgTg@sN~CwBfEcBnKg@zJ{JbGoFxDiCjFiDlAbFf@vLCnHOrG?rI{@vGB~ECjF?nFRzERnFSnF?zEYpKRfKa@lTz@fOsD?_Df@cGR_I?sD?sDRgES_DRgERsD?_DRgESsDR_D?{E?_DRsD?{JRwGR"], "colorCode": "BBF0C4" }, { "title": "Grand Blvd.", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Grand_Blvd.", "listingCount": null, "paths": ["azd~FlqzuOeFuBmGmCwGSwGRwKQsOd@oG?gD?_FMyEIQwG?_G?mFAkH@sJ?uHC}ECaGCcFMcFzEmAl@sE?}N?_R?mQrEsDxD}AfEmA`Da@zJg@fJSpJB~IJdJBrD?rD?zJ?fJ?fJIRpJ?vGRvL?nF?nF?rI?jHRzJ?~nAsDzEkf@R"], "colorCode": "B0D973" }, { "title": "Greater Grand Crossing", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Greater_Grand_Crossing", "listingCount": null, "paths": ["mly}Fpa|uOka@cL{JwBgJkCgJkC{JoA}IyD_KeCeJyBCqGC{GOeFwIHmI~AYvIyJiAaF}A_GwCkCvBwL~C?{JMgQLsLSsIR_Ig@_I?{ESoKfJ?dDG`EK~HSzJSzE?rDS~HcLrI_NvBkCzEsIf@cG?_IsNR{ERgJR{J??cG?{E?cG?{EScGRcGS{E?oF?_IS_InP{@nPjCzJR~CnApE^~Cj@|DrAnJ@fKPfEvB~M~CvVjCg@fE?zE?bGRbGRnFSzE?jHRfERzESbG?nFRnFSnFRnFRbGRjHSrIR~H?~HRrISjHRnFSbG?bGRnF?nFRzE?nF?tF?|F?nFRfE?rI", "{t}}FnozuO"], "colorCode": "26761D" }, { "title": "Gresham", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Gresham", "listingCount": null, "paths": ["exz}FxrcvO?i\\@aG?uFCeFAkFAcFCgFEqGCmF?s]OiHWiT?cGg@oFp@mF]iESoF?cGHcFUiFJaGf@oFnDkFzD}EC}E?{Eja@bLbJ{BvIgChEyB|CmA~DiBfD}AnZcLjHR~CS~CRvIMbJC~H}@zDMHxF@rF?nFHjFLfG?xEBpFGjMgD~EcCnDiBvCiAnE?bG?bGRbLSvGSbG?nFRbG?v[nAvGvBnFrDzEfEnArD?gJbGgEfEc[~W{OdLgOnKoKhCsIf@gJ?aE?mJ?sDg@gm@R"], "colorCode": "F2BC4F" }, { "title": "Hegewisch", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Hegewisch", "listingCount": null, "paths": ["mwg}FreruOXkJ^iMh@sHz@w`@f@k\\SsjA?cK{JGcGCwL?aL?iJ?{J_NbV_N?eG?qF?kF?kF?kG?aK_b@p@kH?_]_D_NoAgW^NgZ?{E?qF?kF?qF?oF?oF?oF?cGoK??{EkHEoUM?wL@sFf@mFdOiCjMEn_@MzCNn\\B~C?bG?rD?fc@?fERz^g@rD?vF?fP?~CH~CHfJSbGOjHChJLhMDjHORvE?zkAf@~HSbGg@zEHxa@Hp\\Rja@?zEg@nFSzJHhEHjEAjFAlF?bFAzEAhGAtFAzFAbGA|FCxRcGf@oT`LuNnHmRvMuC`C}M~KmEtDaEfD"], "colorCode": "1821A3" }, { "title": "Hermosa", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Hermosa", "listingCount": null, "paths": ["mc~~FncpvOSwG?wGSoF?cGf@_IrDoAjCkCzJgEhDgB|DsB~HwBfEkCjEaBbJmCzOwGrDwBzJsDjHkCfE{@fE_DjHsDnKsDzJgESnK?zE?nFf@~M?bG?zESnF?vGRvF?rFSrMk@~OgG@gEEqDBgDCmEReDFaEJ{JRsIRsDSgERgESoFR{E?gERgE?sIRoK?{Tz@"], "colorCode": "E293FE" }, { "title": "Humboldt Park", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Humboldt_Park", "listingCount": null, "paths": ["}gy~F~}ovOj@_PRsM?sFSwF?wGRoF?{E?cGg@_N?oF?{ERoKSsISoFRoFSoF?_IRoKg@oF?sI?_IRsISsIScGLsFh@cE`D?hOC?sG?oF?gLfJBfJ?zE?rISrD??nF?bG?nFzJdEfJ@nF?zI@bCuIbG_SfEgOvBcGz@{EpJOpECnFg@fE?cBjRoAnK?rNRjM?nNSrF?bG?fORjM?rN?bGFhEJtGJxEHhGBlFHdGHbM?~ELrS?~f@YjOT~M_QCsISwLz@kHz@gJRsDS_Dz@oP?kf@RyE?aNScIB"], "colorCode": "8DD8ED" }, { "title": "Hyde Park", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Hyde_Park", "listingCount": null, "paths": ["snc~FzduuOCmFCkFC}NQyM?_I?_I?iJ?{F?iG?_FAaL?aF|O{F?oF?kHnFkHjH_N?gJnFoAvBfERzErD~Hja@gOnAbG|BlDv@dE~@xDmBnC{ApDN`GYjEvDv@zDa@m@~KrBnK?xE?|E?zFBjEBlL?tI?rH@dSBzHBtIBhIuGH_N?gJ?gDH_EHgJRgJ?gJ?gJSgE??kMiDP"], "colorCode": "BBF0C4" }, { "title": "Irving Park", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Irving_Park", "listingCount": null, "paths": ["ozc_GjeqvOA_F?cG?oF?oFRkHScGvGwL~CsD~CoFbBsDfEoFzEsIjHkM?gJSoF?oF?cGSwF?sE?oF?cG?cGS{E?oF?oF?oF?cG?oF?cG?oF?oF?oF?oF?cGS{E?cG?oFGmFEsFImNvDWrDSrDSfEBfJFfJFfJzEfJzExJq@|Jq@SfJ?zE?bG?nFRnF?nF?nF?nFJrFFvE?rNFfGGjF?~F?xF?hFf@vGSzERjM?vG?lE?hFFtGjD@fESvG?nKg@nF?~CRR~M?~M?nKz@bGg@~H?bGRnF?vGRvG{J?{J?gJg@gJz@{J?kMRgO?gEvB}WfLyOfHeHdD}DFcG`@aVC"], "colorCode": "F1218F" }, { "title": "Jefferson Park", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Jefferson_Park", "listingCount": null, "paths": ["e`d_GvayvOcG?gJ?gJSeJO}JCsI?{J?gE?_DSSoFRkM?oKSeJRcGS}ERcGgJ?_D?gES_I?oF?sDpF?cGgJ?cGP~C{JfEwBjCiHvB}EzEnAvGgOnAgEkH_I~CwGnAsD~C_IlDkJpBoF|DiFlGuBvCgB~MsFzOsGzJgEfEcBrDoA~CwBfEoArDoArDcBfEcB~CcB?nF@pFP|MJvHFzFDtHBpGJzJAfF?nF@tGApF?rN?~MR~M?jMR~\\f@r]{E?SnF"], "colorCode": "FFFF00" }, { "title": "Jeffery Manor", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Jeffery_Manor", "listingCount": null, "paths": ["q{s}F`hpuORoFSoF?wG?_NS{E?cGAiNEcMKmFAuTC_HGkHCaIvIIbECnDCzJE?cHCqGlJM~KI?fHBxG?~H@~Hk@jF@~E?vGF`FDlGD~E?nF?nF?nFRnFgJbLcGnF_NvLsI~H{Jz@"], "colorCode": "26761D" }, { "title": "Kenwood", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Kenwood", "listingCount": null, "paths": ["qif~FhiuuOSsv@ScVjEsBfMgGbLcVbG?zKkKvDqDfQuPbBwGhE|A|RX?fJ?rI}OzF@nECvGBzJ?hG?zF?hJ?~H?~HNjHDjTBjFBlFqJlCgJ?{J?sD?sD?eJC_JKqJCgJR"], "colorCode": "960E4E" }, { "title": "Lakeview", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Lakeview", "listingCount": null, "paths": ["esb_Gj|bvO?{J?kH?_IS_ISgJrDoAfE{@rD{@~CoA~HgEhLqGKwOMqO@uLAaNSkHSgERgJ?oFSwGnFcBoFcBRgTrD{@~HwB~P_H~EoBja@g^z@zEsDvBf@jHcQvGoAjMsDfEkCnF~CkCzEwGnFz@rDcBrD{EvG{@~CwBjCwBS{JwGoAvGgEzTsIfJ_DvGgERfE?vGf@fTz@rI?jHRzJ?nFRzESvGRrI?jMRnF?bG?nFRnF?bG?zE?tF?tERvG?zE?nF?nF?nF?nFRbG?zE?nF?bGJfGFjF{T?cG?kM?oFz@_DR_Dg@_D?cLf@{J?oUf@{JReJJ}JFsI?cVf@"], "colorCode": "26761D" }, { "title": "Lawndale", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Lawndale", "listingCount": null, "paths": ["alp~F~vovO?wGSkH?wLSsNR_NSgO?_N?kMJeOKa]_@o]JoM?gO?kMS_N?sN?sN?{E?cGz@{E~C{EzEcA~JwCzDwCrOuC~KiCzC?jE?fEjRzAnJbAnGf@bG|C|R|@`IvBrNz@nFf@nFz@zEz@nFf@bGSfEz@zElAjH|@nFf@bGz@nFf@zEz@bGz@nFz@nFf@zEfBtHv@pEn@pHfAtJz@vGz@rIz@fE|@~E`BfMfErScVz@wGR{E?aDVqDNsDR_D?cVRwDLoDM_I?oF?kDG{DZsD?_Nz@"], "colorCode": "960E4E" }, { "title": "Lincoln Park", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Lincoln_Park", "listingCount": null, "paths": ["e_}~Ff~}uO?cGS{ORwGS{E?oFS{J?kHR_IwB{T?wGSgE~CrD~Rg@rDg@vLwGjp@wGnZwo@zOfYf@zJSbGRnF?bGRjHRjH?vG?zERnK?bL?bGz@bLg@nK?jH?~HcQRwL?cLRgJf@{J?oJA_H@gLf@{E?_DSsNRoFR"], "colorCode": "B0D973" }, { "title": "Lincoln Square", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Lincoln_Square", "listingCount": null, "paths": ["qyf_GbhivORcGg@kH?oFScGRoF?oF?oF?cG?wGvB{EjCoFvG{@fE?~CSfES?wG?sI{J?gJ?{JRgJf@{JRgJ?oKSRoFS{EIsVIsU?qHCyG?_IbNcC~H?rN?pDStD?rD?rDSrDRrDg@rDSfERfD@JvEbG`DjH?~C?RjH?vGRbG?nF?nF?zE?bGRnF?nF?bGnFSrIg@fEoAg@rI?nFSbG?nFgES{ERgE?oAfm@?bGcG~H{JnAwLhCoJpBqJrBiJnB"], "colorCode": "26761D" }, { "title": "Little Village", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Little_Village", "listingCount": null, "paths": ["i|k~FnoovOgEsSeAwGq@sIcBcG{@sI{@wG{@kH{@{Jw@qEgBuHg@{E{@oF{@oF{@cGg@{E{@oFg@cG}@oFmAkH{@{ERgEg@cG{@oF{@{Eg@oF{@oFwBsNk@wFoDgUg@cGcAoG{AoJwBcQzJ?zESrDS~CSrI?zJ?rD?rDSrI?fE?vVg@zHWxDPpNlm@nJbh@oDb@{RQ|SfBjEDhDnNrLri@vD~PvGj\\jCbLfBrG~AfGv[zzA_D?gm@vBoP{@{J{@wL?_XRmKJyGFkHR"], "colorCode": "26761D" }, { "title": "Logan Square", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Logan_Square", "listingCount": null, "paths": ["ix|~Fr`nvORwL?_N?cGS{ERcGSoF?{E?cGS{E?{E?wG?oFSsN?{E?cG?oFImFI{F?yF?oF?oF?oFRcGS{E?cGfJ?|HCpKBfJg@fERzESzE?fE?fE?bGS~CRnK{@~H?z@nKSzENjHi@bEMrFRbGRrISrI?~H?rIf@nFSnK?~HRnFSnFRnF?zE{EbG{OnFkHrDgE~CgEz@kHjC{JrDsDvB{OvGcJlCkE`BgEjC"], "colorCode": "1821A3" }, { "title": "Loop", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Loop", "listingCount": null, "paths": ["i{s~Frw{uOcG{J?kESgMRkH?_I{@wG{@cGeBqGmAmEf@kWZ}P^aUrO}AjGm@bLvQrD?jCkC~CjCr]i@~IGfIIzORjCsDRnFRzE~CxDf@dbBgOnAwLnAgO~CoFvBcG~CoFnAcGnAoFRcG?cGg@cGg@_IS"], "colorCode": "960E4E" }, { "title": "Marquette Park", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Marquette_Park", "listingCount": null, "paths": ["ij`~FbpjvO?sN?oF?cGSoF?oF?oF?oF?cG?cGDqFEmFSoF?oF?cG?oF?oFSoF?cG?oFSoFRoFSoFf@cGScGSwG?cLz^SjMwBzEf@rNSzTg@fJJjDGzDCrDR~C?~CSnFf@rDAnF?hHG|T{A?zT?jHRpU?bGRr^f@z{@?j\\RbGg@vV}GGcEJsDE{IF_ECqESuTv@aEQ_D?gERsD?yDFmDG_EF{DJeDBmDCgERsDSgERgOz@gJ?sD?gEf@"], "colorCode": "F1024B" }, { "title": "McKinley Park", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/McKinley_Park", "listingCount": null, "paths": ["ufj~FbnevO{CgM}BuLkCwMyC}NsD_NsDg@vBgEoKoKfEcBfEcBkMg@{EoPwB{O~HcB~B_CtFq@dIA`E_BlEsAfEoAbLoKzToU~KStF?pD?~CjCzOkCf@jH?~RCxF?pKBfN?fG?nF@jFB`GBrFHlF?nFB~EDlFF~GDjFFdGFjIaDzBiHjFkHfEyDj@yCb@gJ?sD?gE?gOS{E?wDN"], "colorCode": "1821A3" }, { "title": "Montclaire", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Montclaire", "listingCount": null, "paths": ["m~}~Fnt~vO?oF?oF?oF?cGGqF?{FCuFA_GE_F?cG?mF?{JSuI?cG?cG?{E?wGSoF?oF?{EzJg@fJ?fJ?fJSbVSfTSja@oAnFgEsNnd@kCzJkCnKoAfE_DzOwBfJkCfJgERsIR_D?{JRoJ?gK?sIRSbG?nF?nFRnFSbGRbG?nFRnFgJ?gJR"], "colorCode": "E293FE" }, { "title": "Morgan Park", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Morgan_Park", "listingCount": null, "paths": ["}io}FjcgvO?u]AyE?}G@kF?{EGqGKuF?kEEwGM_G?{E?oFIqFEeFCoE?wG?oF?gJRgESkM?wLSkM?gJ?_I?sI?gJ?cG?wGSoK?wG?{J?{EScG?oF?{ESwFv`Ae@~GCnOIRzE?jR?fJRnF?tE?hG?nF?hF?tF?nF?bG?~H?|G?`JdVlB`V]RzJRzEg@nF?bGRnFRrI?nF?rISfJRfJ?nK?zJ?nFRbGSzERbGRjp@?fJa_@\\}KHwVRoURsDRwOP}JJiJJ"], "colorCode": "960E4E" }, { "title": "Mount Greenwood", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Mount_Greenwood", "listingCount": null, "paths": ["e}p}FpdgvOfr@e@hJK|JKvOQrDSnUSSjH?nFRzEjHg@nAbGzJSH`GHpF?~MbEApD?lEQ~C~M?rNFfF{DKsD?qD?uD??hH?`N?~M?~H?bL?zE?vGDzELtGRdLHfGHjF?hh@RbLwj@b@s@yEScG?}M?sN?oF?eGe@kXAcFo@oZsI?gJ?{ERsNRsD?gESsDRsDTsD?sD?gJ?{Jf@sDIsDIgJf@sD?sD?SoF?oFSoF?cG?oF?cG?qFzJg@?{ErI?zJ?fJ?R{Eg@cGRcGSoF?oFRoFSmFScG_DUSoP?oF"], "colorCode": "1821A3" }, { "title": "Near North Side", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Near_North_Side", "listingCount": null, "paths": ["ysx~Fvm_vOSwGg@oFScQS_IRoFSoFRgEf@oK?cL{@sI?sIS{J?cL?wGSkHSkH?cGSoFRcGg@{JjHjC~K}A~Eq@vDi@nIiA~EyBvEuBbBkRvGgE|CoDtNwI~D_CvHoEvEoCg@wGoPoKSkMScGRwG?oPvQSV`[NdQfE?SkdA~CS?jMbBvt@~H??fJcGz@RfO?tTR`Lt@cFMsZ?kHzESjCjH]rS]jRg@jWlAlEdBpGz@bGz@vG?~HSjHRjH?fJbGzJuQjIkFhDyDhCcGnF{JzJoKf@gEbB_DvBf@rN_IfTcB~HkCfOoPbL{TbBsIkCgEvGkCcL"], "colorCode": "FFFF00" }, { "title": "Near South Side", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Near_South_Side", "listingCount": null, "paths": ["ein~Fvf{uOcGcBgEg@{E?od@?g@ebB_DyDS{ESoFBiGLeFvFnAPcb@cBuE`CaClEV~CRzEnFfJgE~HoAnArDzh@eBJzGgAjKjAxFvI]nFvBz@fE_Df@bGf@jC|JnAzE?nF?jRf@rIvBzJp@bGp@bGRjMa@tFuLr@oJUwGO_IvB_D?kH?cGR?nFRzE?bG"], "colorCode": "BBF0C4" }, { "title": "Near West Side", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Near_West_Side", "listingCount": null, "paths": ["ybt~FrffvOgE?oAwV?{ER{E?oF?oF?cGf@kN?}M?qOU{MCeMa@qOSsIEaZSgKXaI?kHRoFSoFS{E?oFBkFC_FvBcG{@gJNsGBoHSwGScGfOkM~HRbGf@bGf@bG?nFSbGoAnFoAbG_D?zOBfI@bHBxGRxH\\fG?nFg@fER~HRzEmAnPUrNg@nPf@bL?~\\?rNNhOBxERpU?zNShNR~MR~M?jHRnUoFR_D?gE?sD?sD?sD?sD?sDR_D?kM?oFoA"], "colorCode": "1821A3" }, { "title": "North Center", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/North_Center", "listingCount": null, "paths": ["mqb_G~{fvO?yFEcFEyF?yFEsF@}E?cG?{E?cG?_IS_I?_I?wG?_ISwGbVcBrI?|JGdJKzJSnUg@RzERvG?rNSfE?nF?nFRbG?zE?bG?zEF|FGtF?nF?~HRrIRjM}Jp@yJp@gJ{EgJ{EgJGgJGgECsDRsDRwDV"], "colorCode": "B0D973" }, { "title": "North Park", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/North_Park", "listingCount": null, "paths": ["uqi_Gb`mvO?wF?{K?uG?qF?oFDcFEiF?aGIgFFmH@aFz`@gKrGwAbKyBvIkBrMsCbGqAhJoBpJsBnJqBvLiCzJoA_DzJg@zES~Hv@zErAbGnF~CvB~H?nFMzEiBbGwAnFeCrFk@jFeArGqA`EeCtB_BjEPrGdFrJ~C?`BjG`F?BpE@rFeF??`G{J??nFDrF@~F@zF@tFBfG@zF@`F?nKR~HSfE{JbBsI?gERgOR{ESrD{E?cQ?{E?oFCgFBcFCsF?kFcO{J_P_KaKoGeKoHkCoA{EsDsIoF{J_I"], "colorCode": "BBF0C4" }, { "title": "Northwood Park", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Northwood_Park", "listingCount": null, "paths": ["yhe_GxrbwO{E?_DS_D?gERsD?oF?oK?oFSyCReD?{@wGR{Ef@cGf@{ERcGf@oFf@oFf@cGRoFf@oFf@{EsDSoFSsDSgEe@sI}@_Ig@_Dg@_NsAsDOmDHEqESsI?wLSkR?cL?cGg@wGoAsD?{E{ES_DRcGSR{E_DwGRoFSoFvBoKfE{@?cGsDgESsI?kHSsIR{EzJ_ItI_JPcPJcGFcGI{GpJBvBeGvBoFrDcLbGQfJ??bGrDqFrD?zJ?fER~C?fJ?SbGR|ESbGRlFHlI]dSRnF~CRfE?zJ?rI?hG?xMRfJRfJ?bG??nF?nFRbG?nF?zE?nF?bG?zE?bG?nF?dG?nFbBzEDtFAvENxE_D?{ER_DSsDSsDRsDSgEf@RzE?nFRnF?vG?zE?bGRnFRnF~C?rDRrDShDRdAvGsNnAcGvB?rN?zJRfESfERzEfE?Rn_@sDg@SzE_Df@kCbBRjR"], "colorCode": "BBF0C4" }, { "title": "O'Hare", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/O'Hare", "listingCount": null, "paths": ["eng_GxrbwOhG?xCSrDNjMBnF?rD?fES~C?~CR~C?zE?~CRfESvGRnFSfJ?bGf@fJg@zJRfJSnIJbX_@nK?fJ?zJRfJ{@fJSrIR~FEvSMzOg@f@~p@?rNRbQkHnKgZjJwPjF{EnAgJz@sNoFsI?kMfY{JrDcDcBoHuDoLaGoPkC_I_Dw`@wBgEjHnFzT}C~D}EjGsSoFwLwL_I_IkRScDBaGY{FiAaF_AgES_CzCbFsf@|@yIx@aIbCc]rCk_@"], "colorCode": "B0D973" }, { "title": "Oakland", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Oakland", "listingCount": null, "paths": ["oci~FrswuOAuL?{ESgORcGS{E?_IvCsGgCgOzGsFbQ{E|A{CpCsFnF?fEoF~PcMjGqEfMeJ?vQP`x@yEpBmHt@gElAyD|AsEnB?pS?~Q?|NCpEmGJuUHcRF"], "colorCode": "8DD8ED" }, { "title": "Pilsen", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Pilsen", "listingCount": null, "paths": ["qcn~FrrevOkC{JgJoU_DgJoAsN?_IbB_Sz@_ISoKSwG?sNS_N?_NSwL?gOg@{^SsI?cL?qP?yYR_Iz@oFfEkCbG?~CSbGSrDfJjCjCnFfErNnKjCjHnA~MbBpPd@pEy@rHwGz@jHbBz@rI{@bGSnFxBjG|CfFoFnAcG?bQz@~CnFbB~Cgc@z@nd@nAbB~Co_@nFr]f@?zEhCpMrCxNxCnOfEvL{@fOzJg@bDlPfCpMjB~JxClOyDQ{HVwVf@_DS{JRsDRsD?{J?sI?_DRsDR{ER{J?"], "colorCode": "2A38F6" }, { "title": "Portage Park", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Portage_Park", "listingCount": null, "paths": ["evc_GfzxvOg@s]Sw[?sN?oKSoP?sN@qFAuG?oF@gFC}EKoLEiFGgIKwHSkH?cL?oFDgH|UcElE[tDIbJiDxOgH|WgLfEwBfO?jMSzJ?fJ{@fJf@zJ?zJ?SfERnF?nFSnFf@rN?~M?~M?rN?rN?~MRnFSvGRzESnFRbG?nFRbG?zE?nF?bG?nF?nFsD?stAvB?nFRnF?nF?bG?zJFfQiEDkDDaJHsIJoKNsIDoFf@wG{@{J?sDR"], "colorCode": "2A38F6" }, { "title": "Pullman", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Pullman", "listingCount": null, "paths": ["itl}FtuvuOkWkHgJ{@sDg@sDg@{OcB_Dg@oKoA{JcBkH{@cG{@sDSsD{@sD{@sDS{EoA_S_DoFoA_Dg@{ES_IoA_DS{E{@sEo@{SwCSod@S{E?cGCgFB{ICwFOkX?wGfJ?vG?rXiA|DQhDGnPoAtGiBxHLzDN~ObZdTzUfGbExKtGjNpF~ZjNz[xNhKtD_CpCIvFCdU?z\\oFnA"], "colorCode": "E293FE" }, { "title": "Riverdale", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Riverdale", "listingCount": null, "paths": ["yog}FbywuOgm@}F_}@wLsD{@cL{@oFoA_]sDnFg@?k\\@kWJeH~BqCpg@N~R{HrNcLj\\{Y|GaGjGeBdD{@jIgHnEmD`EgDdDaDdOsLtCaClRwMtNoHnTaLbGg@?nF?nZ?rNNdJVpPSzh@?~a@?rN?~H?zERbG?vGRjR?rNoF?sDg@cGf@_Dg@{ER{@jWoI{Csl@mL"], "colorCode": "F1024B" }, { "title": "Rogers Park", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Rogers_Park", "listingCount": null, "paths": ["qni_Gfa_vO?nFBzGHlGBlL@jF?nF?nF?nF?~MS~Mm@fJM~H?hGuE@JtKiM`F}FlBaUlGoFjCsDnA_IjCwGbBgEnA{EnAgJvBgEnAcGf@_If@wGf@?gJSoF?oF?cGz@cGR{E?kRwGbGuHbKyDnDCqa@?wGSa`@zE{EzOsDfEoAzE?dEaBhEyBzEoAfG_BfD{@|DqE~BmDdEuCzG}E~EmEpB`EvHBbEYlE_ApDeAdE?fEcB~CcB~CoAjHoA"], "colorCode": "F1024B" }, { "title": "Roscoe Village", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Roscoe_Village", "listingCount": null, "paths": ["mu__GfegvOSwGSgO?_I?oFFuFG}F?{E?cG?{EScG?oF?oFRgE?sNSwGS{EzJ?jHg@vG?~Cf@~CSnF{@~Hf@nKg@bQg@vB~HRfTSfORzJ{E~CcBbLkM~MsDjMgEbBkHfJ}DzCuM~JoRbD"], "colorCode": "E293FE" }, { "title": "Roseland", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Roseland", "listingCount": null, "paths": ["mku}Fn}zuO{DL_I|@cJBwIL_DS_DRnFoFbBgEjCgEzEcLbQkRpBkCXoF~Ck\\~Hs]~CkHbBgEnF_NbLg^vBgErDnAnTJrEn@zEz@~CRrDf@vGz@nFf@nFnA~R~CzEnArDRrDz@rDz@rDRbGz@jHz@zJbBnKnA~Cf@zObBrDf@rDf@fJz@vVrDRnFf@bqDoOH_HBw`Ad@}v@^Okr@aELaDBeEB_D@gEC}EC}HBsJLqJDeJSwg@d@cKZ"], "colorCode": "F1218F" }, { "title": "Sauganash", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Sauganash", "listingCount": null, "paths": ["}df_Gn{rvO?wEkHwGgJwG_D_DcBgE_NvBsDRcLSsDSsIg@aFYyNeBcFs@z@{ES{Jg@oF?oF?oF?{E?oF?oF?{E?oFJcIFwES{E?cGRoFSwG?gOzJvBrInFzErDjCnAdKnH`KnG~O~JbOzJ?jFBrFCbFBfF?nF?zE?zJsDbLzERnKS~HSfE?zOS~MSbG?~C?rDSrD?tDO?dLaDlDgEbBsDbBsDnAgEnA_DvBsDnAgEbB{JfE{OrG"], "colorCode": "F2BC4F" }, { "title": "Scottsdale", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Scottsdale", "listingCount": null, "paths": ["ozy}Fb_pvOCaGEqF?cGMwEaAc]S{Y?kRSwLbLSzJ?nP?~CSfJSrDSrD?rD?zE?~C?rD?rDSrDSfE?~C?RbG?vL?bGRzESnFRnFSbGRnF?bGRzE?zEf@vGSzESnF?~HsI{@sD?gER_DRgE?{J?wIFkKJoUf@yHPcD?mDD"], "colorCode": "F1024B" }, { "title": "South Chicago", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/South_Chicago", "listingCount": null, "paths": ["mqy}FparuOVuJD_F_@mJQsG?{E?wGFiFImF@cFAsGEaFIeFE}FCaGEuFEeF?cG?oFg@cG?{E?kG?oGI_ICmG?kHEaHD_IEkM?oK?cGIsJRwG^oKdEcZfO_g@zh@wBbBni@?fOz@{ORwj@bQoArXkCzFdQvKh\\wJ`E{GpC|GsA`Ew@jHRbBfJvGrN~EhCxNzCxGU?bKCnE\\lI}CdJcGvGsJtNiGjKyG|J}OrUaLjPsFbJ_JhOcIxL{JfO_KhPcJdNwLjRcBrDgJfO{ClEkJlN"], "colorCode": "F1024B" }, { "title": "South Deering", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/South_Deering", "listingCount": null, "paths": ["y_k}FhstuOqg@OiKuD{[yN_[kNkNqFyKuGgGcEeT{U_PcZ{DOyHMuGhBgOf@qEn@}DPsXhAwG?gJ?S_]?oFjHSbLgJfJ_IzJgJfJwGS{J?oF?oF?oFE_FEmGGaF?wGA_FCcFl@gI?_ICyG?gH_LHmJLBpG?bH{JDoDBcEBwIHA{H?cG?wG?wG@cGCeJ]uGBgG?cKvH~@fC_BzE?pChEhHmBrHaChK|@pR}@pExEPjf@z@_b@vGrI?j\\~AkW|BaCpDhg@R}R\\}RhNk@jMrSvA~IgGzRfI}N`LjHxC~AHrYjAeYzHgBpBzRvBgY~a@RvEK~MYzVi@zh@z@zJpNnFxL~HjHbQfYf@fESzE~CjHrN~M?zOg@bLg@zJe@`I_ExJm@rHqLpHcDWuD@oJZsDbBeDiJgAeEiCcJoD_@h@fOVxLsDXsCn@wGml@_DCbCjm@uChBkK_r@_F[bGto@iClCkEaV?jT{@u\\wCqRuG{@uBdEcEcD_Gj@kC~kBvBjFvBrDiA|D|GnBdEdFvE~@fDdDvAeDXep@xAdr@^fEeDfB_FA{Do@sFcCuu@s\\tu@n_@bF|BnIl@zFUjBwGfDi@~D_@lDPjDcBrHoB|EcAjDiHvB{E~@mFVmElBwGbAwGr@iHeIsRq]Fr\\{AlMlOrCg@qArEkCtWrHtGlBeE|@oIl@wHL}FcBaFxC@p@jVvBlC~EgT`CmDhAyE|A_GnBmHxBgIp@wJbDeOhFsWjMSg@j\\{@v`@i@rH_@hMYjJoElD{FvEsCdD{FYoKfJk\\zYsNbL_SvG", "ywi}F`|kuOaG_JcKwP}DmG_EmD{CtCgCtEkWoA_W\\gU\\o_@wB{TrIkCgBsI_GwGoZ{@kHrb@vBzES~a@?zV[fW_@~MnA~\\~CjH?~a@q@?`K?jG?jF?jF?pF?dGcV~M", "yqg}Fd~nuOoPgTgEgOwQsNoAcLcL{OhJ?`L?rI?fJBzJF?zH?zgA"], "colorCode": "2A38F6" }, { "title": "South Shore", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/South_Shore", "listingCount": null, "paths": ["esz}FhrsuOcGoFcMQoJA}DsA_Dk@qE_@_DoA{JSoPkCoPcBRsSu@{P@sEEqF?{EA}FC_GBsF@_GA_F?wG?kHFkKGcI@_JDoG_C_Gv[wQf@sSnPfEjH{EzJsIpDcGv@wG~HgHbEqIxAmEnAwQg@gEcG{TrNoPnFjHnFbLvQ{E|@oG_@nKSvGHjF?jK?zE?rN?dGDlLBjG?bFDhGBhM?jG?zEf@bG?nF?bGDdFDtFB`GD|FHdFD`F@rGAbFHlFGhF?vG?zEPrGHjENnGCrHkM~WcLjR{E~H"], "colorCode": "B0D973" }, { "title": "Tri-Taylor", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Tri-Taylor", "listingCount": null, "paths": ["utq~FrffvOkCcV?kHS_NS_NR_I?eT?eQ~CnArDfExFvGlG`I~MtQlIjJfCvC`KrLnCfNvAlF_FtD_KvC{EbA_Ig@_D?gERsDRsD?sD?{ER"], "colorCode": "B0D973" }, { "title": "Ukrainian Village", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Ukrainian_Village", "listingCount": null, "paths": ["mnv~FzkdvO?sNg@kMfE?rDS~CSrDS?{E?oF_D?sDRScG?oFrD?rD?ScG?oFScGRoFfERrDSrD?fE?bG?vG{@rD?`@pOBdMTzM?pO?|Mg@jNgE?{ERwGRgE?sD?_DR{E?_D?sD?gE?_D?"], "colorCode": "F1218F" }, { "title": "University Village", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/University_Village", "listingCount": null, "paths": ["ymo~FlyevOcAeE}CgNqJaM}CqDyFkHsPcSmGsIiFyGcEeEoDoFCkRSwQS{YSgOf@oPTsNPcLf@gJKmEGiFd@gG[_IM}GIuHAcHCgI?{OnFwBfO_DvLoAfOoAnd@?zE?fEf@bGbB?bGcGvBgEjC{@nFS~H@zTAzO?nKRbLf@rb@?~MR~M?~MR~M?rNRvGRnK{@~HoA~MS~MnArN~CfJ~HvQbBjMkE?{C?_LhCoNvB", "izq~FjrbvO"], "colorCode": "F1218F" }, { "title": "Uptown", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Uptown", "listingCount": null, "paths": ["uoe_GbxavO?oU?oFSoF?oF?cGS{E?kM?kHScQSkHoAkHkC_NnFoArXcBjMkHrDkCrDoFjH{JvBgJjCwQf@oUfLuAvE|GvLjRbB~Hg@jHwBrIsDkCbBgERoFoA{E{EwG_DfEnAjWbB~HfE?rN{@jWgESfTnFbBcGRf@fJ?nFSfJRfERjH@`N?~HJfSJvOiLpGgEjCwGjCsDz@gEz@sDnAcJpBkJnA{JtAgJz@mP|@aDPsD?sDz@sDf@gE?"], "colorCode": "F1218F" }, { "title": "Washington Park", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Washington_Park", "listingCount": null, "paths": ["e|a~F`ozuO{VWcVR{@_tASoF?wG?sN?oF?oFSwL?wGSuJ~CkERdOfE?fJRfJ?fJ?fJS~DIfDIfJ?jI?~GS~Cz@BdLAtF?lF?lF?`F?pF?jHdJ_@zJSfJR?jHR~H?rIRjHRrIQbIF~PLhJkEtB}HbA}EGwQSwG?cQnAoSB"], "colorCode": "E293FE" }, { "title": "West Elsdon", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/West_Elsdon", "listingCount": null, "paths": ["mdb~FrhovOc@qMeB_GeBaGcBoFwB{EcBoFoA{EwL{^{Ocj@{@gPlSR`UGbV?fJ?rDSrD?rD?rDSrDRrDSR~M?rNR~MSjM?nF?nFRnF?bGSzE?bGRbG?zE?bG?zERbG?bGcV?cVRcL?"], "colorCode": "BBF0C4" }, { "title": "West Englewood", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/West_Englewood", "listingCount": null, "paths": ["yl`~FvycvO{J?oUSwG?cBcL@qFGqFEcGA}EE}FEqFEmFEqFAiF?mG?iF?oF?cG?{E?_NI}NpJKzJ?fJSfJRzJSfJShJ?dJ?fJg@fJSfJ?fJ?fJSfJg@zJ?rI?fE?rDSrD?rD?fE?rD?~Cg@~C?RvQRzJ?r]BlFDpGBfF@bF@jFBdF?tFA`G?h\\}TzAiHFoF?sD@oFg@_DR_D?sDS{DBkDFgJK{Tf@oK?_ISkMvB{^R"], "colorCode": "B0D973" }, { "title": "West Lawn", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/West_Lawn", "listingCount": null, "paths": ["em}}FncpvO?oF?{EScG?cGgJRgJR{JRgJSgJRgJ?gJRgJR?cGScG?{E?cG?{EScG?cGR{E?cGSoF?oF?oFRkMS_N?sNS_NfEg@rD?fJ?zJSrI{@rDRfESlDBdDCzDK~DGlDFxDGrD?rDQrDArDR`QaArIZ~DBzIGrDDbEK|GF{Yf|@hWO`DAbGA~C?rD?bBbL?jORz\\`Ab]LvE?bGDpFB`GaHR{O?kM?{OnA}KDiQLoFRwQ?"], "colorCode": "F1218F" }, { "title": "West Pullman", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/West_Pullman", "listingCount": null, "paths": ["yql}F`p`vOHoJI{F?wG?kM?oF?uF?iF?oF?iG?uESoF?gJ?kRS{Eg@cqD~\\vBnFnAbLz@rDz@~|@vLfm@|FChGcLrDwBzJnAbQnKrSfJbQRxY?pH?r[nA~a@oF?kMSgOR?sI?cG?oF?cGoKf@sI?oFR_N??bG?nF?nF?bG?zE?nF?nF?bG?nFRbG?nF?nF?bG?zJ?fJgJSsIR{JR{JSmUtCeV\\"], "colorCode": "1821A3" }, { "title": "West Rogers Park", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/West_Rogers_Park", "listingCount": null, "paths": ["uqi_GbajvOQoEeJoByJKuU[gJ?{J?aE?eD?_I?sD?gESsDSsD?sD?sD?sDSsDRg@wLSsN?kMSwLRkMSsN?_IKcQCcGCcG?cGRsIvGg@~Hg@bGg@fEoAfJwBzEoAfEoAvGcBbGwBnFcBnFkC`UmG|FmBhMaFC{GlE{BnFCnFAjOYbEMNbMBxG?pHHrUHrVRzESnFnKRfJ?zJSfJg@zJSfJ?zJ??bG?fJgER_DRgE?sDRoFvGwBzE?vG?bG?nF?nFSnFRbG?nFRfE?fJcGpAsMrCwIjBcKxBsGvA{`@zF"], "colorCode": "F1218F" }, { "title": "West Town", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/West_Town", "listingCount": null, "paths": ["igy~F~fhvOOkHR{ES{ERwL?cG?oFS{E?cG?cG?{E?cG?{TSwGnFf@vGSrDRfES~C?jH?zEg@fER~CSfESfER~CSfE?rDS~C?fE?rD?~C?zE?~CSrD?fE?vGSzES~CRf@nF?nF?nFSzE?zEnAvVoFf@_D?wGRgEzEwBbGgEfOcG~R?vI_NCoF?cGA}MAAsL?cG?oFsD?gE?gJRgJ?gJC?rF?bL?rGcKBgH?"], "colorCode": "BBF0C4" }, { "title": "Wicker Park", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Wicker_Park", "listingCount": null, "paths": ["mhy~FvmdvOuAoEMgFRsNRoF?oFScG?{E?cG?oF?oFScGzJ?fJS~C?fE?nF?rNSrD?~CSrD?fE?rDSfER~CSrD?fES~CSSnFRbG?nFRbGsD?sD??nFRbGrDS~C??nF?zEsDR_DRsDRgE?f@jM?rNsDRgE?_DRgESgER_DRgES_DRkH?{ERgERsDSwGRoFg@"], "colorCode": "F1024B" }, { "title": "Woodlawn", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Woodlawn", "listingCount": null, "paths": ["cg`~F`owuO?kH?qF?aF?mF?mF@uF?oI]qMCuIC{HAeS?sH?uI?kFGmK?{F?}E?yEA{KDgIzDqBtDo@lEm@tD{@}CmBoE`@iDTsD\\yD?fBwFbE[|Cu@fCeBnEYDkF}AeDwDzAsC`BiDlBsDFsCuBq@}DgAgEmAcFbLg@v[{m@~CvL~CbGfDpGGqGbL{OnP_X~B~FEnGA~IFbIG~F?vL?vG@~EA~FCrFB~F@|F?zEDpFArEt@zP?rNS~HR~H?~H?nFRzESbGRbG?zE?bG?zE?bGzJ?fJSzESrNS?~Hg@bG{ErIwBjCsI~MoFrI_DbB{ER_N?_IRaEJeDFgJ?gJS{JReJ^"], "colorCode": "F2BC4F" }, { "title": "Albany Park", "href": "\/real-estate\/Illinois\/Cook_County\/Chicago\/Albany_Park", "listingCount": null, "paths": ["qge_GbgqvO?wGQaHAmLAaFA{FCgGAuFA{FA_GEsF?oFzJ??aGdF?AsFCqEaF?QkGoF?eCkF{BsEp@wFfCwEfC{FdAsGj@iEdCuGvAoFbBsDRkH?oFwB_IoF_DoAoF{@oFR_If@{E~C{JvGkCzTgOnD_CbDkDjCcDvGgH~C}B~CmDfEoAnDkAHlNDrFFlF?nF?bGRzE?bG?nF?nF?nF?nF?bG?nF?bG?nF?nF?nFRzE?bG?bG?nF?rERvF?bG?nFRnF?zEkHvQ{ErIgEnFcBrD_DnF_DrDwGvLRbGSjH?nF?nF?bG@~EuDNsD?sDR_D?gE?{OR"], "colorCode": "8DD8ED"}];
+            var gPaths = [];
+            var gBounds, locationShape, map;
+            var fsboListings = [];
+            var searchMapListings = [{ "featured": true, "lat": "41.879676", "lng": "-87.651662", "askingPrice": "$389,999", "address": "111 S. Morgan St #825, Chicago, IL 60607", "href": "\/listing\/2-bed-Condo-Townhome-for-sale-by-owner-111-S-Morgan-St-825-60607\/23935365" }, { "lat": "41.92308", "lng": "-87.656818", "askingPrice": "$2,150,000", "address": "2247 N. Clifton Ave., Chicago, IL 60614", "href": "\/listing\/4-bed-Single-Family-home-for-sale-by-owner-2247-N-Clifton-Ave-60614\/23849075" }, { "lat": "41.893874", "lng": "-87.6366178", "askingPrice": "$1,299,000", "address": "319 W. Erie St., Chicago, IL 60654", "href": "\/listing\/2-bed-Condo-Townhome-for-sale-by-owner-319-W-Erie-St-60654\/23917204" }, { "lat": "41.955685", "lng": "-87.681656", "askingPrice": "$1,279,900", "address": "2109 W Belle Plaine., Chicago, IL 60618", "href": "\/listing\/5-bed-Single-Family-home-for-sale-by-owner-2109-W-Belle-Plaine-60618\/23934625" }, { "lat": "41.897458", "lng": "-87.678485", "askingPrice": "$750,000", "address": "2035 W Iowa, Chicago, IL 60622", "href": "\/listing\/5-bed-Single-Family-home-for-sale-by-owner-2035-W-Iowa-60622\/23938492" }, { "lat": "41.927586", "lng": "-87.648737", "askingPrice": "$679,000", "address": "2509 N. Halsted St., Chicago, IL 60614", "href": "\/listing\/4-bed-Multi-Family-home-for-sale-by-owner-2509-N-Halsted-St-60614\/23910286" }, { "lat": "41.861047", "lng": "-87.628152", "askingPrice": "$630,000", "address": "1530 South State Street, Chicago, IL 60605", "href": "\/listing\/3-bed-Condo-Townhome-for-sale-by-owner-1530-South-State-Street-60605\/23092960" }, { "lat": "41.9664054", "lng": "-87.8427237", "askingPrice": "$615,000", "address": "5241 N. Potawatomie Ave, Chicago, IL 60656", "href": "\/listing\/11-bed-Multi-Family-home-for-sale-by-owner-5241-N-Potawatomie-Ave-60656\/23066953" }, { "lat": "41.9751819", "lng": "-87.690339", "askingPrice": "$610,000", "address": "2430 W. Winona St., Chicago, IL 60625", "href": "\/listing\/5-bed-Multi-Family-home-for-sale-by-owner-2430-W-Winona-St-60625\/22805155" }, { "lat": "41.978728", "lng": "-87.73699", "askingPrice": "$598,000", "address": "5448 N. Lowell Ave, Chicago, IL 60630", "href": "\/listing\/3-bed-Single-Family-home-for-sale-by-owner-5448-N-Lowell-Ave-60630\/23933303" }, { "lat": "41.992698", "lng": "-87.753549", "askingPrice": "$595,000", "address": "6142 N Leader, Chicago, IL 60646", "href": "\/listing\/3-bed-Single-Family-home-for-sale-by-owner-6142-N-Leader-60646\/23706536" }, { "lat": "42.004449", "lng": "-87.708192", "askingPrice": "$585,000", "address": "3130 W. Columbia Ave., Chicago, IL 60645", "href": "\/listing\/5-bed-Single-Family-home-for-sale-by-owner-3130-W-Columbia-Ave-60645\/23929338" }, { "lat": "41.90707", "lng": "-87.708633", "askingPrice": "$585,000", "address": "3247 West Beach, Chicago, IL 60651", "href": "\/listing\/11-bed-Multi-Family-home-for-sale-by-owner-3247-West-Beach-60651\/21657420" }, { "lat": "41.879465", "lng": "-87.6492899", "askingPrice": "$575,000", "address": "850 West Adams Street, Chicago, IL 60607", "href": "\/listing\/2-bed-Condo-Townhome-for-sale-by-owner-850-West-Adams-Street-60607\/23649350" }, { "lat": "41.933995", "lng": "-87.674565", "askingPrice": "$569,900", "address": "2855B N. Wolcott, Chicago, IL 60657", "href": "\/listing\/3-bed-Single-Family-home-for-sale-by-owner-2855B-N-Wolcott-60657\/23915507" }, { "lat": "41.946546", "lng": "-87.681665", "askingPrice": "$549,900", "address": "2115 W. Addison St., Chicago, IL 60618", "href": "\/listing\/3-bed-Condo-Townhome-for-sale-by-owner-2115-W-Addison-St-60618\/23900394" }, { "lat": "41.9946069", "lng": "-87.7529754", "askingPrice": "$549,000", "address": "6244 N. Legett, Chicago, IL 60646", "href": "\/listing\/3-bed-Single-Family-home-for-sale-by-owner-6244-N-Legett-60646\/23920589" }, { "lat": "41.9084754", "lng": "-87.6376392", "askingPrice": "$539,000", "address": "1426 N Orleans, Chicago, IL 60610", "href": "\/listing\/2-bed-Condo-Townhome-for-sale-by-owner-1426-N-Orleans-60610\/23934219" }, { "lat": "41.933843", "lng": "-87.674985", "askingPrice": "$529,800", "address": "2851 N Wolcott, Chicago, IL 60657", "href": "\/listing\/3-bed-Single-Family-home-for-sale-by-owner-2851-N-Wolcott-60657\/23917901" }, { "lat": "41.934894", "lng": "-87.667031", "askingPrice": "$525,000", "address": "1523 W. Oakdale Ave., Chicago, IL 60657", "href": "\/listing\/5-bed-Multi-Family-home-for-sale-by-owner-1523-W-Oakdale-Ave-60657\/23936339" }, { "lat": "41.986477", "lng": "-87.715985", "askingPrice": "$479,000", "address": "5757 N. St. Louis Ave, Chicago, IL 60659", "href": "\/listing\/3-bed-Condo-Townhome-for-sale-by-owner-5757-N-St-Louis-Ave-60659\/23069891" }, { "lat": "41.98332", "lng": "-87.710454", "askingPrice": "$475,000", "address": "3238 W Bryn Mawr Avenue, Chicago, IL 60659", "href": "\/listing\/6-bed-Multi-Family-home-for-sale-by-owner-3238-W-Bryn-Mawr-Avenue-60659\/23922610" }, { "lat": "41.882336", "lng": "-87.655813", "askingPrice": "$459,000", "address": "15 N Racine Ave., Chicago, IL 60607", "href": "\/listing\/2-bed-Condo-Townhome-for-sale-by-owner-15-N-Racine-Ave-60607\/23911323" }, { "lat": "41.8641183", "lng": "-87.6240616", "askingPrice": "$454,500", "address": "100 E. 14th St., Chicago, IL 60605", "href": "\/listing\/2-bed-Condo-Townhome-for-sale-by-owner-100-E-14th-St-60605\/22750667" }, { "lat": "41.928368", "lng": "-87.725939", "askingPrice": "$450,000", "address": "3940 W Wrightwood, Chicago, IL 60647", "href": "\/listing\/5-bed-Multi-Family-home-for-sale-by-owner-3940-W-Wrightwood-60647\/21941258" }, { "lat": "41.975479", "lng": "-87.7614399", "askingPrice": "$449,900", "address": "5326 W. Foster Ave., Chicago, IL 60630", "href": "\/listing\/4-bed-Multi-Family-home-for-sale-by-owner-5326-W-Foster-Ave-60630\/23104831"}];
+</script>
+        <script type="text/javascript" src="scripts/location/bing_map.js"></script>
+        <div id="locationWrapper">
+            <div id="locationBreadCrumbs">
+                <span itemprop="breadcrumb" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <a itemprop="url" href="/homes-for-sale">
+                        <meta itemprop="title" content="Homes For Sale" />
+                    </a></span>
+                <ul class="breadcrumbs">
+                    <li class="breadcrumbsParent" itemprop="breadcrumb" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                        <a href="/real-estate/Illinois" itemprop="url"><span itemprop="title">Illinois</span></a>
+                        <div class="breadcrumbsSiblings col5">
+                            <ul>
+                                <li><a href="/real-estate/Alabama"><span>Alabama</span> </a></li>
+                                <li><a href="/real-estate/Alaska"><span>Alaska</span> </a></li>
+                                <li><a href="/real-estate/Arizona"><span>Arizona</span> </a></li>
+                                <li><a href="/real-estate/Arkansas"><span>Arkansas</span> </a></li>
+                                <li><a href="/real-estate/California"><span>California</span> </a></li>
+                                <li><a href="/real-estate/Colorado"><span>Colorado</span> </a></li>
+                                <li><a href="/real-estate/Connecticut"><span>Connecticut</span> </a></li>
+                                <li><a href="/real-estate/Delaware"><span>Delaware</span> </a></li>
+                                <li><a href="/real-estate/District_of_Columbia"><span>District o&hellip;</span> </a>
+                                </li>
+                                <li><a href="/real-estate/Florida"><span>Florida</span> </a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="/real-estate/Georgia"><span>Georgia</span> </a></li>
+                                <li><a href="/real-estate/Hawaii"><span>Hawaii</span> </a></li>
+                                <li><a href="/real-estate/Idaho"><span>Idaho</span> </a></li>
+                                <li><a href="/real-estate/Indiana"><span>Indiana</span> </a></li>
+                                <li><a href="/real-estate/Iowa"><span>Iowa</span> </a></li>
+                                <li><a href="/real-estate/Kansas"><span>Kansas</span> </a></li>
+                                <li><a href="/real-estate/Kentucky"><span>Kentucky</span> </a></li>
+                                <li><a href="/real-estate/Louisiana"><span>Louisiana</span> </a></li>
+                                <li><a href="/real-estate/Maine"><span>Maine</span> </a></li>
+                                <li><a href="/real-estate/Maryland"><span>Maryland</span> </a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="/real-estate/Massachusetts"><span>Massachusetts</span> </a></li>
+                                <li><a href="/real-estate/Michigan"><span>Michigan</span> </a></li>
+                                <li><a href="/real-estate/Minnesota"><span>Minnesota</span> </a></li>
+                                <li><a href="/real-estate/Mississippi"><span>Mississippi</span> </a></li>
+                                <li><a href="/real-estate/Missouri"><span>Missouri</span> </a></li>
+                                <li><a href="/real-estate/Montana"><span>Montana</span> </a></li>
+                                <li><a href="/real-estate/Nebraska"><span>Nebraska</span> </a></li>
+                                <li><a href="/real-estate/Nevada"><span>Nevada</span> </a></li>
+                                <li><a href="/real-estate/New_Hampshire"><span>New Hampshire</span> </a></li>
+                                <li><a href="/real-estate/New_Jersey"><span>New Jersey</span> </a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="/real-estate/New_Mexico"><span>New Mexico</span> </a></li>
+                                <li><a href="/real-estate/New_York"><span>New York</span> </a></li>
+                                <li><a href="/real-estate/North_Carolina"><span>North Carolina</span> </a></li>
+                                <li><a href="/real-estate/North_Dakota"><span>North Dakota</span> </a></li>
+                                <li><a href="/real-estate/Ohio"><span>Ohio</span> </a></li>
+                                <li><a href="/real-estate/Oklahoma"><span>Oklahoma</span> </a></li>
+                                <li><a href="/real-estate/Oregon"><span>Oregon</span> </a></li>
+                                <li><a href="/real-estate/Pennsylvania"><span>Pennsylvania</span> </a></li>
+                                <li><a href="/real-estate/Rhode_Island"><span>Rhode Island</span> </a></li>
+                                <li><a href="/real-estate/South_Carolina"><span>South Carolina</span> </a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="/real-estate/South_Dakota"><span>South Dakota</span> </a></li>
+                                <li><a href="/real-estate/Tennessee"><span>Tennessee</span> </a></li>
+                                <li><a href="/real-estate/Texas"><span>Texas</span> </a></li>
+                                <li><a href="/real-estate/Utah"><span>Utah</span> </a></li>
+                                <li><a href="/real-estate/Vermont"><span>Vermont</span> </a></li>
+                                <li><a href="/real-estate/Virginia"><span>Virginia</span> </a></li>
+                                <li><a href="/real-estate/Washington"><span>Washington</span> </a></li>
+                                <li><a href="/real-estate/West_Virginia"><span>West Virginia</span> </a></li>
+                                <li><a href="/real-estate/Wisconsin"><span>Wisconsin</span> </a></li>
+                                <li><a href="/real-estate/Wyoming"><span>Wyoming</span> </a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="breadcrumbsParent" itemprop="breadcrumb" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                        <a href="/real-estate/Illinois/Cook_County" itemprop="url"><span itemprop="title">Cook
+                            County</span></a>
+                        <div class="breadcrumbsSiblings col1">
+                            <ul>
+                                <li><a href="/real-estate/Illinois/DuPage_County"><span>DuPage County</span> </a>
+                                </li>
+                                <li><a href="/real-estate/Illinois/Lake_County"><span>Lake County</span> </a></li>
+                                <li><a href="/real-estate/Illinois/Will_County"><span>Will County</span> </a></li>
+                                <li><a href="/real-estate/Indiana/Lake_County"><span>Lake County</span> </a></li>
+                                <li><a href="/real-estate/Illinois/McHenry_County"><span>McHenry County</span> </a>
+                                </li>
+                                <li><a href="/real-estate/Illinois/Kane_County"><span>Kane County</span> </a></li>
+                                <li><a href="/real-estate/Michigan/Berrien_County"><span>Berrien County</span> </a>
+                                </li>
+                                <li><a href="/real-estate/Indiana/Porter_County"><span>Porter County</span> </a>
+                                </li>
+                                <li><a href="/real-estate/Illinois/Kendall_County"><span>Kendall County</span> </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="breadcrumbsParent" itemprop="breadcrumb" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                        <a href="/real-estate/Illinois/Cook_County/Chicago" itemprop="url"><span itemprop="title">
+                            Chicago</span></a>
+                        <div class="breadcrumbsSiblings col2">
+                            <ul>
+                                <li><a href="/real-estate/Illinois/Cook_County/Orland_Park"><span>Orland Park</span>
+                                </a></li>
+                                <li><a href="/real-estate/Illinois/Cook_County/Park_Ridge"><span>Park Ridge</span> </a>
+                                </li>
+                                <li><a href="/real-estate/Illinois/Cook_County/Des_Plaines"><span>Des Plaines</span>
+                                </a></li>
+                                <li><a href="/real-estate/Illinois/Cook_County/Elk_Grove_Village"><span>Elk Grove Village</span>
+                                </a></li>
+                                <li><a href="/real-estate/Indiana/Lake_County/Hammond"><span>Hammond</span> </a>
+                                </li>
+                                <li><a href="/real-estate/Illinois/Cook_County/Palos_Heights"><span>Palos Heights</span>
+                                </a></li>
+                                <li><a href="/real-estate/Illinois/Cook_County/Oak_Park"><span>Oak Park</span> </a>
+                                </li>
+                                <li><a href="/real-estate/Illinois/Cook_County/Lemont"><span>Lemont</span> </a></li>
+                                <li><a href="/real-estate/Illinois/Cook_County/Mount_Prospect"><span>Mount Prospect</span>
+                                </a></li>
+                                <li><a href="/real-estate/Illinois/Cook_County/Rosemont"><span>Rosemont</span> </a>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li><a href="/real-estate/Illinois/DuPage_County/Bensenville"><span>Bensenville</span>
+                                </a></li>
+                                <li><a href="/real-estate/Illinois/DuPage_County/Elmhurst"><span>Elmhurst</span> </a>
+                                </li>
+                                <li><a href="/real-estate/Illinois/Cook_County/Evanston"><span>Evanston</span> </a>
+                                </li>
+                                <li><a href="/real-estate/Illinois/Cook_County/Harwood_Heights"><span>Harwood Heights</span>
+                                </a></li>
+                                <li><a href="/real-estate/Illinois/Cook_County/Hinsdale"><span>Hinsdale</span> </a>
+                                </li>
+                                <li><a href="/real-estate/Illinois/Cook_County/Homer_Glen"><span>Homer Glen</span> </a>
+                                </li>
+                                <li><a href="/real-estate/Illinois/Cook_County/Justice"><span>Justice</span> </a>
+                                </li>
+                                <li><a href="/real-estate/Illinois/Cook_County/Niles"><span>Niles</span> </a></li>
+                                <li><a href="/real-estate/Illinois/Cook_County/Oak_Lawn"><span>Oak Lawn</span> </a>
+                                </li>
+                                <li><a href="/real-estate/Illinois/Cook_County/Westchester"><span>Westchester</span>
+                                </a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="locationFullColumn">
+                <h1>
+                    <span class="innerWrapper">Homes For Sale in Chicago</span> <a class="simpleBrowseButton"
+                        href="/homes-for-sale/Illinois/Cook_County/Chicago" title="Browse more properties">
+                        Browse Chicago Homes</a>
+                </h1>
+                <div class="clear">
+                </div>
+            </div>
+            <div class="locationTwoColumn">
+                <div class="locationRightColumn">
+                    <div id="ad_sidebar_right">
+                    </div>
+                    <h2>
+                        Find It On The Map</h2>
+                    <h4>
+                        Click on the map to get information for that area</h4>
+                    <div id="mapPlaceHolder" style="width: 300px; height: 350px; position: relative;">
+                        Loading map...
+                    </div>
+                    <p class="locationViewChildren">
+                        <a href="/real-estate/Illinois/Cook_County/Chicago/neighborhoods">View all neighborhoods
+                            in Chicago</a>
+                    </p>
+                    <a class="blueBrowseButton" href="/homes-for-sale/Illinois/Cook_County/Chicago" title="Browse more properties">
+                        Browse All Chicago Properties</a>
+                </div>
+                <div class="locationLeftColumn">
+                    <div id="locationStateListings">
+                        <div class="locationSearchResults">
+                            <h2 class="locationListingTitle">
+                                Homes for Sale in Chicago, Illinois</h2>
+                            <h2 class="locationFeaturedTitle">
+                                Featured Listing</h2>
+                            <div class="listing listingFeat undercontract">
+                                <div class="photoWrap">
+                                    <div class="photo">
+                                        <a class="flag" href="/listing/2-bed-Condo-Townhome-for-sale-by-owner-111-S-Morgan-St-825-60607/23935365#featured"
+                                            title="UNDER CONTRACT: This property is under contract">UNDER CONTRACT</a> <a href="/listing/2-bed-Condo-Townhome-for-sale-by-owner-111-S-Morgan-St-825-60607/23935365#featured"
+                                                title="UNDER CONTRACT: This property is under contract">
+                                                <img src="http://static.forsalebyowner.com/images/small/2393/23935365-1.jpg" class="photo"
+                                                    width="100" height="77" />
+                                            </a>
+                                    </div>
+                                </div>
+                                <p class="desc">
+                                    <a href="/listing/2-bed-Condo-Townhome-for-sale-by-owner-111-S-Morgan-St-825-60607/23935365#featured">
+                                        Breath Taking Views 2 bed/2 bath condo in the West Loop</a></p>
+                                <p class="desc price">
+                                    $389,999</p>
+                                <p class="desc address">
+                                    111 S. Morgan St #825, Chicago, IL 60607</p>
+                                <a href="/listing/2-bed-Condo-Townhome-for-sale-by-owner-111-S-Morgan-St-825-60607/23935365#featured"
+                                    class="learnMore">Learn More</a> <span class="favorite23935365"><a class="addFav"
+                                        href="/favoriteHandler.php?action=add&id=23935365" title="Add to Favorites">Add
+                                        to Favorites</a></span>
+                                <div class="clear">
+                                </div>
+                            </div>
+                            <h2 class="locationListingTitle">
+                                Properties within Chicago, Illinois</h2>
+                            <div class="listing ">
+                                <div class="photoWrap">
+                                    <div class="photo">
+                                        <a class="flag" href="/listing/4-bed-Single-Family-home-for-sale-by-owner-2247-N-Clifton-Ave-60614/23849075"
+                                            title="4 bed, Single Family home  for sale by owner 2247 N. Clifton Ave., Chicago, IL 60614">
+                                        </a><a href="/listing/4-bed-Single-Family-home-for-sale-by-owner-2247-N-Clifton-Ave-60614/23849075"
+                                            title="Single Family For Sale: LUXURY SFH located in heart of Lincoln Park/DePaul">
+                                            <img src="http://static.forsalebyowner.com/images/small/2384/23849075-1.jpg" class="photo"
+                                                width="100" height="77" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <p class="desc">
+                                    <a href="/listing/4-bed-Single-Family-home-for-sale-by-owner-2247-N-Clifton-Ave-60614/23849075">
+                                        LUXURY SFH located in heart of Lincoln Park/DePaul</a></p>
+                                <p class="desc price">
+                                    $2,150,000</p>
+                                <p class="desc address">
+                                    2247 N. Clifton Ave., Chicago, IL 60614</p>
+                                <a href="/listing/4-bed-Single-Family-home-for-sale-by-owner-2247-N-Clifton-Ave-60614/23849075"
+                                    class="learnMore">Learn More</a> <span class="favorite23849075"><a class="addFav"
+                                        href="/favoriteHandler.php?action=add&id=23849075" title="Add to Favorites">Add
+                                        to Favorites</a></span>
+                                <div class="clear">
+                                </div>
+                            </div>
+                            <div class="listingSpacer">
+                            </div>
+                            <div class="listing ">
+                                <div class="photoWrap">
+                                    <div class="photo">
+                                        <a class="flag" href="/listing/2-bed-Condo-Townhome-for-sale-by-owner-319-W-Erie-St-60654/23917204"
+                                            title="2 bed, Condo/Townhome  for sale by owner 319 W. Erie St., Chicago, IL 60654">
+                                        </a><a href="/listing/2-bed-Condo-Townhome-for-sale-by-owner-319-W-Erie-St-60654/23917204"
+                                            title="Condo/Townhome For Sale: Rare &amp; Spectacular!">
+                                            <img src="http://static.forsalebyowner.com/images/small/2391/23917204-1.jpg" class="photo"
+                                                width="100" height="77" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <p class="desc">
+                                    <a href="/listing/2-bed-Condo-Townhome-for-sale-by-owner-319-W-Erie-St-60654/23917204">
+                                        Rare &amp; Spectacular!</a></p>
+                                <p class="desc price">
+                                    $1,299,000</p>
+                                <p class="desc address">
+                                    319 W. Erie St., Chicago, IL 60654</p>
+                                <a href="/listing/2-bed-Condo-Townhome-for-sale-by-owner-319-W-Erie-St-60654/23917204"
+                                    class="learnMore">Learn More</a> <span class="favorite23917204"><a class="addFav"
+                                        href="/favoriteHandler.php?action=add&id=23917204" title="Add to Favorites">Add
+                                        to Favorites</a></span>
+                                <div class="clear">
+                                </div>
+                            </div>
+                            <div class="listingSpacer">
+                            </div>
+                            <div class="listing ">
+                                <div class="photoWrap">
+                                    <div class="photo">
+                                        <a class="flag" href="/listing/5-bed-Single-Family-home-for-sale-by-owner-2109-W-Belle-Plaine-60618/23934625"
+                                            title="5 bed, Single Family home  for sale by owner 2109 W Belle Plaine., Chicago, IL 60618">
+                                        </a><a href="/listing/5-bed-Single-Family-home-for-sale-by-owner-2109-W-Belle-Plaine-60618/23934625"
+                                            title="Single Family For Sale: New Construction Single Family Home In Coonley School Dist.">
+                                            <img src="http://static.forsalebyowner.com/images/small/2393/23934625-1.jpg" class="photo"
+                                                width="100" height="77" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <p class="desc">
+                                    <a href="/listing/5-bed-Single-Family-home-for-sale-by-owner-2109-W-Belle-Plaine-60618/23934625">
+                                        New Construction Single Family Home In Coonley&hellip;</a></p>
+                                <p class="desc price">
+                                    $1,279,900</p>
+                                <p class="desc address">
+                                    2109 W Belle Plaine., Chicago, IL 60618</p>
+                                <a href="/listing/5-bed-Single-Family-home-for-sale-by-owner-2109-W-Belle-Plaine-60618/23934625"
+                                    class="learnMore">Learn More</a> <span class="favorite23934625"><a class="addFav"
+                                        href="/favoriteHandler.php?action=add&id=23934625" title="Add to Favorites">Add
+                                        to Favorites</a></span>
+                                <div class="clear">
+                                </div>
+                            </div>
+                            <div class="listingSpacer">
+                            </div>
+                            <div class="listing new">
+                                <div class="photoWrap">
+                                    <div class="photo">
+                                        <a class="flag" href="/listing/5-bed-Single-Family-home-for-sale-by-owner-2035-W-Iowa-60622/23938492"
+                                            title="NEW LISTING: Posted less than 7 days ago">NEW LISTING</a> <a href="/listing/5-bed-Single-Family-home-for-sale-by-owner-2035-W-Iowa-60622/23938492"
+                                                title="Single Family For Sale: Ukranian Villiage Single family Gem">
+                                                <img src="http://static.forsalebyowner.com/images/pendingSmall.gif" class="photo"
+                                                    width="100" height="77" />
+                                            </a>
+                                    </div>
+                                </div>
+                                <p class="desc">
+                                    <a href="/listing/5-bed-Single-Family-home-for-sale-by-owner-2035-W-Iowa-60622/23938492">
+                                        Ukranian Villiage Single family Gem</a></p>
+                                <p class="desc price">
+                                    $750,000</p>
+                                <p class="desc address">
+                                    2035 W Iowa, Chicago, IL 60622</p>
+                                <a href="/listing/5-bed-Single-Family-home-for-sale-by-owner-2035-W-Iowa-60622/23938492"
+                                    class="learnMore">Learn More</a> <span class="favorite23938492"><a class="addFav"
+                                        href="/favoriteHandler.php?action=add&id=23938492" title="Add to Favorites">Add
+                                        to Favorites</a></span>
+                                <div class="clear">
+                                </div>
+                            </div>
+                            <div class="listingSpacer">
+                            </div>
+                            <div class="listing ">
+                                <div class="photoWrap">
+                                    <div class="photo">
+                                        <a class="flag" href="/listing/4-bed-Multi-Family-home-for-sale-by-owner-2509-N-Halsted-St-60614/23910286"
+                                            title="4 bed, Multi-Family home  for sale by owner 2509 N. Halsted St., Chicago, IL 60614">
+                                        </a><a href="/listing/4-bed-Multi-Family-home-for-sale-by-owner-2509-N-Halsted-St-60614/23910286"
+                                            title="Multi-Family For Sale: Charming Property in Prime Lincoln Park--Motivated Seller">
+                                            <img src="http://static.forsalebyowner.com/images/small/2391/23910286-1.jpg" class="photo"
+                                                width="100" height="77" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <p class="desc">
+                                    <a href="/listing/4-bed-Multi-Family-home-for-sale-by-owner-2509-N-Halsted-St-60614/23910286">
+                                        Charming Property in Prime Lincoln Park--Motivated Seller</a></p>
+                                <p class="desc price">
+                                    $679,000</p>
+                                <p class="desc address">
+                                    2509 N. Halsted St., Chicago, IL 60614</p>
+                                <a href="/listing/4-bed-Multi-Family-home-for-sale-by-owner-2509-N-Halsted-St-60614/23910286"
+                                    class="learnMore">Learn More</a> <span class="favorite23910286"><a class="addFav"
+                                        href="/favoriteHandler.php?action=add&id=23910286" title="Add to Favorites">Add
+                                        to Favorites</a></span>
+                                <div class="clear">
+                                </div>
+                            </div>
+                            <div class="listingSpacer">
+                            </div>
+                            <div class="locationListingMore">
+                                <a class="blueBrowseButton" href="/homes-for-sale/Illinois/Cook_County/Chicago" title="Browse more properties">
+                                    Browse All Chicago, Illinois Properties</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="locationFullColumn">
+                <h1>
+                    Living in Chicago <a href="/homes-for-sale/Illinois/Cook_County/Chicago">Browse Chicago
+                        Properties</a>
+                </h1>
+                <table width="940" align="center" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 12px;">
+                    <tbody>
+                        <tr>
+                            <td align="center" valign="center">
+                                <img src="http://chart.apis.google.com/chart?chs=310x175&cht=p&chd=t:25.52,29.95,34.48,10.05&chl=25%25|29%25|34%25|10%25&chdl=under 18 yrs|18-34 yrs|35-64 yrs|over 65 yrs&chco=8DD8ED|839BC1|BFD1E9|2E679C|68B31B|51811B|F6ED38|D41F00|971600&chtt=Age+Profile&chts=2C689C,18&chp=4.7"
+                                    width="310" height="175" alt="Age Profile" />
+                            </td>
+                            <td align="center" valign="center">
+                                <img src="http://chart.apis.google.com/chart?chs=310x175&cht=p&chd=t:26.00,63.23,7.70,3.07&chl=26%25|63%25|7%25|3%25&chdl=Public Transit|Car|Alt. Transit|No Commute&chco=8DD8ED|839BC1|BFD1E9|2E679C|68B31B|51811B|F6ED38|D41F00|971600&chtt=Transportation&chts=2C689C,18&chp=4.7"
+                                    width="310" height="175" alt="Mode of Transportation" />
+                            </td>
+                            <td align="center" valign="center">
+                                <img src="http://chart.apis.google.com/chart?chs=310x175&cht=p&chd=t:47.03,18.36,5.53,17.68,11.39&chl=47%25|18%25|5%25|17%25|11%25&chdl=High School|Some College|Associates|Bachelors|Graduates&chco=8DD8ED|839BC1|BFD1E9|2E679C|68B31B|51811B|F6ED38|D41F00|971600&chtt=Education&chts=2C689C,18&chp=4.7"
+                                    width="310" height="175" alt="Education" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="locationTwoColumn">
+                <div class="locationRightColumn">
+                    <div class="blueOutlineBox">
+                        <h3>
+                            Quick Facts about <a href="/homes-for-sale/Illinois/Cook_County/Chicago" title="Browse more properties">
+                                Chicago</a></h3>
+                        <table cellpadding="0" cellspacing="0" border="0">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Population
+                                    </td>
+                                    <td>
+                                        2,887,897
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Area
+                                    </td>
+                                    <td>
+                                        225 mi
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Familes with children
+                                    </td>
+                                    <td>
+                                        50.18%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Median household income
+                                    </td>
+                                    <td>
+                                        $50,897
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Average household income
+                                    </td>
+                                    <td>
+                                        $73,175
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Properties occupied by owners
+                                    </td>
+                                    <td>
+                                        41.34%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Properties occupied by renters
+                                    </td>
+                                    <td>
+                                        52.95%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Median home value
+                                    </td>
+                                    <td>
+                                        $229,046
+                                    </td>
+                                </tr>
+                                </tobdy>
+                        </table>
+                    </div>
+                </div>
+                <div class="locationLeftColumn">
+                    <div class="locationDescritption">
+                        <p>
+                            Thinking of living in Chicago? You&rsquo;ll be joining about 2,887,897 others. Commuters
+                            in the Chicago area spend a median of 35 minutes getting to work and 63.23% commute
+                            by car. The average household income is $73,175, a 25.78% change from 2000. It is
+                            estimated that 17.68% of Chicago residents have graduated from college and another
+                            11.39% have graduate degrees.
+                        </p>
+                        <p>
+                            Did you know that 89.26% of Chicago&rsquo;s residents have lived there for 10 years
+                            or less?
+                        </p>
+                        <p>
+                            With a median home value of $229,046, Chicago residents closely track the housing
+                            market. Could your next home be in Chicago? Find it at <a href="http://www.forsalebyowner.com/homes-for-sale/Illinois/Cook_County/Chicago">
+                                ForSaleByOwner.com</a>, the world&rsquo;s largest site for by-owner real estate
+                            listings, which includes commercial properties, condominiums, townhouses and getaway
+                            places. Whether you are buying your first home, buying a foreclosure, or just scoping
+                            out Chicago houses for sale, you&rsquo;ll find the widest array of offerings at
+                            <a href="http://www.forsalebyowner.com/homes-for-sale/Illinois/Cook_County/Chicago">
+                                ForSaleByOwner.com</a>.
+                        </p>
+                        <div class="blueOutlineBox">
+                            <h3>
+                                Useful Links</h3>
+                            <table width="575" cellpadding="0" cellspacing="0">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <a href="/homes-for-sale/Illinois/Cook_County/Chicago?iPage=1&iSortMethod=14&szSortDirection=DESC">
+                                                Most Viewed Listings In Chicago</a>
+                                        </td>
+                                        <td>
+                                            <a href="/home-buying.html">Homebuyer&rsquo;s Guide</a>
+                                        </td>
+                                        <td>
+                                            <a href="/insurance">Insurance Center</a>
+                                        </td>
+                                        <tr>
+                                    <tr>
+                                        <td>
+                                            <a href="/homes-for-sale/Illinois/Cook_County/Chicago?hasOpenHouse=1">Open Houses</a>
+                                        </td>
+                                        <td>
+                                            <a href="/home-buying-tips.html">Homebuying Checklist</a>
+                                        </td>
+                                        <td>
+                                            <a href="/tools/">Tools</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="/homes-for-sale/Illinois/Cook_County/Chicago?iPage=1&iSortMethod=13&szSortDirection=DESC">
+                                                Just Reduced Properties</a>
+                                        </td>
+                                        <td>
+                                            <a href="/mortgage/rates.php">Mortgage Rates</a>
+                                        </td>
+                                        <td>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearWithSpace">
+            </div>
+        </div>
+    </div>
+    <!-- id=wrapper-->
+    <div class="clear">
+    </div>
+    <div id="footerBot">
+        <div id="footerAd">
+        </div>
+        <div id="footerWrap">
+            <div class="footSect company">
+                <h3>
+                    Our Company</h3>
+                <ul style="padding-bottom: 8px;">
+                    <li><a href="/sitemap">Site Map</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/press">Press Room</a></li>
+                    <li><a href="/terms">Terms and Conditions</a></li>
+                    <li><a href="/privacy">Privacy and Use</a></li>
+                    <li><a href="/spam">Abuse &amp; Spam</a></li>
+                </ul>
+                <a target="_blank" id="bbblink" class="sehzbus" href="http://www.bbb.org/chicago/business-reviews/real-estate-services/forsalebyownercom-in-chicago-il-88381771#bbblogo"
+                    title="ForSaleByOwner.com, Corp., Real Estate Services, Chicago, IL" style="display: block;
+                    position: relative; overflow: hidden; width: 100px; height: 38px; margin: 0px;
+                    padding: 0px;">
+                    <img style="padding: 0px; border: none;" id="bbblinkimg" src="http://seal-chicago.bbb.org/logo/sehzbus/forsalebyownercom-88381771.png"
+                        width="200" height="38" alt="ForSaleByOwner.com, Corp., Real Estate Services, Chicago, IL" /></a>
+                <script type="text/javascript">                    var bbbprotocol = (("https:" == document.location.protocol) ? "https://" : "http://"); document.write(unescape("%3Cscript src='" + bbbprotocol + 'seal-chicago.bbb.org' + unescape('%2Flogo%2Fforsalebyownercom-88381771.js') + "' type='text/javascript'%3E%3C/script%3E"));</script>
+            </div>
+            <div class="footSect work">
+                <h3>
+                    Work With Us</h3>
+                <ul>
+                    <li><a href="/pro/new">Become a Pro
+                        <img src="http://www.forsalebyowner.com/images/global/msgNew.gif" alt="New!" /></a></li>
+                    <li><a href="/agents">Real Estate Agents</a></li>
+                    <li><a href="/business-development">Business Development</a></li>
+                    <li><a href="/affiliate-programs">Affiliate Programs</a></li>
+                    <li><a href="/careers">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footSect support">
+                <h3>
+                    Customer Support</h3>
+                <p>
+                    Available:<br />
+                    Mon-Fri, 7AM-7PM CST<br />
+                    Sat-Sun, 8AM-5PM CST<br />
+                    888-367-7253</p>
+                <ul>
+                    <li><a href="/contact">Contact Support</a></li>
+                    <li><a href="#" onclick="javascript:gaTrackPageView('/livechat');window.open('http://chat.forsalebyowner.com/netagent/cimlogin.aspx?questid=C97949F9-63B1-45DF-A6B4-00D1CC3D208B&amp;portid=9B6061D5-4D5C-4F0C-8178-AF3E189C275A&amp;nareferer='+escape(document.location),'_blank','resizable=yes,width=750,height=475'); return false;">
+                        Live Chat</a></li>
+                    <li><a href="/help">Frequently Asked Questions</a></li>
+                </ul>
+                <br />
+                <h3>
+                    How Can We Improve?</h3>
+                <p>
+                    <a href="/suggest">Make a Suggestion</a></p>
+            </div>
+            <div class="footSect feedback">
+                <h3>
+                    Getting to know the terms</h3>
+                <ul>
+                    <li><a href="http://www.forsalebyowner.com/realestate">Real Estate</a></li>
+                    <li><a href="http://www.forsalebyowner.com/the-mls">MLS</a></li>
+                    <li><a href="http://www.forsalebyowner.com/houses-on-sale">Houses For Sale</a></li>
+                    <li><a href="http://www.forsalebyowner.com/sell-as-is">Sell As Is</a></li>
+                    <li><a href="http://www.forsalebyowner.com/property-for-sale">Property For Sale</a></li>
+                    <li><a href="http://www.forsalebyowner.com/houses-for-sale">Houses On Sale</a></li>
+                    <li><a href="http://www.forsalebyowner.com/by-owner">By Owner</a></li>
+                    <li><a href="http://www.forsalebyowner.com/foreclosure">Foreclosure</a></li>
+                    <!--
+	<li><a href="/property/">SINGLE PROPERTY PAGES</a></li>
+	-->
+                </ul>
+            </div>
+            <div class="footSect last">
+                <h3>
+                    Stay Connected!</h3>
+                <div class="leftColumn">
+                    <div class="connected">
+                        <div class="icons">
+                            <a href="http://blog.forsalebyowner.com/" target="_blank" onclick="gaTrackPageView('/outbound/blog');">
+                                <img src="http://www.forsalebyowner.com/images/global/button-blog.gif" alt="ForSaleByOwner.com Blog" /></a></div>
+                        <div class="text text_long">
+                            <a href="/blog" target="_blank" onclick="gaTrackPageView('/outbound/blog');">Read our<br />
+                                blog!</a></div>
+                    </div>
+                    <div class="connected">
+                        <div class="icons">
+                            <a href="http://www.facebook.com/pages/ForSaleByOwnercom/127631372832" target="_blank"
+                                onclick="gaTrackPageView('/outbound/facebook_fan_page');">
+                                <img src="http://www.forsalebyowner.com/images/global/button-facebook.gif" alt="Like us on Facebook" /></a></div>
+                        <div class="text text_long">
+                            <a href="http://www.facebook.com/pages/ForSaleByOwnercom/127631372832" target="_blank"
+                                onclick="gaTrackPageView('/outbound/facebook_fan_page');">Like us<br />
+                                on Facebook</a></div>
+                    </div>
+                    <div class="connected">
+                        <div class="icons">
+                            <a href="http://www.twitter.com/forsalebyowner" target="_blank" onclick="gaTrackPageView('/outbound/twitter');">
+                                <img src="http://www.forsalebyowner.com/images/global/button-twitter.gif" alt="Follow us on twitter" /></a></div>
+                        <div class="text text_long">
+                            <a href="http://www.twitter.com/forsalebyowner" target="_blank" onclick="gaTrackPageView('/outbound/twitter');">
+                                Follow us<br />
+                                on Twitter</a></div>
+                    </div>
+                </div>
+                <div class="rightColumn">
+                    <div class="connected">
+                        <div class="icons">
+                            <a href="http://itunes.apple.com/us/app/forsalebyowner-com-real-estate/id423632511?mt=8"
+                                target="_blank" onclick="gaTrackPageView('/outbound/mobileApp');">
+                                <img src="http://www.forsalebyowner.com/images/global/button-mobileApp.gif" alt="Download our Mobile App" /></a></div>
+                        <div class="text text_long" style="padding: 0px;">
+                            <a href="http://itunes.apple.com/us/app/forsalebyowner-com-real-estate/id423632511?mt=8"
+                                target="_blank" onclick="gaTrackPageView('/outbound/mobileApp');">iPhone App</a>
+                        </div>
+                        <div class="text text_long" style="padding: 0px;">
+                            <a href="https://play.google.com/store/apps/details?id=com.tribune.fsbo&feature=search_result#?t=W10"
+                                target="_blank" onclick="gaTrackPageView('/outbound/mobileApp');">Android App</a>
+                        </div>
+                    </div>
+                    <div class="connected">
+                        <div class="icons">
+                            <a href="http://www.youtube.com/forsalebyowner" target="_blank" onclick="gaTrackPageView('/outbound/youtube');">
+                                <img src="http://www.forsalebyowner.com/images/global/button-youtube.gif" alt="Learn more on YouTube" /></a></div>
+                        <div class="text text_long">
+                            <a href="http://www.youtube.com/forsalebyowner" target="_blank" onclick="gaTrackPageView('/outbound/youtube');">
+                                Learn more<br />
+                                on YouTube</a>
+                        </div>
+                    </div>
+                    <div class="connected">
+                        <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+                        <div class="icons" style="margin-top: 6px">
+                            <div class="g-plusone" data-href="http://www.forsalebyowner.com/" data-count="false">
+                            </div>
+                        </div>
+                        <div class="text text_long" style="font-size: 12px">
+                            +1 us<br />
+                            on Google</div>
+                    </div>
+                </div>
+            </div>
+            <p id="copyright">
+                &copy;1997-2013 ForSaleByOwner.com</p>
+        </div>
+    </div>
+</body>
+</html>

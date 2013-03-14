@@ -242,9 +242,9 @@ $(document).ready(function(){
 		searchMapListings = [];
 	}
 	for( var i = 0; i < searchMapListings.length; i++ ) {
-		var iconPath = i < 5 ? '/images/map/orangeDot.png' : '/images/map/redDot.png';
+	    var iconPath = i < 5 ? 'http://www.forsalebyowner.com/images/map/orangeDot.png' : 'http://www.forsalebyowner.com/images/map/redDot.png';
 		if(searchMapListings[i].featured) {
-			iconPath = '/images/map/yellowDot.png';
+			iconPath = 'http://www.forsalebyowner.com/images/map/yellowDot.png';
 		}
 		var icon = new google.maps.MarkerImage(iconPath, new google.maps.Size(7,7));
 		
