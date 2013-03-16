@@ -267,8 +267,7 @@ SearchMap.load = function () {
         showScalebar: false,
         mapTypeId: Microsoft.Maps.MapTypeId.road
     },
-        x = $('#listingsHolder').offset(),
-        ibid;
+        x = $('#listingsHolder').offset();
     SearchMap.initialTopHeight = x.top;
     SearchMap.windowOptions = {};
     SearchMap.windowOptions.minWidth = 300;
@@ -386,9 +385,9 @@ SearchMap.resizeWindowHelper = function () {
     var x = $('#listingsHolder').offset();
     var topHeight = x.top;
     var windowHeight = $(window).height();
-    var bottomHeight = windowHeight - topHeight;
+    var bottomHeight = windowHeight - topHeight - 20;
 
-    var width = $(window).width() - $('#listingsScroller').width() - 5;
+    var width = $(window).width() - $('#listingsScroller').width() - 10;
 
     SearchMap.resizeTimeoutID = 0;
 
@@ -400,6 +399,7 @@ SearchMap.resizeWindowHelper = function () {
 
     $('#listingsScroller').height(bottomHeight);
     $('#mapHolder').height(bottomHeight).width(width);
+    SearchMap.map.setOptions({ width: width, height: bottomHeight });
 
     SearchMap.recenterMap();
 };
@@ -407,7 +407,9 @@ SearchMap.resizeWindowHelper = function () {
 // show the infobox with the given HTML
 SearchMap.showInfobox = function (location, html) {
     'use strict';
-    var fpp = SearchMap.map.getCenter();
+    var bounds = SearchMap.map.getBounds(),
+        cbOff, cbLocation, newCenter, northOffset, eastOffset;
+
     SearchMap.infobox.setOptions({
         visible: true,
         offset: new Microsoft.Maps.Point(-25, 40),
@@ -416,6 +418,21 @@ SearchMap.showInfobox = function (location, html) {
     SearchMap.infobox.setLocation(location);
 
     // TODO: move map to ensure infobox visibility
+    // Use the Close button location
+    cbOff = $('a.infobox_close').offset();
+    cbLocation = SearchMap.map.tryPixelToLocation(new Microsoft.Maps.Point(cbOff.left + 50, cbOff.top - 50), Microsoft.Maps.PixelReference.page);
+    if (!bounds.contains(cbLocation)) {
+        newCenter = SearchMap.map.getCenter();
+        northOffset = cbLocation.latitude - bounds.getNorth();
+        eastOffset =  cbLocation.longitude - bounds.getEast();
+        if (northOffset > 0) {
+            newCenter.latitude += northOffset;
+        }
+        if (eastOffset > 0) {
+            newCenter.longitude += eastOffset;
+        }
+        SearchMap.map.setView({ center: newCenter });
+    }
     return false;
 };
 
@@ -467,7 +484,7 @@ $(document).ready(function () {
 		}
 	);
     SearchMap.load();
-    SearchMap.resizeWindowHelper();
+    SearchMap.resizeWindow(400);
     $(window).resize(function () { SearchMap.resizeWindow(400); });
     $('#moreOptionsLink').click(function () { SearchMap.resizeWindow(2400); });
 });
