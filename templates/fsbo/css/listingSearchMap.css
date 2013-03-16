@@ -41,9 +41,9 @@ div#viewBar #viewFour:hover #dispMenu, div#viewBar #viewFour.hov #dispMenu {disp
 div#viewBar div img.arrowDn {position: absolute; margin: 5px 0 0 -14px;}
 
 /* Hover Menus */
-#sortMenu {display: absolute; right: -1px; top: 24px; border-top: 1px solid #CCD8E6; margin-top: 0px; margin-left: -1px;}
+#sortMenu {position: absolute; right: -1px; top: 24px; border-top: 1px solid #CCD8E6; margin-top: 0px; margin-left: -1px;}
 #sortMenu li {width: 148px;}
-#dispMenu {display: absolute; right: -1px; top: 24px; border-top: 1px solid #CCD8E6; margin-top: 0px; margin-left: -1px;}
+#dispMenu {position: absolute; right: -1px; top: 24px; border-top: 1px solid #CCD8E6; margin-top: 0px; margin-left: -1px;}
 #dispMenu li {width: 170px;}
 
 /* Listings Headers */
@@ -63,7 +63,7 @@ div.listing:hover, div.listing.listingHov, div.listing.listingSel {background-co
 
 div.listing div.flags {width:108px;float: left; margin-left: 19px; font-size: 11px; line-height: 1em; color:#bababa; font-family: Lucida Grande; margin-bottom:3px;}
 div.listing div.flags span.photosFlag {position:relative; float: right; width:auto; padding-right:8px;}
-div.listing div.flags span.videoFlag {postion:relative; float: right; width:auto; text-align:right; padding-right:8px;}
+div.listing div.flags span.videoFlag {position:relative; float: right; width:auto; text-align:right; padding-right:8px;}
 div.listing div.flags img {vertical-align: bottom;}
 
 div.listing div.icon {float: left; height: 111px; width: 35px; background-repeat: no-repeat; background-position: 10px 25px;}
@@ -90,7 +90,7 @@ div.listing.underContract div.photo span.flag {background-color: #2c628e;}
 div.listingbubble.open div.photo span.flag,
 div.listing.open div.photo span.flag {background-color: #4b2d88;}
 div.listingbubble.new div.photo span.flag,
-div.listing.new div.photo span.flag {background-color: #00pda7;}
+div.listing.new div.photo span.flag {background-color: #00dda7;}
 div.listingbubble.justreduced div.photo span.flag,
 div.listing.justreduced div.photo span.flag,
 div.listingbubble.justReduced div.photo span.flag,
@@ -210,3 +210,30 @@ ul.breadcrumbs li.breadcrumbsParent:hover div.breadcrumbsSiblings { display: blo
 ul.breadcrumbs div.breadcrumbsSiblings ul { float:left; width: 125px; overflow: hidden; display: block; }
 ul.breadcrumbs div.breadcrumbsSiblings ul li {}
 ul.breadcrumbs div.breadcrumbsSiblings ul li a { background-color: transparent !important; display: block; line-height: 20px; border: 0px none transparent !important; white-space: nowrap; }
+
+
+.listingbubble
+{
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #CCCCCC;
+    border-radius: 20px;
+}
+
+.infobox_close{
+    cursor:pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border:none;
+}
+
+.infobox_pointer{
+    width:33px;
+    height:38px;
+    overflow:hidden;
+    position:relative;
+    z-index:1;
+    left:20px;
+    top:-1px;
+}

@@ -5,9 +5,7 @@
 /*global jQuery: false, Microsoft: false, $: false, FavoritesSearchMap: false */
 
 
-var SearchMap = function () {
-    'use strict';
-};
+var SearchMap = {};
 
 
 /*
@@ -137,41 +135,37 @@ Listing.prototype.scrollPos = function () {
 */
 Listing.prototype.icon = function () {
     'use strict';
-    var self = this;
+    var self = this, options;
     if (self._icon_) { return self._icon_; }
     if (self._unableToMap_) {
         $('#' + self.options.iconPrefix + self.id + ' .iconInner').css('background-image', 'url(http://www.forsalebyowner.com/images/map/icon.unableToMap.png)');
-        return 'http://www.forsalebyowner.com/images/map/icon.unableToMap.png';
+        return { icon: 'http://www.forsalebyowner.com/images/map/icon.unableToMap.png' };
     }
-    /*
 
-    var Icon = new GIcon();
-    Icon.iconSize = new GSize(48, 54);
-    Icon.iconAnchor = new GPoint(10, 41);
-    Icon.infoWindowAnchor = new GPoint(24, 5);
-    Icon.transparent = "http://www.forsalebyowner.com/images/map/iconBlankTrans.png";
-    Icon.imageMap = [4, 21, 13, 7, 30, 5, 38, 20, 35, 24, 33, 37, 21, 50, 10, 37, 8, 21];
-    Icon.sprite = {
-    image: 'http://www.forsalebyowner.com/images/map/sprites/sprite.' + self._iconColor_ + '.png',
-    width: 48,
-    height: 54,
-    top: 0,
-    left: ((SearchMap.featuredListings.length + SearchMap.listings.length) * self.options.spriteOffset + self.options.spriteOffset)
+    // With Google API v2, we displayed an icon containing a number in the image.
+    // With Bing Maps v7, we use the simple image with a text overlay.
+    options = {
+        width: 48,
+        height: 54,
+        anchor: new Microsoft.Maps.Point(10, 41),
+        text: (SearchMap.featuredListings.length + SearchMap.listings.length + 1).toString(),
+        icon: 'http://www.forsalebyowner.com/images/map/sprites/sprite.' + self.iconColor() + '.png'
     };
+
     $('#' + self.options.iconPrefix + self.id).css({
-    cursor: 'pointer'
+        cursor: 'pointer'
     }).find('.iconInner').css({
-    backgroundPosition: ((SearchMap.featuredListings.length + SearchMap.listings.length) * -1 * self.options.spriteOffset - self.options.spriteOffset) + 'px 0px',
-    backgroundImage: 'url(http://www.forsalebyowner.com/images/map/sprites/sprite.' + self._iconColor_ + '.png)'
+        backgroundPosition: ((SearchMap.featuredListings.length + SearchMap.listings.length) * -1 * self.options.spriteOffset - self.options.spriteOffset) + 'px 0px',
+        backgroundImage: 'url(http://www.forsalebyowner.com/images/map/sprites/sprite.' + self.iconColor() + '.png)'
     });
-    // Rail item click Event 
+
+    // Rail item click Event triggers the icon click event 
     $('#' + self.options.idPrefix + self.id).click(function () {
-    GEvent.trigger(self._marker_, "click");
-    return true;
+        Microsoft.Maps.Events.invoke(self._marker_, "click");
+        return true;
     });
-    return Icon;
-    */
-    return {};
+
+    return options;
 };
 
 /*
@@ -186,7 +180,11 @@ Listing.prototype.html = function () {
     if (self._html_) { return self._html_; }
     var html = $('#' + self.options.contentPrefix + self.id).html();
     var classes = $('#' + self.options.contentPrefix + self.id).attr('class');
-    return '<div id="openbubble' + self.id + '" class="' + classes + '">' + html + '</div>';
+    return '<div class="listingbubble" id="openbubble' + self.id + '" class="' + classes + '">' +
+        '<a class="infobox_close" href="javascript:SearchMap.hideInfobox()"><img src="images/close.png"/></a>' +
+        html +
+        '</div>' +
+        '<div class="infobox_pointer"><img src="images/pointer_shadow.png"></div>';
 };
 
 /*
@@ -216,7 +214,15 @@ Listing.prototype.marker = function () {
         return 'http://www.forsalebyowner.com/images/map/icon.unableToMap.png';
     }
 
-    marker = new Microsoft.Maps.Pushpin(self._point_);
+    marker = new Microsoft.Maps.Pushpin(self._point_, self.icon());
+
+    Microsoft.Maps.Events.addHandler(marker, 'click', function (event) {
+        $('#listingsScroller').animate({ scrollTop: self._scrollPos_ - SearchMap.initialTopHeight }, "fast", "easeOutExpo");
+        $('#' + self.options.idPrefix + self.id).addClass('listingSel');
+
+        SearchMap.showInfobox(self.point(), self.html());
+    });
+
     return marker;
     /*
     SearchMap.bounds.extend(self._point_);
@@ -246,6 +252,7 @@ Listing.prototype.marker = function () {
 
 SearchMap.resizeTimeoutID = 0;
 SearchMap.map = null;
+SearchMap.infobox = null;
 SearchMap.listings = [];
 SearchMap.featuredListings = [];
 SearchMap.bounds = null;
@@ -254,21 +261,22 @@ SearchMap.initialTopHeight = 0;
 SearchMap.load = function () {
     'use strict';
     var opts = {
-            credentials: "AqFS5IR76tuVDO7gUl9YncTj1GHOkrJC00Ol_qz1qJNG31f4Ie9Utw8TZEF0mEIX",
-            showDashboard: true,
-            showMapTypeSelector: false,
-            showScalebar: false,
-            mapTypeId: Microsoft.Maps.MapTypeId.road
-        },
-        x = $('#listingsHolder').offset();
+        credentials: "AqFS5IR76tuVDO7gUl9YncTj1GHOkrJC00Ol_qz1qJNG31f4Ie9Utw8TZEF0mEIX",
+        showDashboard: true,
+        showMapTypeSelector: false,
+        showScalebar: false,
+        mapTypeId: Microsoft.Maps.MapTypeId.road
+    },
+        x = $('#listingsHolder').offset(),
+        ibid;
     SearchMap.initialTopHeight = x.top;
     SearchMap.windowOptions = {};
     SearchMap.windowOptions.minWidth = 300;
     SearchMap.windowOptions.maxWidth = 400;
     SearchMap.map = new Microsoft.Maps.Map(document.getElementById('mapHolder'), opts);
-        
-        SearchMap.placeListings();
-        // TODO: extend map bounds to show all pushpins
+    SearchMap.infobox = new Microsoft.Maps.Infobox(new Microsoft.Maps.Location(0, 0));
+    SearchMap.map.entities.push(SearchMap.infobox);
+    SearchMap.placeListings();
 };
 
 SearchMap.addFeatureListing = function (id, lat, lng, accuracy) {
@@ -396,6 +404,29 @@ SearchMap.resizeWindowHelper = function () {
     SearchMap.recenterMap();
 };
 
+// show the infobox with the given HTML
+SearchMap.showInfobox = function (location, html) {
+    'use strict';
+    var fpp = SearchMap.map.getCenter();
+    SearchMap.infobox.setOptions({
+        visible: true,
+        offset: new Microsoft.Maps.Point(-25, 40),
+        htmlContent: html
+    });
+    SearchMap.infobox.setLocation(location);
+
+    // TODO: move map to ensure infobox visibility
+    return false;
+};
+
+// destroy the infobox contents
+SearchMap.hideInfobox = function () {
+    'use strict';
+    SearchMap.infobox.setOptions({
+        visible: false,
+        htmlContent: ""
+    });
+};
 
 $(document).ready(function () {
     'use strict';
