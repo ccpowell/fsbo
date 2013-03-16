@@ -166,17 +166,17 @@ Listing.prototype.icon = function() {
 	var self = this;
 	if (self._icon_) { return self._icon_ ; }
 	if ( self._unableToMap_ ) { 
-		$('#'+ self.options.iconPrefix + self.id + ' .iconInner').css('background-image', 'url(/images/map/icon.unableToMap.png)');
-		return '/images/map/icon.unableToMap.png'; 
+		$('#'+ self.options.iconPrefix + self.id + ' .iconInner').css('background-image', 'url(http://www.forsalebyowner.com/images/map/icon.unableToMap.png)');
+		return 'http://www.forsalebyowner.com/images/map/icon.unableToMap.png'; 
 	}
 	var Icon = new GIcon();
 	Icon.iconSize = new GSize(48,54); 
 	Icon.iconAnchor = new GPoint(10,41);
 	Icon.infoWindowAnchor = new GPoint(24,5);  
-	Icon.transparent = "/images/map/iconBlankTrans.png";
+	Icon.transparent = "http://www.forsalebyowner.com/images/map/iconBlankTrans.png";
 	Icon.imageMap = [ 4,21, 13,7, 30,5, 38,20, 35,24, 33,37, 21,50, 10,37, 8,21 ];
 	Icon.sprite = {
-			image: '/images/map/sprites/sprite.'+ self._iconColor_ +'.png', 
+			image: 'http://www.forsalebyowner.com/images/map/sprites/sprite.'+ self._iconColor_ +'.png', 
 			width:48, 
 			height:54, 
 			top:0, 
@@ -186,7 +186,7 @@ Listing.prototype.icon = function() {
 		cursor				: 'pointer'
 	}).find('.iconInner').css({
 		backgroundPosition	: ( ( SearchMap.featuredListings.length + SearchMap.listings.length ) * -1 * self.options.spriteOffset - self.options.spriteOffset )  + 'px 0px',
-		backgroundImage 	: 'url(/images/map/sprites/sprite.'+ self._iconColor_ +'.png)'
+		backgroundImage 	: 'url(http://www.forsalebyowner.com/images/map/sprites/sprite.'+ self._iconColor_ +'.png)'
 	});
 	/* Rail item click Event */
 	$('#'+self.options.idPrefix+self.id).click(function(){
@@ -232,7 +232,7 @@ Listing.prototype.marker = function() {
 	var self = this;
 	if(this._marker_) { return this._marker_ ; }
 	if ( self._unableToMap_ ) { 
-		return '/images/map/icon.unableToMap.png'; 
+		return 'http://www.forsalebyowner.com/images/map/icon.unableToMap.png'; 
 	}
 	SearchMap.bounds.extend(self._point_);
 	var marker = new GMarker(self._point_, { icon : self._icon_, clickable : true });

@@ -7,13 +7,12 @@
 // map polygons
 var polygonShapes = new Microsoft.Maps.EntityCollection();
 
-// Prototype tooltip
+// singleton tooltip
 var toolTip = false;
 
 // Map markers
 var markerPoints = new Microsoft.Maps.EntityCollection();
 
-var tmpBounds;
 
 // return an array of Locations for an encoded path
 function polylineDecode(polyLineString) {
@@ -144,7 +143,7 @@ var unused = (function ($) {
 
 function ToolTip() {
     'use strict';
-    this.infodiv = jQuery('<div/>')
+    var infodiv = jQuery('<div/>', {'id': 'tooltip-div'})
         .css({
             'z-index': 20,
             'display': 'none',
@@ -156,6 +155,16 @@ function ToolTip() {
             'border-radius': '6px'
         })
         .appendTo(map.getRootElement());
+
+    // adjust the position of the tooltip to track the mouse
+    Microsoft.Maps.Events.addHandler(map, 'mousemove', function (event) {
+        var position = {
+            'top': event.getY() + (map.getHeight() / 2),
+            'left': event.getX() + 25 + (map.getWidth() / 2)
+        };
+        infodiv.css(position);
+    });
+    this.infodiv = infodiv;
 }
 
 
@@ -165,17 +174,13 @@ var unused = (function ($) {
     ToolTip.prototype.draw = function (event, args) {
         var title = !!args.askingPrice ? args.address.replace(/,\s/g, ',<br>') : args.title;
         var html = '<strong>' + title + '</strong>';
-        var position = {
-            top: event.pageY - map.getPageY(),
-            left: event.pageX - map.getPageX() + 25
-        };
+
         if (!!args.askingPrice && args.askingPrice !== "null") {
             html += '<br>' + args.askingPrice;
         }
 
         this.infodiv
             .html(html)
-            .css(position)
             .show();
     };
 
@@ -187,6 +192,8 @@ var unused = (function ($) {
 
 jQuery(document).ready(function () {
     'use strict';
+    var tmpBounds;
+
     // Build default bounds to generate map center & parent MBR
     gBounds = Microsoft.Maps.LocationRect.fromCorners(
 			new Microsoft.Maps.Location(bound[0][0], bound[0][1]),
@@ -238,8 +245,7 @@ jQuery(document).ready(function () {
     /* Look for & add map makers */
     searchMapListings = searchMapListings || [];
 
-    // create a PushPin for the given searchMapListing
-    function createListingPushPin(index, listing) {
+    jQuery.each(searchMapListings, function (index, listing) {
         var location = new Microsoft.Maps.Location(listing.lat, listing.lng),
             iconPath,
             marker;
@@ -270,12 +276,7 @@ jQuery(document).ready(function () {
             }
         });
 
-        return marker;
-    }
-
-    jQuery.each(searchMapListings, function (index, listing) {
-        var pp = createListingPushPin(index, listing);
-        markerPoints.push(pp);
+        markerPoints.push(marker);
     });
 
     if (markerPoints.getLength() > 0) {
