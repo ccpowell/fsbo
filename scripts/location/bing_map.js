@@ -3,7 +3,7 @@
 // see http://www.jslint.com/
 /*jslint browser: true, debug: true, devel: true, white: true, plusplus: true, maxerr: 100, unparam: true, 
 indent: 4, bitwise: true, vars: true */
-/*global jQuery: false, Microsoft: false, google: false, gBounds: true, gPolygons: true, bound: false, 
+/*global jQuery: false, $: false, Microsoft: false, gBounds: true, gPolygons: true, bound: false, 
 map: true, searchMapListings: true */
 
 // map polygons
@@ -98,6 +98,7 @@ var unused = (function ($) {
             if (single) {
                 this.polyopts = {
                     fillColor: new Microsoft.Maps.Color(0, 0, 0, 0),
+                    strokeColor: Microsoft.Maps.Color.fromHex(this.options.strokeColor),
                     strokeThickness: 2
                 };
                 this.polygon = new Microsoft.Maps.Polygon(this.options.paths[0], this.polyopts);
