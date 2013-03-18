@@ -264,7 +264,7 @@ SearchMap.initialTopHeight = 0;
 SearchMap.load = function () {
     'use strict';
     var opts = {
-        credentials: "AqFS5IR76tuVDO7gUl9YncTj1GHOkrJC00Ol_qz1qJNG31f4Ie9Utw8TZEF0mEIX",
+        credentials: "AgjSx3sxeWsMwX7tppXvmhHuOOG41Nov_nnjREuMw3B-4_7Tg_Fpuz8fi_EHi0H0",
         showDashboard: true,
         showMapTypeSelector: false,
         showScalebar: false,

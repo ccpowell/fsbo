@@ -234,7 +234,7 @@ jQuery(document).ready(function () {
     // Map options.
     // The map boundary is initially set to gBounds, which is copied from the global bounds.
     var opts = {
-        credentials: "AqFS5IR76tuVDO7gUl9YncTj1GHOkrJC00Ol_qz1qJNG31f4Ie9Utw8TZEF0mEIX",
+        credentials: "AgjSx3sxeWsMwX7tppXvmhHuOOG41Nov_nnjREuMw3B-4_7Tg_Fpuz8fi_EHi0H0",
         bounds: gBounds,
         showDashboard: true,
         showMapTypeSelector: false,
