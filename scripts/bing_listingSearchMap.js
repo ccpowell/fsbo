@@ -1,7 +1,8 @@
 // The following comments are for JSLint.
 // Do NOT remove them!
 // see http://www.jslint.com/
-/*jslint browser: true, debug: true, devel: true, white: true, plusplus: true, maxerr: 100, unparam: true, indent: 4, bitwise: true, vars: true, nomen: true */
+/*jslint browser: true, debug: true, devel: true, white: true, plusplus: true, maxerr: 100, 
+    unparam: true, indent: 4, bitwise: true, vars: true, nomen: true */
 /*global jQuery: false, Microsoft: false, $: false, FavoritesSearchMap: false */
 
 
@@ -138,7 +139,8 @@ Listing.prototype.icon = function () {
     var self = this, options;
     if (self._icon_) { return self._icon_; }
     if (self._unableToMap_) {
-        $('#' + self.options.iconPrefix + self.id + ' .iconInner').css('background-image', 'url(http://www.forsalebyowner.com/images/map/icon.unableToMap.png)');
+        $('#' + self.options.iconPrefix + self.id + ' .iconInner').css('background-image', 
+            'url(http://www.forsalebyowner.com/images/map/icon.unableToMap.png)');
         return { icon: 'http://www.forsalebyowner.com/images/map/icon.unableToMap.png' };
     }
 
@@ -155,7 +157,8 @@ Listing.prototype.icon = function () {
     $('#' + self.options.iconPrefix + self.id).css({
         cursor: 'pointer'
     }).find('.iconInner').css({
-        backgroundPosition: ((SearchMap.featuredListings.length + SearchMap.listings.length) * -1 * self.options.spriteOffset - self.options.spriteOffset) + 'px 0px',
+        backgroundPosition: ((SearchMap.featuredListings.length + SearchMap.listings.length) * -1 * self.options.spriteOffset - 
+            self.options.spriteOffset) + 'px 0px',
         backgroundImage: 'url(http://www.forsalebyowner.com/images/map/sprites/sprite.' + self.iconColor() + '.png)'
     });
 
@@ -293,7 +296,8 @@ SearchMap.addFeatureListing = function (id, lat, lng, accuracy) {
     SearchMap.featuredListings.push(new Listing(x));
 };
 
-SearchMap.addListing = function (id, lat, lng, accuracy, isFeatured, isSold, isUnderContract, isNewConstruction, hasOpenHouse, isJustReduced) {
+SearchMap.addListing = function (id, lat, lng, accuracy, isFeatured, isSold, isUnderContract, 
+    isNewConstruction, hasOpenHouse, isJustReduced) {
     'use strict';
     var x = {};
     x.id = id;
@@ -385,20 +389,25 @@ SearchMap.resizeWindowHelper = function () {
     var x = $('#listingsHolder').offset();
     var topHeight = x.top;
     var windowHeight = $(window).height();
-    var bottomHeight = windowHeight - topHeight - 20;
+    var bottomHeight = windowHeight - topHeight;
 
-    var width = $(window).width() - $('#listingsScroller').width() - 10;
+    // TODO: why is a 5 pixel slop required? Is there a border?
+    var width = $(window).width() - $('#listingsScroller').width() - 5;
 
     SearchMap.resizeTimeoutID = 0;
 
     //Need this because IE sometimes throws false resize events that
     //when clicking a marker, causes map to be recentered
-    if ($('#listingsScroller').height() === bottomHeight && $('#mapHolder').height() === bottomHeight && $('#mapHolder').width() === width) {
+    if (($('#listingsScroller').height() === bottomHeight) &&
+        ($('#mapHolder').height() === bottomHeight) && 
+        ($('#mapHolder').width() === width)) {
         return;
     }
 
     $('#listingsScroller').height(bottomHeight);
-    $('#mapHolder').height(bottomHeight).width(width);
+
+    // set map and container to same size
+    $('#mapHolder').width(width).height(bottomHeight);
     SearchMap.map.setOptions({ width: width, height: bottomHeight });
 
     SearchMap.recenterMap();
@@ -417,10 +426,11 @@ SearchMap.showInfobox = function (location, html) {
     });
     SearchMap.infobox.setLocation(location);
 
-    // TODO: move map to ensure infobox visibility
+    // Move map to ensure infobox visibility
     // Use the Close button location
     cbOff = $('a.infobox_close').offset();
-    cbLocation = SearchMap.map.tryPixelToLocation(new Microsoft.Maps.Point(cbOff.left + 50, cbOff.top - 50), Microsoft.Maps.PixelReference.page);
+    cbLocation = SearchMap.map.tryPixelToLocation(new Microsoft.Maps.Point(cbOff.left + 50, cbOff.top - 50), 
+        Microsoft.Maps.PixelReference.page);
     if (!bounds.contains(cbLocation)) {
         newCenter = SearchMap.map.getCenter();
         northOffset = cbLocation.latitude - bounds.getNorth();

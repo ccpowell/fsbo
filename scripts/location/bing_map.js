@@ -1,8 +1,10 @@
 // The following comments are for JSLint.
 // Do NOT remove them!
 // see http://www.jslint.com/
-/*jslint browser: true, debug: true, devel: true, white: true, plusplus: true, maxerr: 100, unparam: true, indent: 4, bitwise: true, vars: true */
-/*global jQuery: false, Microsoft: false, google: false, gBounds: true, gPolygons: true, bound: false, map: true, searchMapListings: true */
+/*jslint browser: true, debug: true, devel: true, white: true, plusplus: true, maxerr: 100, unparam: true, 
+indent: 4, bitwise: true, vars: true */
+/*global jQuery: false, Microsoft: false, google: false, gBounds: true, gPolygons: true, bound: false, 
+map: true, searchMapListings: true */
 
 // map polygons
 var polygonShapes = new Microsoft.Maps.EntityCollection();
@@ -51,9 +53,9 @@ function polylineDecode(polyLineString) {
 }
 
 
-function Shape(opts) {
+function Shape(opts, single) {
     'use strict';
-    this.m_init(opts);
+    this.m_init(opts, single);
 
     // Return polygon instead of Shape's object.
     return this.polygon;
@@ -81,7 +83,7 @@ var unused = (function ($) {
             color.a = Math.max(0, Math.min(255, (opacity * 255)));
         },
 
-        m_init: function (opts) {
+        m_init: function (opts, single) {
             var i, self = this;
             this.options = $.extend({}, this.defaults, opts);
             for (i = 0; i < this.options.paths.length; i++) {
@@ -91,43 +93,55 @@ var unused = (function ($) {
             this.options.fillColor = !!this.options.colorCode ? this.options.colorCode : this.m_getFillColor();
             if (/^[0-9A-Fa-f]{6}$/.test(this.options.fillColor)) { this.options.fillColor = '#' + this.options.fillColor; }
 
-            // save the original options for restoring after mouseover
-            this.polyopts = {
-                fillColor: Microsoft.Maps.Color.fromHex(this.options.fillColor),
-                strokeColor: Microsoft.Maps.Color.fromHex(this.options.strokeColor),
-                strokeThickness: this.options.strokeThickness
-            };
-            this.m_setOpacity(this.polyopts.fillColor, this.options.fillOpacity);
-            this.m_setOpacity(this.polyopts.strokeColor, this.options.strokeOpacity);
+            // if there is a single shape, we use different display options 
+            // and NO event handlers
+            if (single) {
+                this.polyopts = {
+                    fillColor: new Microsoft.Maps.Color(0, 0, 0, 0),
+                    strokeThickness: 2
+                };
+                this.polygon = new Microsoft.Maps.Polygon(this.options.paths[0], this.polyopts);
+            } else {
+                // save the original options for restoring after mouseover
+                this.polyopts = {
+                    fillColor: Microsoft.Maps.Color.fromHex(this.options.fillColor),
+                    strokeColor: Microsoft.Maps.Color.fromHex(this.options.strokeColor),
+                    strokeThickness: this.options.strokeThickness
+                };
+                this.m_setOpacity(this.polyopts.fillColor, this.options.fillOpacity);
+                this.m_setOpacity(this.polyopts.strokeColor, this.options.strokeOpacity);
 
-            // currently, we just use the first path
-            this.polygon = new Microsoft.Maps.Polygon(this.options.paths[0], this.polyopts);
+                // currently, we just use the first path
+                // To handle complex polygons, use the AdvancedShapes module
+                // see http://msdn.microsoft.com/en-us/library/gg675211.aspx
+                this.polygon = new Microsoft.Maps.Polygon(this.options.paths[0], this.polyopts);
 
-            // save a set of colors for mouseover
-            this.overopts = {
-                fillColor: Microsoft.Maps.Color.fromHex(this.options.fillColor),
-                strokeColor: Microsoft.Maps.Color.fromHex(this.options.strokeColor)
-            };
-            this.m_setOpacity(this.overopts.fillColor, 1);
-            this.m_setOpacity(this.overopts.strokeColor, 1);
+                // save a set of colors for mouseover
+                this.overopts = {
+                    fillColor: Microsoft.Maps.Color.fromHex(this.options.fillColor),
+                    strokeColor: Microsoft.Maps.Color.fromHex(this.options.strokeColor)
+                };
+                this.m_setOpacity(this.overopts.fillColor, 1);
+                this.m_setOpacity(this.overopts.strokeColor, 1);
 
-            Microsoft.Maps.Events.addHandler(this.polygon, 'click', function (event) {
-                if (!!self.options.href) {
-                    window.location.href = self.options.href.replace(/\s/g, '_');
-                }
-            });
-            Microsoft.Maps.Events.addHandler(this.polygon, 'mouseover', function (event) {
-                self.polygon.setOptions(self.overopts);
-                if (toolTip) {
-                    toolTip.draw(event, self.options);
-                }
-            });
-            Microsoft.Maps.Events.addHandler(this.polygon, 'mouseout', function (event) {
-                self.polygon.setOptions(self.polyopts);
-                if (toolTip) {
-                    toolTip.hide();
-                }
-            });
+                Microsoft.Maps.Events.addHandler(this.polygon, 'click', function (event) {
+                    if (!!self.options.href) {
+                        window.location.href = self.options.href.replace(/\s/g, '_');
+                    }
+                });
+                Microsoft.Maps.Events.addHandler(this.polygon, 'mouseover', function (event) {
+                    self.polygon.setOptions(self.overopts);
+                    if (toolTip) {
+                        toolTip.draw(event, self.options);
+                    }
+                });
+                Microsoft.Maps.Events.addHandler(this.polygon, 'mouseout', function (event) {
+                    self.polygon.setOptions(self.polyopts);
+                    if (toolTip) {
+                        toolTip.hide();
+                    }
+                });
+            }
         },
 
         m_getFillColor: function () {
@@ -143,7 +157,7 @@ var unused = (function ($) {
 
 function ToolTip() {
     'use strict';
-    var infodiv = jQuery('<div/>', {'id': 'tooltip-div'})
+    var infodiv = jQuery('<div/>', { 'id': 'tooltip-div' })
         .css({
             'z-index': 20,
             'display': 'none',
@@ -190,6 +204,23 @@ var unused = (function ($) {
 
 } (jQuery));
 
+// get the LocationRect that contains all of the paths of the shapes
+function getBoundary(shapes) {
+    'use strict';
+    var locations = [];
+    if (shapes.length < 1) {
+        return null;
+    }
+    jQuery.each(shapes, function (index, shape) {
+        var boundary = Microsoft.Maps.LocationRect.fromLocations(shape.getLocations());
+        locations.push(boundary.getNorthWest(), boundary.getSouthEast(),
+            new Microsoft.Maps.Location(boundary.GetNorth(), boundary.GetEast()),
+            new Microsoft.Maps.Location(boundary.GetSouth(), boundary.GetWest()));
+    });
+    return Microsoft.Maps.LocationRect.fromLocations(locations);
+}
+
+
 jQuery(document).ready(function () {
     'use strict';
     var tmpBounds;
@@ -199,9 +230,9 @@ jQuery(document).ready(function () {
 			new Microsoft.Maps.Location(bound[0][0], bound[0][1]),
 			new Microsoft.Maps.Location(bound[1][0], bound[1][1])
 			);
-    tmpBounds = new Microsoft.Maps.LocationRect();
 
-    // Map options
+    // Map options.
+    // The map boundary is initially set to gBounds, which is copied from the global bounds.
     var opts = {
         credentials: "AqFS5IR76tuVDO7gUl9YncTj1GHOkrJC00Ol_qz1qJNG31f4Ie9Utw8TZEF0mEIX",
         bounds: gBounds,
@@ -209,12 +240,15 @@ jQuery(document).ready(function () {
         showMapTypeSelector: false,
         showScalebar: false,
         mapTypeId: Microsoft.Maps.MapTypeId.road
-    }, hand, i;
+    }, hand;
 
     // Load map
     map = new Microsoft.Maps.Map(document.getElementById('mapPlaceHolder'), opts);
     hand = map.getRootElement().style.cursor;
 
+    // Set the cursor to "pointer" if over a shape of some kind.
+    // This has to be done in a mousemove handler because the map will
+    // keep changing it.
     Microsoft.Maps.Events.addHandler(map, "mousemove", function (e) {
         // get the HTML DOM Element that represents the Map
         var mapElem = map.getRootElement();
@@ -231,25 +265,28 @@ jQuery(document).ready(function () {
     toolTip = new ToolTip();
 
     // Build polygons from parent page
-    if (gPolygons.length > 0) {
-        for (i = 0; i < gPolygons.length; i++) {
-            polygonShapes.push(new Shape(gPolygons[i]));
-        }
-        map.entities.push(polygonShapes);
+    jQuery.each(gPolygons, function (index, poly) {
+        polygonShapes.push(new Shape(poly, (gPolygons.length === 1)));
+    });
+
+    // add them to the map (n.b. empty collections are okay)
+    map.entities.push(polygonShapes);
+
+    // If we have many shapes, recalculate map bounds to show all rendered polygons
+    if (polygonShapes.length > 1) {
+        tmpBounds = getBoundary(polygonShapes);
+        map.setView({ bounds: tmpBounds });
     }
 
-    // TODO: If we have many shapes, recalculate map bounds to all rendered polygons
-
-    // TODO: If we're only displaying one shape; remove mouse events and clear shading
-
-    /* Look for & add map makers */
+    /* Look for & add map markers */
     searchMapListings = searchMapListings || [];
 
     jQuery.each(searchMapListings, function (index, listing) {
         var location = new Microsoft.Maps.Location(listing.lat, listing.lng),
             iconPath,
             marker;
-        iconPath = index < 5 ? 'http://www.forsalebyowner.com/images/map/orangeDot.png' : 'http://www.forsalebyowner.com/images/map/redDot.png';
+        iconPath = index < 5 ? 'http://www.forsalebyowner.com/images/map/orangeDot.png' :
+            'http://www.forsalebyowner.com/images/map/redDot.png';
         if (listing.featured) {
             iconPath = 'http://www.forsalebyowner.com/images/map/yellowDot.png';
         }
@@ -279,8 +316,6 @@ jQuery(document).ready(function () {
         markerPoints.push(marker);
     });
 
-    if (markerPoints.getLength() > 0) {
-        map.entities.push(markerPoints);
-    }
+    map.entities.push(markerPoints);
 });
 
